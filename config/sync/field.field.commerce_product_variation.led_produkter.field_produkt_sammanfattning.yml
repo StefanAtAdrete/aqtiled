@@ -1,0 +1,21 @@
+uuid: 42fcb69e-1ae4-4c9f-ba95-6293b1622c12
+langcode: sv
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.led_produkter
+    - field.storage.commerce_product_variation.field_produkt_sammanfattning
+  module:
+    - text
+id: commerce_product_variation.led_produkter.field_produkt_sammanfattning
+field_name: field_produkt_sammanfattning
+entity_type: commerce_product_variation
+bundle: led_produkter
+label: 'Produkt sammanfattning'
+description: 'Text som E2-05 50cm, Dali2, 90°, EnsoNet'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

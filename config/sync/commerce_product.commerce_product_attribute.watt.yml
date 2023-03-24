@@ -1,0 +1,7 @@
+uuid: cc628d0a-5a7d-4b94-8434-0979eadbee03
+langcode: sv
+status: true
+dependencies: {  }
+id: watt
+label: Watt
+elementType: select

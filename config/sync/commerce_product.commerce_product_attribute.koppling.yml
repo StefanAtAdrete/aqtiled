@@ -1,0 +1,7 @@
+uuid: 40eaf25a-19e4-47da-b0e2-055c90b547b3
+langcode: sv
+status: true
+dependencies: {  }
+id: koppling
+label: Koppling
+elementType: select

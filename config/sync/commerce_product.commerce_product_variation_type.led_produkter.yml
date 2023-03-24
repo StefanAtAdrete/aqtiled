@@ -1,0 +1,10 @@
+uuid: 87a50791-687e-46dc-a000-8ea1672b62ce
+langcode: sv
+status: true
+dependencies: {  }
+id: led_produkter
+label: 'LED produkter'
+traits: {  }
+locked: false
+orderItemType: default
+generateTitle: null

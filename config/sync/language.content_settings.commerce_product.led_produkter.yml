@@ -1,0 +1,11 @@
+uuid: d1b31c4a-4c12-48e5-bdab-494125818aca
+langcode: sv
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.led_produkter
+id: commerce_product.led_produkter
+target_entity_type_id: commerce_product
+target_bundle: led_produkter
+default_langcode: site_default
+language_alterable: false

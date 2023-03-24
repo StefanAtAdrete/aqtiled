@@ -1,0 +1,45 @@
+uuid: d9a95f65-2dd3-4403-b71b-ee69f039173f
+langcode: sv
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - search
+    - system
+  theme:
+    - bootstrap_barrio_subtheme
+_core:
+  default_config_hash: A4VN9nsPpD2CTheOvM7Ma8wbl4Rz2xhvB12dua274xo
+id: bootstrap_barrio_subtheme_search_form_narrow
+theme: bootstrap_barrio_subtheme
+region: sidebar_second
+weight: -7
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form (narrow)'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: ''
+  'entity_bundle:commerce_product':
+    id: 'entity_bundle:commerce_product'
+    negate: true
+    context_mapping:
+      commerce_product: '@commerce_product.product_route_context:commerce_product'
+    bundles:
+      default: default
+      led_produkter: led_produkter
+  'entity_bundle:commerce_product_variation':
+    id: 'entity_bundle:commerce_product_variation'
+    negate: true
+    context_mapping:
+      commerce_product_variation: '@commerce_product.product_variation_route_context:commerce_product_variation'
+    bundles:
+      default: default
+      led_produkter: led_produkter

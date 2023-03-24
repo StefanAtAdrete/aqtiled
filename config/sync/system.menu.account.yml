@@ -1,0 +1,10 @@
+uuid: 8b9a35a0-0ce1-4cd4-9486-b4f639ab0a68
+langcode: sv
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: M_Bh81osDyUQ4wV0GgU_NdBNqkzM87sLxjaCdFj9mnw
+id: account
+label: 'User account menu'
+description: 'Länkar relaterade till det aktiva användarkontot'
+locked: true

@@ -1,0 +1,20 @@
+uuid: ddf2381f-e6eb-4374-97e7-446b8fd125d7
+langcode: sv
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - media
+id: commerce_product.field_bildspel_bilder
+field_name: field_bildspel_bilder
+entity_type: commerce_product
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

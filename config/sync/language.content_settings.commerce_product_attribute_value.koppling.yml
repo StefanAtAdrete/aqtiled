@@ -1,0 +1,16 @@
+uuid: bace96bf-7e31-431f-a6e1-7666077b970a
+langcode: sv
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_attribute.koppling
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: commerce_product_attribute_value.koppling
+target_entity_type_id: commerce_product_attribute_value
+target_bundle: koppling
+default_langcode: site_default
+language_alterable: false

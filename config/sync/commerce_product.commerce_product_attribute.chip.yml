@@ -1,0 +1,7 @@
+uuid: f59b612a-663d-4d75-9e9d-67b1e593a84c
+langcode: sv
+status: true
+dependencies: {  }
+id: chip
+label: Chip
+elementType: select
