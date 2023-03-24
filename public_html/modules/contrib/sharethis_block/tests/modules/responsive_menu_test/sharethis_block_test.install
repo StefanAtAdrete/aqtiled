@@ -1,0 +1,34 @@
+<?php
+
+use Drupal\block\Entity\Block;
+use Drupal\Core\Entity\EntityStorageException;
+
+/**
+ * Implements hook_install().
+ *
+ * @throws EntityStorageException
+ */
+function sharethis_block_test_install() {
+  $values = [
+    'id' => 'sharethis',
+    'plugin' => 'sharethis',
+    'region' => 'content',
+    'settings' => [
+      'label' => '',
+    ],
+    'theme' => 'stark',
+    'visibility' => [],
+    'weight' => 0,
+  ];
+  $block = Block::create($values);
+  $block->save();
+
+  $config_factory = \Drupal::configFactory();
+  $config = $config_factory->getEditable('sharethis_block.configuration');
+
+  $config
+    ->set('sharethis_property', '5ece0df09d73fe001243be34')
+    ->set('sharethis_inline', 1)
+    ->save();
+}
+

@@ -1,0 +1,12 @@
+name: ShareThis Block
+type: module
+description: Adds the ShareThis javascript
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: Custom
+configure: sharethis_block.configuration
+
+# Information added by Drupal.org packaging script on 2020-05-27
+version: '8.x-1.3'
+project: 'sharethis_block'
+datestamp: 1590579231

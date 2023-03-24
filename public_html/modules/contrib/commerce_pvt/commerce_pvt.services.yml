@@ -1,0 +1,7 @@
+services:
+  commerce_pvt.refresh_page_elements_helper:
+    class: Drupal\commerce_pvt\RefreshPageElementsHelper
+    arguments: ['@theme.manager', '@entity_type.manager', '@plugin.manager.block', '@renderer']
+  commerce_pvt.lazy_builders:
+    class: Drupal\commerce_pvt\LazyBuilders
+    arguments: ['@renderer']

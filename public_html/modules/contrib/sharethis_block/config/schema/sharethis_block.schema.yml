@@ -1,0 +1,8 @@
+sharethis_block.configuration:
+  type: config_object
+  label: Settings
+  mapping:
+    sharethis_property:
+      type: string
+    sharethis_inline:
+      type: boolean

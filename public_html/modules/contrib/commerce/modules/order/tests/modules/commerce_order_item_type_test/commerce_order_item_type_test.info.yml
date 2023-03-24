@@ -1,0 +1,8 @@
+name: Commerce order item type resolving test
+type: module
+description: Contains new order item type and a resolving logic to test
+package: Testing
+core_version_requirement: ^8.9 || ^9
+dependencies:
+  - commerce:commerce_order
+  - commerce:commerce_product

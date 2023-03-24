@@ -1,0 +1,68 @@
+<?php
+
+/**
+ * @file
+ * Contains main module logic.
+ */
+
+use Drupal\commerce_product\Entity\ProductType;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function commerce_pvt_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.commerce_pvt':
+      $output = '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('This module aims to expose all the product variation in a VIEW table and adding them to cart. See the <a href=":pvt">online documentation for the Comment module</a>.', [':pvt' => 'https://www.drupal.org/docs/8/modules/commerce-product-variation-table']) . '</p>';
+      $output .= '<p>' . t("This kinda is a usefull tool for a wholesaling usage of the commerce where a person who's buying has to add many variations with different quantities at once.") . '</p>';
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function commerce_pvt_entity_extra_field_info() {
+  $extra = [];
+
+  foreach (ProductType::loadMultiple() as $bundle) {
+    $extra['commerce_product'][$bundle->id()]['display']['commerce_pvt_field'] = [
+      'label' => t('Product Variations Table'),
+      'description' => t('Exposes the variations list as a table with manageble quantitites'),
+      'weight' => 100,
+      'visible' => TRUE,
+    ];
+  }
+
+  return $extra;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function commerce_pvt_commerce_product_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  if ($component = $display->getComponent('commerce_pvt_field')) {
+    $build['commerce_pvt'] = [
+      '#lazy_builder' => [
+        'commerce_pvt.lazy_builders:variationTableForProduct',
+        [$entity->id()],
+      ],
+      '#create_placeholder' => TRUE,
+      '#weight' => $component['weight'],
+    ];
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function commerce_pvt_theme($existing, $type, $theme, $path) {
+  return [
+    'commerce_pvt_enhanced_widget' => ['render element' => 'element'],
+    'commerce_pvt_contextual_links_wrapper' => ['variables' => ['content' => NULL]],
+  ];
+}

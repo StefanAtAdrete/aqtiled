@@ -1,0 +1,10 @@
+block.settings.pvt_table_summary_block:
+  type: block_settings
+  label: 'Commerce PVT block'
+  mapping:
+    minimum_fraction_digits:
+      type: integer
+      label: 'Minimum fraction digits'
+    currency_display:
+      type: string
+      label: 'Subtotal currency display'

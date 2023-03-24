@@ -1,0 +1,33 @@
+{
+  "name": "drupal/commerce_pvt",
+  "description": "This module aims to expose all the product variation in a table and adding them to cart.",
+  "type": "drupal-module",
+  "authors": [
+    {
+      "name": "Egor Guriyanov <egorlaw@gmail.com>",
+      "role": "maintainer"
+    }
+  ],
+  "support": {
+    "issues": "https://drupal.org/project/issues/commerce_pvt",
+    "source": "https://cgit.drupalcode.org/commerce_pvt"
+  },
+  "license": "GPL-2.0-or-later",
+  "minimum-stability": "dev",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    }
+  ],
+  "require": {
+    "drupal/commerce": "^2.28"
+  },
+  "extra": {
+    "patches": {
+      "drupal/commerce": {
+        "Added OrderItemTypeResolver chain": "https://www.drupal.org/files/issues/2021-12-09/3017662-50.patch"
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.commerce-pvt-enhanced-widget {
+  position: relative;
+}
+
+.commerce-pvt-enhanced-widget div,
+.commerce-pvt-enhanced-widget label {
+  display: inline-block;
+}
+
+.commerce-pvt-enhanced-widget .quantity-edit {
+  min-width: 1rem;
+  text-align: center;
+  cursor: pointer;
+}
+.commerce-pvt-enhanced-widget .quantity-edit.disabled {
+  opacity: .35;
+  cursor: not-allowed;
+}
+
+.commerce-pvt-enhanced-widget input:readonly {
+  text-align: center;
+}
+.commerce-pvt-enhanced-widget input:disabled {
+  cursor: not-allowed !important;
+  opacity: 0.5;
+}
+
+.commerce-pvt-enhanced-widget > * {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.commerce-pvt-enhanced-widget .ajax-progress {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}

@@ -1,0 +1,12 @@
+name: Simple Menu Icons
+type: module
+description: Associates icons with menu items
+core_version_requirement: ^8 || ^9 || ^10
+
+dependencies:
+  - drupal:menu_ui
+
+# Information added by Drupal.org packaging script on 2022-10-21
+version: '3.0.0'
+project: 'simple_menu_icons'
+datestamp: 1666338280

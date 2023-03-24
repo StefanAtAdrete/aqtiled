@@ -1,0 +1,12 @@
+name: 'Webform Mautic'
+type: module
+description: 'Allows to send Webform submissions as contacts through Mautic forms.'
+package: 'Webform'
+core_version_requirement: ^8 || ^9 || ^10
+dependencies:
+  - webform:webform
+
+# Information added by Drupal.org packaging script on 2022-07-22
+version: '2.0.0'
+project: 'webform_mautic'
+datestamp: 1658532830

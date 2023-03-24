@@ -1,0 +1,60 @@
+<?php
+
+/**
+ * @file
+ * Hook implementations for the sharethis_block module.
+ */
+
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_library_info_alter().
+ */
+function sharethis_block_library_info_alter(&$libraries, $extension) {
+  if (($extension == 'sharethis_block') && isset($libraries['sharethis.core'])) {
+    $config = \Drupal::config('sharethis_block.configuration');
+    // Get the property ID.
+    $property_id = $config->get('sharethis_property');
+    // Determine the product type from the configuration.
+    $product_type = $config->get('sharethis_inline') ? 'inline-share-buttons' : 'sticky-share-button';
+    $remote = str_replace('PROPERTYID', $property_id, $libraries['sharethis.core']['remote']);
+    $remote = str_replace('PRODUCT_TYPE', $product_type, $remote);
+    $libraries['sharethis.core']['remote'] = $remote;
+    $options = reset($libraries['sharethis.core']['js']);
+    $libraries['sharethis.core']['js'] = [
+      $libraries['sharethis.core']['remote'] => $options,
+    ];
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function sharethis_block_theme() {
+  return [
+    'block__sharethis' => [
+      'base hook' => 'block',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_help().
+ */
+function sharethis_block_help($route_name, RouteMatchInterface $route_match) {
+  if ($route_name === 'help.page.sharethis_block') {
+    $readme_file = file_exists(__DIR__ . '/README.md') ? __DIR__ . '/README.md' : __DIR__ . '/README.txt';
+    if (!file_exists($readme_file)) {
+      return NULL;
+    }
+    // Use the Markdown filter to render the README.
+    if (method_exists('Drupal\markdown\Markdown', 'create')) {
+      return Drupal\markdown\Markdown::create()->loadPath($readme_file);
+    }
+    // Fall back to plain text.
+    $text = file_get_contents($readme_file);
+    return '<pre>' . Html::escape($text) . '</pre>';
+  }
+  return NULL;
+}

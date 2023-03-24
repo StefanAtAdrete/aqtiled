@@ -1,0 +1,30 @@
+{
+  "name": "drupal/webform_mautic",
+  "description": "Allows to send Webform submissions as contacts through Mautic forms.",
+  "type": "drupal-module",
+  "notification-url": "https://packages.drupal.org/8/downloads",
+  "license": "GPL-2.0-or-later",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "authors": [
+    {
+      "name": "Vardot",
+      "homepage": "https://www.drupal.org/vardot",
+      "role": "Maintainer"
+    }
+  ],
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/webform_mautic",
+    "source": "http://cgit.drupalcode.org/webform_mautic"
+  },
+  "repositories": {
+    "drupal": {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    }
+  },
+  "require": {
+    "drupal/core": "^8 || ^9 || ^10",
+    "drupal/webform": "^6"
+  }
+}

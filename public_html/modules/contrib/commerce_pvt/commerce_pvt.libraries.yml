@@ -1,0 +1,11 @@
+enhanced-widget:
+  version: 1.0
+  css:
+    base:
+      css/enhanced-widget.css: {}
+  js:
+    js/enhanced-widget.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal.debounce

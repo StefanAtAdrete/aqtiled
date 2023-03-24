@@ -1,0 +1,4 @@
+commerce_pvt_configure:
+  title: 'Configure PVT form'
+  route_name: 'entity.view.edit_form'
+  group: 'commerce_pvt'

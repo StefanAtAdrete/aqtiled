@@ -1,0 +1,6 @@
+services:
+  commerce_order_item_type_test.simple_order_item_type_resolver:
+    class: Drupal\commerce_order_item_type_test\Resolver\SimpleOrderItemTypeResolver
+    arguments: ['@entity_type.manager']
+    tags:
+      - { name: commerce_order.order_item_type_resolver, priority: 0 }

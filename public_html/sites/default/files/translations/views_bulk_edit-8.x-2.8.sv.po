@@ -1,0 +1,28 @@
+# Swedish translation of Views Bulk Edit (8.x-2.8)
+# Copyright (c) 2022 by the Swedish translation team
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Views Bulk Edit (8.x-2.8)\n"
+"POT-Creation-Date: 2022-10-20 09:46+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Language-Team: Swedish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+msgid "Create new revision"
+msgstr "Skapa ny version"
+msgid "Edit content"
+msgstr "Redigera innehåll"
+msgid "Revision information"
+msgstr "Information om versionshantering"
+msgid "Views Bulk Operations"
+msgstr "Views Bulk Operations"
+msgid "Revision log message"
+msgstr "Loggmeddelande för versionshantering"
+msgid "Edit media"
+msgstr "Redigera media"
+msgid "Briefly describe the changes you have made."
+msgstr "Beskriv kortfattat de ändringar du har gjort."

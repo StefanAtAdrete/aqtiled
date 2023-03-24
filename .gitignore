@@ -1,0 +1,35 @@
+# Drupal 9 specific files
+/web/core/
+/web/modules/contrib/
+/web/themes/contrib/
+/web/profiles/contrib/
+/web/libraries/
+/web/sites/*/files/
+/web/sites/*/settings.php
+/web/sites/*/services.yml
+/web/sites/*/settings.local.php
+/web/sites/*/settings.testing.php
+
+# Drupal 9 files to ignore
+*.log
+*.sql
+*.sqlite
+*.sqlite3
+*.tar
+*.gz
+*.zip
+*.rar
+*.csv
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.pdf
+*.doc
+*.docx
+*.xls
+*.xlsx
+*.ppt
+*.pptx
+*.swp

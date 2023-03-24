@@ -1,0 +1,16 @@
+name: 'Commerce Product Variations Table'
+description: 'Gives the possibility to create the table of variations with add to cart buttons for each'
+type: module
+package: Commerce
+core_version_requirement: ^8.9 || ^9
+dependencies:
+  - drupal:system (>=8.9)
+  - drupal:views (>=8.9)
+  - commerce:commerce_product (>= 2.17)
+  - commerce:commerce_order (>= 2.17)
+  - commerce:commerce_cart (>= 2.17)
+
+# Information added by Drupal.org packaging script on 2022-12-06
+version: '2.0.0-beta5'
+project: 'commerce_pvt'
+datestamp: 1670320111
