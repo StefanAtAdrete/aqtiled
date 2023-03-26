@@ -1,0 +1,37 @@
+uuid: 063acc05-97d4-468e-930e-5f65c873c798
+langcode: sv
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.led_produkter
+    - field.storage.commerce_product_variation.field_produkt_variation_media
+    - media.type.document
+    - media.type.image
+    - media.type.remote_video
+    - media.type.vector_image
+    - media.type.video
+id: commerce_product_variation.led_produkter.field_produkt_variation_media
+field_name: field_produkt_variation_media
+entity_type: commerce_product_variation
+bundle: led_produkter
+label: 'Produkt variation media'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+      image: image
+      remote_video: remote_video
+      vector_image: vector_image
+      video: video
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: image
+field_type: entity_reference

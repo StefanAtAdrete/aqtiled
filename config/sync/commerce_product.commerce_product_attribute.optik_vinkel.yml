@@ -1,0 +1,7 @@
+uuid: 13ea47e7-2304-4a8a-9309-397cab7846ad
+langcode: sv
+status: true
+dependencies: {  }
+id: optik_vinkel
+label: 'Optik vinkel (grader)'
+elementType: select

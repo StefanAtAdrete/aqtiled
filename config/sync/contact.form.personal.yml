@@ -1,0 +1,13 @@
+uuid: f5744452-8ce3-4340-8b89-07655adf9d50
+langcode: sv
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: jonvgt3CkUM2eMLTFwWfHileWWDC4YtXCuIlCahTk_I
+id: personal
+label: 'Personligt kontaktformulär'
+recipients: {  }
+reply: ''
+weight: 0
+message: 'Ditt meddelande &auml;r nu under behandling.'
+redirect: ''

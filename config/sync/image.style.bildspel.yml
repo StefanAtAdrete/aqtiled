@@ -1,0 +1,17 @@
+uuid: ce361a83-3ed0-4a3d-be80-9966997a701f
+langcode: sv
+status: true
+dependencies:
+  module:
+    - focal_point
+name: bildspel
+label: Bildspel
+effects:
+  5fe8e323-7b55-4376-a505-2dcdd71d0ef3:
+    uuid: 5fe8e323-7b55-4376-a505-2dcdd71d0ef3
+    id: focal_point_scale_and_crop
+    weight: 2
+    data:
+      width: 1080
+      height: 250
+      crop_type: focal_point

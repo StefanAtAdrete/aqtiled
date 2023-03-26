@@ -1,0 +1,24 @@
+uuid: 94b2b996-338f-4b2e-9955-5cec89c45fcd
+langcode: sv
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_attribute.chip
+    - commerce_product.commerce_product_variation_type.led_produkter
+    - field.storage.commerce_product_variation.attribute_chip
+id: commerce_product_variation.led_produkter.attribute_chip
+field_name: attribute_chip
+entity_type: commerce_product_variation
+bundle: led_produkter
+label: Chip
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:commerce_product_attribute_value'
+  handler_settings:
+    target_bundles:
+      - chip
+field_type: entity_reference

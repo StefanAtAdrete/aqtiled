@@ -1,0 +1,17 @@
+uuid: d289a69e-7e5b-470b-88ec-fcbf6e00e16b
+langcode: sv
+status: true
+dependencies:
+  module:
+    - focal_point
+name: hero_landscape
+label: 'Hero - landscape'
+effects:
+  36330c01-919a-45ed-9431-77625e6d5164:
+    uuid: 36330c01-919a-45ed-9431-77625e6d5164
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1300
+      height: 300
+      crop_type: focal_point
