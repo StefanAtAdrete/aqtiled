@@ -1,0 +1,16 @@
+augmentor_library:
+  css:
+    theme:
+      css/augmentor_form.css: {}
+  js:
+    js/augmentor_library.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/drupal.message
+
+augmentor_ckeditor:
+  css:
+    theme:
+      css/augmentor_ckeditor.css: {}

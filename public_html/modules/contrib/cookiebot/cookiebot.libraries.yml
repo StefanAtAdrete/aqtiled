@@ -1,0 +1,11 @@
+cookiebot:
+  js:
+    js/cookiebot.js: {}
+  css:
+    theme:
+      css/cookiebot.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/js-cookie
+    - core/once

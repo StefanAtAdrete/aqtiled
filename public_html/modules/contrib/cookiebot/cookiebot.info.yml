@@ -1,0 +1,10 @@
+name: Cookiebot
+type: module
+description: Drupal Cookiebot integration. Cookie consent, Cookie monitoring and Cookie control.
+core_version_requirement: ^8.8 || ^9 || ^10
+configure: cookiebot.admin_settings_form
+
+# Information added by Drupal.org packaging script on 2023-03-22
+version: '8.x-1.0-alpha15'
+project: 'cookiebot'
+datestamp: 1679520676

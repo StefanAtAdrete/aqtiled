@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * Cookiebot declaration.
+ *
+ * Available variables:
+ * - cookiebot_src
+ * - cookiebot_culture
+ * - cookiebot_disable_async_loading
+ */
+#}
+{% if cookiebot_src %}
+<script type="text/javascript" id="CookieDeclaration" src="{{ cookiebot_src }}" {% if cookiebot_disable_async_loading == false %}async="async"{% endif %}{% if cookiebot_culture %} data-culture="{{ cookiebot_culture }}"{% endif %}</script>
+{% endif %}

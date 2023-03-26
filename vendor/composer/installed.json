@@ -3415,6 +3415,126 @@
             "install-path": "../../public_html/modules/contrib/asset_injector"
         },
         {
+            "name": "drupal/augmentor",
+            "version": "1.0.0",
+            "version_normalized": "1.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/augmentor.git",
+                "reference": "1.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/augmentor-1.0.0.zip",
+                "reference": "1.0.0",
+                "shasum": "d2637c922d0c15288e832e341c4a26430a3f83a8"
+            },
+            "require": {
+                "drupal/core": "^9.3 || ^10",
+                "drupal/key": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0",
+                    "datestamp": "1672970801",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "installation-source": "dist",
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "eleonel",
+                    "homepage": "https://www.drupal.org/user/440810"
+                },
+                {
+                    "name": "KelvinWong",
+                    "homepage": "https://www.drupal.org/user/62003"
+                },
+                {
+                    "name": "murrayw",
+                    "homepage": "https://www.drupal.org/user/595658"
+                },
+                {
+                    "name": "naveenvalecha",
+                    "homepage": "https://www.drupal.org/user/2665733"
+                }
+            ],
+            "description": "Integration module which allows content to be augmented in Drupal via connections with external services.",
+            "homepage": "https://www.drupal.org/project/augmentor",
+            "support": {
+                "source": "https://git.drupalcode.org/project/augmentor"
+            },
+            "install-path": "../../public_html/modules/contrib/augmentor"
+        },
+        {
+            "name": "drupal/augmentor_openai_gpt3",
+            "version": "1.0.0",
+            "version_normalized": "1.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/augmentor_openai_gpt3.git",
+                "reference": "1.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/augmentor_openai_gpt3-1.0.0.zip",
+                "reference": "1.0.0",
+                "shasum": "e6fe5e6bf97f0d5fe7f00b1990f7dc4a9874d723"
+            },
+            "require": {
+                "drupal/augmentor": "*",
+                "drupal/core": "^9.3 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0",
+                    "datestamp": "1672977178",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "installation-source": "dist",
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "eleonel",
+                    "homepage": "https://www.drupal.org/user/440810"
+                },
+                {
+                    "name": "KelvinWong",
+                    "homepage": "https://www.drupal.org/user/62003"
+                },
+                {
+                    "name": "murrayw",
+                    "homepage": "https://www.drupal.org/user/595658"
+                },
+                {
+                    "name": "naveenvalecha",
+                    "homepage": "https://www.drupal.org/user/2665733"
+                }
+            ],
+            "description": "Provides integration of Augmentor with OpenAI GPT3 API.",
+            "homepage": "https://www.drupal.org/project/augmentor_openai_gpt3",
+            "support": {
+                "source": "https://git.drupalcode.org/project/augmentor_openai_gpt3"
+            },
+            "install-path": "../../public_html/modules/contrib/augmentor_openai_gpt3"
+        },
+        {
             "name": "drupal/automatic_updates",
             "version": "dev-1.x",
             "version_normalized": "dev-1.x",
@@ -3688,18 +3808,18 @@
         },
         {
             "name": "drupal/bootstrap_barrio",
-            "version": "5.5.9",
-            "version_normalized": "5.5.9.0",
+            "version": "5.5.10",
+            "version_normalized": "5.5.10.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/bootstrap_barrio.git",
-                "reference": "5.5.9"
+                "reference": "5.5.10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/bootstrap_barrio-5.5.9.zip",
-                "reference": "5.5.9",
-                "shasum": "99b5d4431259a5ed04e7f9a09179a88ff57f31da"
+                "url": "https://ftp.drupal.org/files/projects/bootstrap_barrio-5.5.10.zip",
+                "reference": "5.5.10",
+                "shasum": "4015cae184be99d08329878e609b814700a73e60"
             },
             "require": {
                 "drupal/core": "^9.4 || ^10",
@@ -3708,8 +3828,8 @@
             "type": "drupal-theme",
             "extra": {
                 "drupal": {
-                    "version": "5.5.9",
-                    "datestamp": "1674098246",
+                    "version": "5.5.10",
+                    "datestamp": "1679769012",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5821,18 +5941,94 @@
             "install-path": "../../public_html/modules/contrib/cookie_consent_notice_by_cookieyes"
         },
         {
-            "name": "drupal/core",
-            "version": "9.5.5",
-            "version_normalized": "9.5.5.0",
+            "name": "drupal/cookiebot",
+            "version": "1.0.0-alpha15",
+            "version_normalized": "1.0.0.0-alpha15",
             "source": {
                 "type": "git",
-                "url": "https://github.com/drupal/core.git",
-                "reference": "eae5e76a8b403cbd42b3465f567313b52d78b0dc"
+                "url": "https://git.drupalcode.org/project/cookiebot.git",
+                "reference": "8.x-1.0-alpha15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/eae5e76a8b403cbd42b3465f567313b52d78b0dc",
-                "reference": "eae5e76a8b403cbd42b3465f567313b52d78b0dc",
+                "url": "https://ftp.drupal.org/files/projects/cookiebot-8.x-1.0-alpha15.zip",
+                "reference": "8.x-1.0-alpha15",
+                "shasum": "8885c98afde8239336c85288ebe00c7f00fdc1e3"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-alpha15",
+                    "datestamp": "1679520675",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "installation-source": "dist",
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Oleksandr Milkovskyi",
+                    "homepage": "https://www.drupal.org/u/amilkovsky",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Ludek Kvapil",
+                    "homepage": "https://www.drupal.org/u/siva01",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Daniël Smidt",
+                    "homepage": "https://www.drupal.org/u/dmsmidt",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "dmsmidt",
+                    "homepage": "https://www.drupal.org/user/198330"
+                },
+                {
+                    "name": "markconroy",
+                    "homepage": "https://www.drupal.org/user/336910"
+                },
+                {
+                    "name": "Steven Buteneers",
+                    "homepage": "https://www.drupal.org/user/3301055"
+                }
+            ],
+            "description": "Provides Cookiebot integration",
+            "homepage": "https://drupal.org/project/cookiebot",
+            "keywords": [
+                "GPDR",
+                "cookiebot",
+                "cookies"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/cookiebot",
+                "issues": "https://drupal.org/project/issues/cookiebot"
+            },
+            "install-path": "../../public_html/modules/contrib/cookiebot"
+        },
+        {
+            "name": "drupal/core",
+            "version": "9.5.7",
+            "version_normalized": "9.5.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/drupal/core.git",
+                "reference": "bf51aa8ed6ab733fcaf60d0860aefd3918140fe3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/drupal/core/zipball/bf51aa8ed6ab733fcaf60d0860aefd3918140fe3",
+                "reference": "bf51aa8ed6ab733fcaf60d0860aefd3918140fe3",
                 "shasum": ""
             },
             "require": {
@@ -5912,7 +6108,7 @@
                 "drupal/core-uuid": "self.version",
                 "drupal/core-version": "self.version"
             },
-            "time": "2023-03-15T14:30:25+00:00",
+            "time": "2023-03-24T16:54:38+00:00",
             "type": "drupal-core",
             "extra": {
                 "drupal-scaffold": {
@@ -5946,7 +6142,7 @@
                     "Fix missing dependecies resolver": "https://www.drupal.org/files/issues/2022-12-26/3329660-2.patch"
                 }
             },
-            "installation-source": "dist",
+            "installation-source": "source",
             "autoload": {
                 "files": [
                     "includes/bootstrap.inc",
@@ -5989,14 +6185,14 @@
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
             "support": {
-                "source": "https://github.com/drupal/core/tree/9.5.5"
+                "source": "https://github.com/drupal/core/tree/9.5.7"
             },
             "install-path": "../../public_html/core"
         },
         {
             "name": "drupal/core-composer-scaffold",
-            "version": "9.5.5",
-            "version_normalized": "9.5.5.0",
+            "version": "9.5.7",
+            "version_normalized": "9.5.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-composer-scaffold.git",
@@ -6042,14 +6238,14 @@
                 "drupal"
             ],
             "support": {
-                "source": "https://github.com/drupal/core-composer-scaffold/tree/9.5.5"
+                "source": "https://github.com/drupal/core-composer-scaffold/tree/9.5.7"
             },
             "install-path": "../drupal/core-composer-scaffold"
         },
         {
             "name": "drupal/core-dev",
-            "version": "9.5.5",
-            "version_normalized": "9.5.5.0",
+            "version": "9.5.7",
+            "version_normalized": "9.5.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-dev.git",
@@ -6094,14 +6290,14 @@
             ],
             "description": "require-dev dependencies from drupal/drupal; use in addition to drupal/core-recommended to run tests from drupal/core.",
             "support": {
-                "source": "https://github.com/drupal/core-dev/tree/9.5.5"
+                "source": "https://github.com/drupal/core-dev/tree/9.5.7"
             },
             "install-path": null
         },
         {
             "name": "drupal/core-project-message",
-            "version": "9.5.5",
-            "version_normalized": "9.5.5.0",
+            "version": "9.5.7",
+            "version_normalized": "9.5.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-project-message.git",
@@ -6138,23 +6334,23 @@
                 "drupal"
             ],
             "support": {
-                "source": "https://github.com/drupal/core-project-message/tree/9.5.5"
+                "source": "https://github.com/drupal/core-project-message/tree/9.5.7"
             },
             "install-path": "../drupal/core-project-message"
         },
         {
             "name": "drupal/core-recommended",
-            "version": "9.5.5",
-            "version_normalized": "9.5.5.0",
+            "version": "9.5.7",
+            "version_normalized": "9.5.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-recommended.git",
-                "reference": "3c1d205349407e706cc89f56aa34448742fe81b4"
+                "reference": "4b63b8220b166ad9eca7b5ea05e485cbe1f2b4a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/3c1d205349407e706cc89f56aa34448742fe81b4",
-                "reference": "3c1d205349407e706cc89f56aa34448742fe81b4",
+                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/4b63b8220b166ad9eca7b5ea05e485cbe1f2b4a7",
+                "reference": "4b63b8220b166ad9eca7b5ea05e485cbe1f2b4a7",
                 "shasum": ""
             },
             "require": {
@@ -6163,7 +6359,7 @@
                 "doctrine/annotations": "~1.13.3",
                 "doctrine/lexer": "~1.2.3",
                 "doctrine/reflection": "~1.2.3",
-                "drupal/core": "9.5.5",
+                "drupal/core": "9.5.7",
                 "egulias/email-validator": "~3.2.1",
                 "guzzlehttp/guzzle": "~6.5.8",
                 "guzzlehttp/promises": "~1.5.2",
@@ -6218,7 +6414,7 @@
             "conflict": {
                 "webflo/drupal-core-strict": "*"
             },
-            "time": "2023-03-15T14:30:25+00:00",
+            "time": "2023-03-24T16:54:38+00:00",
             "type": "metapackage",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -6226,7 +6422,7 @@
             ],
             "description": "Core and its dependencies with known-compatible minor versions. Require this project INSTEAD OF drupal/core.",
             "support": {
-                "source": "https://github.com/drupal/core-recommended/tree/9.5.5"
+                "source": "https://github.com/drupal/core-recommended/tree/9.5.7"
             },
             "install-path": null
         },
@@ -6657,21 +6853,21 @@
         },
         {
             "name": "drupal/entity_clone",
-            "version": "1.0.0-beta7",
-            "version_normalized": "1.0.0.0-beta7",
+            "version": "2.0.0-beta2",
+            "version_normalized": "2.0.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/entity_clone.git",
-                "reference": "8.x-1.0-beta7"
+                "reference": "2.0.0-beta2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/entity_clone-8.x-1.0-beta7.zip",
-                "reference": "8.x-1.0-beta7",
-                "shasum": "964b72b21a7e219cf337743ed5c8850235197594"
+                "url": "https://ftp.drupal.org/files/projects/entity_clone-2.0.0-beta2.zip",
+                "reference": "2.0.0-beta2",
+                "shasum": "4045512a62cd203a0f2113aab4ce62d1da983a18"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^8 || ^9 || ^10"
             },
             "require-dev": {
                 "drupal/entity_browser": "2.x-dev",
@@ -6682,8 +6878,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0-beta7",
-                    "datestamp": "1663573486",
+                    "version": "2.0.0-beta2",
+                    "datestamp": "1676962618",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -8720,6 +8916,74 @@
                 "source": "https://git.drupalcode.org/project/jsonapi_extras"
             },
             "install-path": "../../public_html/modules/contrib/jsonapi_extras"
+        },
+        {
+            "name": "drupal/key",
+            "version": "1.17.0",
+            "version_normalized": "1.17.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/key.git",
+                "reference": "8.x-1.17"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/key-8.x-1.17.zip",
+                "reference": "8.x-1.17",
+                "shasum": "fa9f606d2ba0e20693e12040004e2ed31302ed03"
+            },
+            "require": {
+                "drupal/core": ">=8.9 <11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.17",
+                    "datestamp": "1674343967",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": ">=9"
+                    }
+                }
+            },
+            "installation-source": "dist",
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Cellar Door",
+                    "homepage": "https://www.drupal.org/user/658076"
+                },
+                {
+                    "name": "crashtest_",
+                    "homepage": "https://www.drupal.org/user/261457"
+                },
+                {
+                    "name": "nerdstein",
+                    "homepage": "https://www.drupal.org/user/1557710"
+                },
+                {
+                    "name": "rlhawk",
+                    "homepage": "https://www.drupal.org/user/352283"
+                }
+            ],
+            "description": "Provides the ability to manage site-wide keys",
+            "homepage": "http://drupal.org/project/key",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/key",
+                "issues": "http://drupal.org/project/key"
+            },
+            "install-path": "../../public_html/modules/contrib/key"
         },
         {
             "name": "drupal/layout_builder_component_attributes",
@@ -11147,28 +11411,28 @@
         },
         {
             "name": "drupal/token_filter",
-            "version": "1.4.0",
-            "version_normalized": "1.4.0.0",
+            "version": "2.0.0",
+            "version_normalized": "2.0.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/token_filter.git",
-                "reference": "8.x-1.4"
+                "reference": "2.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/token_filter-8.x-1.4.zip",
-                "reference": "8.x-1.4",
-                "shasum": "d0d4ddc098c8e8002a0aefb066cb6cd7481a4658"
+                "url": "https://ftp.drupal.org/files/projects/token_filter-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "73a4dc759ed78d634d4414ec81febc3428ebd2a5"
             },
             "require": {
-                "drupal/core": "^8 || ^9",
+                "drupal/core": "^9.4 || ^10",
                 "drupal/token": "*"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.4",
-                    "datestamp": "1649114304",
+                    "version": "2.0.0",
+                    "datestamp": "1675762777",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -15172,17 +15436,17 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "1.15.3",
-            "version_normalized": "1.15.3.0",
+            "version": "1.16.1",
+            "version_normalized": "1.16.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpdoc-parser.git",
-                "reference": "61800f71a5526081d1b5633766aa88341f1ade76"
+                "reference": "e27e92d939e2e3636f0a1f0afaba59692c0bf571"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/61800f71a5526081d1b5633766aa88341f1ade76",
-                "reference": "61800f71a5526081d1b5633766aa88341f1ade76",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/e27e92d939e2e3636f0a1f0afaba59692c0bf571",
+                "reference": "e27e92d939e2e3636f0a1f0afaba59692c0bf571",
                 "shasum": ""
             },
             "require": {
@@ -15197,7 +15461,7 @@
                 "phpunit/phpunit": "^9.5",
                 "symfony/process": "^5.2"
             },
-            "time": "2022-12-20T20:56:55+00:00",
+            "time": "2023-02-07T18:11:17+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -15214,7 +15478,7 @@
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
             "support": {
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
-                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.15.3"
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.16.1"
             },
             "install-path": "../phpstan/phpdoc-parser"
         },
@@ -17359,35 +17623,35 @@
         },
         {
             "name": "slevomat/coding-standard",
-            "version": "8.8.0",
-            "version_normalized": "8.8.0.0",
+            "version": "8.9.0",
+            "version_normalized": "8.9.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/slevomat/coding-standard.git",
-                "reference": "59e25146a4ef0a7b194c5bc55b32dd414345db89"
+                "reference": "8f11e0f5ff984d6862bb9d83aa513dc05a1773ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/slevomat/coding-standard/zipball/59e25146a4ef0a7b194c5bc55b32dd414345db89",
-                "reference": "59e25146a4ef0a7b194c5bc55b32dd414345db89",
+                "url": "https://api.github.com/repos/slevomat/coding-standard/zipball/8f11e0f5ff984d6862bb9d83aa513dc05a1773ef",
+                "reference": "8f11e0f5ff984d6862bb9d83aa513dc05a1773ef",
                 "shasum": ""
             },
             "require": {
                 "dealerdirect/phpcodesniffer-composer-installer": "^0.6.2 || ^0.7 || ^1.0",
                 "php": "^7.2 || ^8.0",
-                "phpstan/phpdoc-parser": ">=1.15.2 <1.16.0",
+                "phpstan/phpdoc-parser": ">=1.16.0 <1.17.0",
                 "squizlabs/php_codesniffer": "^3.7.1"
             },
             "require-dev": {
                 "phing/phing": "2.17.4",
                 "php-parallel-lint/php-parallel-lint": "1.3.2",
-                "phpstan/phpstan": "1.4.10|1.9.6",
-                "phpstan/phpstan-deprecation-rules": "1.1.1",
-                "phpstan/phpstan-phpunit": "1.0.0|1.3.3",
-                "phpstan/phpstan-strict-rules": "1.4.4",
-                "phpunit/phpunit": "7.5.20|8.5.21|9.5.27"
+                "phpstan/phpstan": "1.4.10|1.10.8",
+                "phpstan/phpstan-deprecation-rules": "1.1.3",
+                "phpstan/phpstan-phpunit": "1.0.0|1.3.10",
+                "phpstan/phpstan-strict-rules": "1.5.0",
+                "phpunit/phpunit": "7.5.20|8.5.21|9.6.5"
             },
-            "time": "2023-01-09T10:46:13+00:00",
+            "time": "2023-03-25T15:52:37+00:00",
             "type": "phpcodesniffer-standard",
             "extra": {
                 "branch-alias": {
@@ -17397,7 +17661,7 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "SlevomatCodingStandard\\": "SlevomatCodingStandard"
+                    "SlevomatCodingStandard\\": "SlevomatCodingStandard/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -17411,7 +17675,7 @@
             ],
             "support": {
                 "issues": "https://github.com/slevomat/coding-standard/issues",
-                "source": "https://github.com/slevomat/coding-standard/tree/8.8.0"
+                "source": "https://github.com/slevomat/coding-standard/tree/8.9.0"
             },
             "funding": [
                 {
