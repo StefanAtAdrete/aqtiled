@@ -1,0 +1,12 @@
+name: Layout BG
+description: "Provides Layout plugins that make background images easy."
+package: Layout
+type: module
+core_version_requirement: ^9 || ^10
+dependencies:
+  - drupal:layout_builder
+
+# Information added by Drupal.org packaging script on 2022-08-19
+version: '8.x-1.3'
+project: 'layout_bg'
+datestamp: 1660938105

@@ -1,0 +1,37 @@
+layout_bg_onecol:
+  label: 'One-Column Layout with Background Region'
+  theme_hook: layout__layout_bg
+  library: layout_bg/layout_bg_onecol
+  class: '\Drupal\layout_bg\Plugin\Layout\LayoutBgOneCol'
+  category: 'Columns: 1'
+  default_region: content
+  icon_map:
+    - [background, background, background, background]
+    - [background, content, content, background]
+    - [background, content, content, background]
+    - [background, background, background, background]
+  regions:
+    background:
+      label: Background
+    content:
+      label: Content
+
+layout_bg_twocol:
+  label: 'Two-Column Layout with Background Region'
+  theme_hook: layout__layout_bg
+  library: layout_bg/layout_bg_twocol
+  class: '\Drupal\layout_bg\Plugin\Layout\LayoutBgTwoCol'
+  category: 'Columns: 2'
+  default_region: first
+  icon_map:
+    - [background, background, background, background]
+    - [background, first, second, background]
+    - [background, first, second, background]
+    - [background, background, background, background]
+  regions:
+    background:
+      label: Background
+    first:
+      label: First
+    second:
+      label: Second

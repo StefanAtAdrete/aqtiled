@@ -1,0 +1,12 @@
+name: Layout BG Article Teaser
+description: "Provides an example of a cool teaser view mode using Layout BG."
+package: Layout
+type: module
+core_version_requirement: ^9 || ^10
+dependencies:
+  - layout_bg:layout_bg
+
+# Information added by Drupal.org packaging script on 2022-08-19
+version: '8.x-1.3'
+project: 'layout_bg'
+datestamp: 1660938105

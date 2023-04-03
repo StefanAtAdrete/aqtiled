@@ -1,5 +1,0 @@
-cookieyes_scripts.admin.body:
-  title: 'Cookie Consent Notice by CookieYes'
-  description: 'Allow to add CookieYes script from the frontend at the start of body tag.'
-  parent: system.admin_config_development
-  route_name: cookieyes_scripts.admin.body

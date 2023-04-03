@@ -1,0 +1,28 @@
+# Swedish translation of Webform Mautic (2.0.0)
+# Copyright (c) 2022 by the Swedish translation team
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Webform Mautic (2.0.0)\n"
+"POT-Creation-Date: 2022-07-22 23:51+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Language-Team: Swedish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+msgid "Edit"
+msgstr "Redigera"
+msgid "Message:"
+msgstr "Meddelande:"
+msgid "Completed"
+msgstr "Slutförd"
+msgid "completed"
+msgstr "fullföljd"
+msgid "Webform"
+msgstr "Webbformulär"
+msgid "Enable debugging"
+msgstr "Aktivera felkodsavsökning"
+msgid "Response status code"
+msgstr "Svarskod"

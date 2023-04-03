@@ -1,7 +1,0 @@
-cookieyes_scripts.admin.body:
-  path: '/admin/config/development/cookieyes-scripts/body'
-  defaults:
-    _form: '\Drupal\cookieyes_scripts\Form\BodyForm'
-    _title: 'CookieYes GDPR Consent Settings'
-  requirements:
-    _permission: 'cookieyes_scripts_settings'

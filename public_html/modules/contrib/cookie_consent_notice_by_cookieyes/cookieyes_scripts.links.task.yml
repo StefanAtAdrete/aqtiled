@@ -1,4 +1,0 @@
-cookieyes_scripts.admin.body:
-  route_name: cookieyes_scripts.admin.body
-  title: 'Body Scripts'
-  base_route: cookieyes_scripts.admin.body

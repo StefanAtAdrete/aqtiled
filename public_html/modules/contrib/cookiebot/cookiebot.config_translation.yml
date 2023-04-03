@@ -1,5 +1,0 @@
-cookiebot.settings:
-  title: "Cookiebot settings"
-  base_route_name: cookiebot.admin_settings_form
-  names:
-    - cookiebot.settings
