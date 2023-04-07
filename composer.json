@@ -116,6 +116,7 @@
         "drupal/webform_mautic": "^2.0",
         "drupal/webform_views": "^5.1",
         "drupal/webhooks": "^1.0@alpha",
+        "drupal/webp": "^1.0@beta",
         "drush/drush": "^10.6",
         "facebook/php-business-sdk": "^16.0",
         "twbs/bootstrap-icons": "^1.10",
