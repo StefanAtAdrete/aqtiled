@@ -5,6 +5,7 @@ dependencies:
   config:
     - commerce_product.commerce_product_variation_type.led_produkter
     - field.field.commerce_product_variation.led_produkter.attribute_chip
+    - field.field.commerce_product_variation.led_produkter.attribute_drivdon
     - field.field.commerce_product_variation.led_produkter.attribute_ip
     - field.field.commerce_product_variation.led_produkter.attribute_koppling
     - field.field.commerce_product_variation.led_produkter.attribute_optik_vinkel
@@ -58,6 +59,7 @@ content:
 hidden:
   add_to_cart_link: true
   attribute_chip: true
+  attribute_drivdon: true
   attribute_ip: true
   attribute_koppling: true
   attribute_optik_vinkel: true

@@ -1,7 +1,14 @@
 uuid: ce8ce431-235d-4a81-8052-7066b9ebff2c
 langcode: sv
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
 _core:
   default_config_hash: AeW1SEDgb1OTQACAWGhzvMknMYAJlcZu0jljfeU3oso
 name: Artikel
@@ -10,4 +17,4 @@ description: 'Använd <em>artiklar</em> för tidskänsligt innehåll som nyheter
 help: ''
 new_revision: true
 preview_mode: 1
-display_submitted: true
+display_submitted: false

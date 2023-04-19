@@ -19,45 +19,50 @@ uid: null
 template: false
 archive: false
 id: contact
-title: 'Kontakta oss'
-description: 'Basic email contact webform.'
+title: Offert
+description: 'Fr&aring;ge och offertformul&auml;r.'
 category: ''
 elements: |-
-  name:
-    '#type': textfield
-    '#title': 'Ditt namn'
-    '#required': true
-    '#default_value': '[current-user:display-name]'
   email:
     '#type': email
     '#title': 'Din e-postadress'
     '#required': true
     '#default_value': '[current-user:mail]'
+  name:
+    '#type': textfield
+    '#title': 'Ditt namn'
+    '#states':
+      visible:
+        ':input[name="email"]':
+          filled: true
+    '#default_value': '[current-user:display-name]'
   foretagsnamn:
     '#type': textfield
     '#title': Företagsnamn
     '#description': 'Vilket f&ouml;retag representerar du?'
     '#help_title': Företagsnamn
     '#help': 'Skriv f&ouml;retagsnamnet'
-  kontakta_oss_angaende:
-    '#type': select
-    '#title': 'Kontakta oss angående'
-    '#description': 'Hur kan vi hj&auml;lpa dig?'
-    '#help_title': 'Välj frågeämne'
-    '#help': 'Vad vill du fr&aring;ga oss om?'
-    '#options':
-      contact: Frågor
-      quote: Offert
+    '#states':
+      visible:
+        ':input[name="email"]':
+          filled: true
   message:
     '#type': textarea
     '#title': Meddelande
-    '#required': true
+    '#states':
+      visible:
+        ':input[name="email"]':
+          filled: true
     '#test': 'Please ignore this email.'
   jag_godkanner_sajtens_data_policy_:
     '#type': checkbox
     '#title': 'Jag godkänner sajtens data policy.'
     '#description': 'Jag godk&auml;nner sajtens <a href="/data-policy" target="_blank">data policy</a>.'
     '#required': true
+  id:
+    '#type': hidden
+    '#title': ID
+    '#default_value': '[webform:id]'
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'

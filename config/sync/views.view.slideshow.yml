@@ -231,7 +231,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"background_slide\">\r\n<div class=\"title_slide\">{{ title }}</div>\r\n<div class=\"image_slide\">{{ field_produkt_bilder }}</div>\r\n</div>"
+            text: "<div class=\"background_slide\">\r\n<div class=\"image_slide\">{{ field_produkt_bilder }}</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false

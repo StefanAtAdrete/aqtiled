@@ -1,0 +1,8 @@
+uuid: 6afbf8e2-8198-4ca8-8655-0b60b7c33db2
+langcode: sv
+status: true
+dependencies: {  }
+name: Miljö
+vid: miljo
+description: 'Vilken miljö passar produkten i?'
+weight: 0

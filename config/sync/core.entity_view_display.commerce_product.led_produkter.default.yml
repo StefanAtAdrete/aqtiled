@@ -66,7 +66,7 @@ third_party_settings:
         layout_id: 'bootstrap_layout_builder:blb_col_2'
         layout_settings:
           label: ''
-          container_wrapper_classes: ''
+          container_wrapper_classes: pt-3
           container_wrapper_attributes: null
           container_wrapper:
             bootstrap_styles:
@@ -216,7 +216,7 @@ third_party_settings:
               component_attributes:
                 block_attributes:
                   id: ''
-                  class: 'bg-warning p-2 text-dark bg-opacity-10 rounded'
+                  class: 'mb-2 bg-warning p-2 text-dark bg-opacity-10 rounded'
                   style: ''
                   data: ''
                 block_title_attributes:
@@ -244,17 +244,17 @@ third_party_settings:
             additional: {  }
           b5842487-38d6-46a1-aa02-8418fbb95038:
             uuid: b5842487-38d6-46a1-aa02-8418fbb95038
-            region: blb_region_col_1
+            region: blb_region_col_2
             configuration:
               id: webform_block
               label: 'Kontakta oss'
-              label_display: '0'
+              label_display: visible
               provider: webform
               context_mapping: {  }
               webform_id: contact
               default_data: ''
               redirect: false
-            weight: 2
+            weight: 1
             additional: {  }
         third_party_settings: {  }
       -

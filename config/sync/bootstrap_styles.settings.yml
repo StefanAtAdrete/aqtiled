@@ -47,7 +47,7 @@ attribute_type: data
 data_key: aos
 scroll_effects_attr_type: true
 scroll_effects_data_key: data-aos
-scroll_effects_library_type: external
+scroll_effects_library_type: local
 text_colors_desktop: "bs-text-xl-white|White\r\nbs-text-xl-black|Black"
 text_colors_laptop: "bs-text-lg-white|White\r\nbs-text-lg-black|Black"
 text_colors_tablet: "bs-text-md-white|White\r\nbs-text-md-black|Black"
