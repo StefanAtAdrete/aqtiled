@@ -32,11 +32,3 @@ color.preview:
     color/preview.js: {}
   dependencies:
     - color/drupal.color
-    
-facebook-pixel:
-  version: 1.x
-  js:
-    js/facebook-pixel.js: {}
-  dependencies:
-    - core/jquery
-
