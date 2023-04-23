@@ -1,0 +1,25 @@
+uuid: 0769b864-bd67-4dc4-a233-23df7a42bff0
+langcode: sv
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:95ee2565-22f2-4995-bf16-a4522a741a96'
+  module:
+    - block_content
+  theme:
+    - b5subtheme
+id: aqtiledc2023
+theme: b5subtheme
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:95ee2565-22f2-4995-bf16-a4522a741a96'
+settings:
+  id: 'block_content:95ee2565-22f2-4995-bf16-a4522a741a96'
+  label: 'Aqtiled © 2023'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

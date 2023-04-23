@@ -8,6 +8,7 @@ dependencies:
     - field.field.commerce_product.led_produkter.field_bildspel_bilder
     - field.field.commerce_product.led_produkter.field_extra_info
     - field.field.commerce_product.led_produkter.field_produkt_bilder
+    - field.field.commerce_product.led_produkter.layout_builder__layout
   module:
     - commerce
     - media_library
@@ -105,4 +106,5 @@ content:
       placeholder: ''
     third_party_settings: {  }
 hidden:
+  layout_builder__layout: true
   variations: true

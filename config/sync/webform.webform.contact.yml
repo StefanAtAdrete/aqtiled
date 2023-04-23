@@ -59,6 +59,9 @@ elements: |-
     '#title': 'Jag godkänner sajtens data policy.'
     '#description': 'Jag godk&auml;nner sajtens <a href="/data-policy" target="_blank">data policy</a>.'
     '#required': true
+  jag_godkanner_att_min_data_anvands_for_marknadsforing:
+    '#type': checkbox
+    '#title': 'Jag godkänner att min data används för marknadsföring'
   id:
     '#type': hidden
     '#title': ID
@@ -84,7 +87,7 @@ settings:
   form_open_message: ''
   form_close_message: ''
   form_exception_message: ''
-  form_previous_submissions: true
+  form_previous_submissions: false
   form_confidential: false
   form_confidential_message: ''
   form_disable_remote_addr: false
