@@ -1,0 +1,12 @@
+name: OpenAI API
+type: module
+description: Enables usage of the OpenAI API.
+package: OpenAI
+core_version_requirement: ^9 || ^10
+dependencies:
+  - drupal:openai
+
+# Information added by Drupal.org packaging script on 2023-01-30
+version: '1.0.0-alpha1'
+project: 'openai'
+datestamp: 1675105550

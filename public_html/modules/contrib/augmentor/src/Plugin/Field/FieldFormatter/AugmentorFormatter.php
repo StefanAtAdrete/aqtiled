@@ -8,7 +8,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 
 /**
- * Provides the Field Token Value Text field formatter.
+ * Provides the Augmentor field formatter.
  *
  * @FieldFormatter(
  *   id = "field_augmentor_formatter",
@@ -34,7 +34,7 @@ class AugmentorFormatter extends FormatterBase implements ContainerFactoryPlugin
    */
   public function settingsForm(array $form, FormStateInterface $form_state) {
     $element['debug'] = [
-      '#title' => t('Enable debugging'),
+      '#title' => $this->t('Enable debugging'),
       '#type' => 'checkbox',
       '#default_value' => $this->getSetting('debug'),
     ];
@@ -61,8 +61,6 @@ class AugmentorFormatter extends FormatterBase implements ContainerFactoryPlugin
    */
   public function viewElements(FieldItemListInterface $items, $langcode) {
     $element = [];
-    $debug = $this->getSetting('debug');
-    $entity = $items->getEntity();
 
     return $element;
   }

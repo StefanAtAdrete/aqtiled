@@ -4,6 +4,8 @@ namespace Drupal\augmentor\Form;
 
 use Drupal\Core\Form\ConfirmFormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\augmentor\AugmentorManager;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Url;
 
 /**
@@ -12,6 +14,32 @@ use Drupal\Core\Url;
  * @internal
  */
 class AugmentorDeleteForm extends ConfirmFormBase {
+
+  /**
+   * The augmentor manager.
+   *
+   * @var \Drupal\augmentor\AugmentorManager
+   */
+  protected $augmentorManager;
+
+  /**
+   * Constructs a new AugmentorDeleteForm.
+   *
+   * @param \Drupal\augmentor\AugmentorManager $augmentor_manager
+   *   The augmentor manager.
+   */
+  public function __construct(AugmentorManager $augmentor_manager) {
+    $this->augmentorManager = $augmentor_manager;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('plugin.manager.augmentor.augmentors'),
+    );
+  }
 
   /**
    * {@inheritdoc}

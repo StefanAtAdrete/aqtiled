@@ -10,7 +10,7 @@ use Drupal\augmentor\AugmentorManager;
 use Drupal\Core\Field\FieldDefinitionInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Url;
-use Drupal\file\Entity\File;
+use Drupal\Core\Entity\EntityStorageInterface;
 
 /**
  * Base class for the Augmentor field widgets.
@@ -22,6 +22,13 @@ abstract class AugmentorBaseWidget extends TextareaWidget implements ContainerFa
    * @var \Drupal\augmentor\AugmentorManager
    */
   protected $augmentorManager;
+
+  /**
+   * The file storage service.
+   *
+   * @var \Drupal\Core\Entity\EntityStorageInterface
+   */
+  protected $fileStorage;
 
   /**
    * Construct a AugmentorBaseWidget object.
@@ -38,10 +45,13 @@ abstract class AugmentorBaseWidget extends TextareaWidget implements ContainerFa
    *   Any third party settings.
    * @param \Drupal\augmentor\AugmentorManager $augmentor_manager
    *   The augmentor plugin manager.
+   * @param \Drupal\Core\Entity\EntityStorageInterface $file_storage
+   *   The file storage service.
    */
-  public function __construct($plugin_id, $plugin_definition, FieldDefinitionInterface $field_definition, array $settings, array $third_party_settings, AugmentorManager $augmentor_manager) {
+  public function __construct($plugin_id, $plugin_definition, FieldDefinitionInterface $field_definition, array $settings, array $third_party_settings, AugmentorManager $augmentor_manager, EntityStorageInterface $file_storage) {
     parent::__construct($plugin_id, $plugin_definition, $field_definition, $settings, $third_party_settings);
     $this->augmentorManager = $augmentor_manager;
+    $this->fileStorage = $file_storage;
   }
 
   /**
@@ -54,7 +64,8 @@ abstract class AugmentorBaseWidget extends TextareaWidget implements ContainerFa
       $configuration['field_definition'],
       $configuration['settings'],
       $configuration['third_party_settings'],
-      $container->get('plugin.manager.augmentor.augmentors')
+      $container->get('plugin.manager.augmentor.augmentors'),
+      $container->get('entity_type.manager')->getStorage('file')
     );
   }
 
@@ -71,20 +82,25 @@ abstract class AugmentorBaseWidget extends TextareaWidget implements ContainerFa
     $source_fields = $this->getSetting('source_fields');
     $entity = $items->getEntity();
     $source_fields_values = [];
-    $yolo = [];
 
     foreach ($source_fields as $field_name) {
       $field_type = $entity->get($field_name)->getFieldDefinition()->getType();
 
+      $source_fields_values[$field_name] = [
+        $field_type => [
+          'value' => '',
+        ],
+      ];
+
       if ($field_type != 'entity_reference' && $field_type != 'entity_reference_revisions' && !$entity->get($field_name)->isEmpty()) {
         $values = $entity->get($field_name)->getValue();
-
+        
         foreach ($values as $value) {
           switch ($field_type) {
             case 'image':
             case 'file':
               $fid = $value['target_id'];
-              $file = File::load($fid);
+              $file = $this->fileStorage->load($fid);
               $value = $file->createFileUrl(FALSE);
               break;
 
@@ -92,9 +108,7 @@ abstract class AugmentorBaseWidget extends TextareaWidget implements ContainerFa
               break;
           }
 
-          $source_fields_values[$field_name] = [
-            $field_type => $value,
-          ];
+          $source_fields_values[$field_name][$field_type] = $value;
         }
       }
     }
@@ -120,6 +134,7 @@ abstract class AugmentorBaseWidget extends TextareaWidget implements ContainerFa
         'action' => $action,
         'trim' => $trim,
         'targets' => $targets,
+        'source_fields' => $source_fields_values,
         'augmentor' => $augmentor,
         'explode_separator' => $explode_separator,
       ],
@@ -303,7 +318,7 @@ abstract class AugmentorBaseWidget extends TextareaWidget implements ContainerFa
 
     $element['button_label'] = [
       '#type' => 'textfield',
-      '#title' => t('Button label'),
+      '#title' => $this->t('Button label'),
       '#default_value' => $this->getSetting('button_label'),
       '#size' => 60,
       '#description' => $this->t('Label of the button to execute the augmentor'),
@@ -320,27 +335,27 @@ abstract class AugmentorBaseWidget extends TextareaWidget implements ContainerFa
     $summary = [];
 
     if ($augmentor = $this->getSetting('augmentor')) {
-      $summary[] = t('Augmentor name: @name', ['@name' => $augmentor]);
+      $summary[] = $this->t('Augmentor name: @name', ['@name' => $augmentor]);
     }
 
     if ($source = $this->getSetting('source_fields')) {
-      $summary[] = t('Source fields: @source', ['@source' => implode(', ', $source)]);
+      $summary[] = $this->t('Source fields: @source', ['@source' => implode(', ', $source)]);
     }
 
     if ($target = $this->getSetting('targets')) {
-      $summary[] = t('Target fields: @target', ['@target' => json_encode($target)]);
+      $summary[] = $this->t('Target fields: @target', ['@target' => json_encode($target)]);
     }
 
     if ($action = $this->getSetting('action')) {
-      $summary[] = t('Action: @action', ['@action' => $action]);
+      $summary[] = $this->t('Action: @action', ['@action' => $action]);
     }
 
     if ($trim = $this->getSetting('trim')) {
-      $summary[] = t('Trim from: @trim', ['@trim' => $trim]);
+      $summary[] = $this->t('Trim from: @trim', ['@trim' => $trim]);
     }
 
     if ($button_label = $this->getSetting('button_label')) {
-      $summary[] = t('Button label: @label', ['@label' => $button_label]);
+      $summary[] = $this->t('Button label: @label', ['@label' => $button_label]);
     }
 
     return $summary;
@@ -364,7 +379,7 @@ abstract class AugmentorBaseWidget extends TextareaWidget implements ContainerFa
    */
   protected function extractValue($input) {
     $value = '';
-    foreach ($input as $field_name => $field) {
+    foreach ($input as $field) {
       $type = key($field);
 
       switch ($type) {

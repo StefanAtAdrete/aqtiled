@@ -75,6 +75,7 @@
         "drupal/feeds_ex": "^1.0@alpha",
         "drupal/feeds_tamper": "^2.0@beta",
         "drupal/field_group": "^3.2",
+        "drupal/field_token_value": "^3.0",
         "drupal/fitvids": "^1.1",
         "drupal/flag": "^4.0@beta",
         "drupal/focal_point": "^1.5",
@@ -100,9 +101,11 @@
         "drupal/media_entity_slideshow": "^2.5",
         "drupal/media_responsive_thumbnail": "^1.5",
         "drupal/media_thumbnails_video": "^2.0",
+        "drupal/menu_item_extras": "^2.19",
         "drupal/metatag": "^1.18",
         "drupal/mimemail": "^1.0@alpha",
         "drupal/oembed_providers": "^2.0",
+        "drupal/openai": "^1.0@alpha",
         "drupal/pathauto": "^1.8",
         "drupal/publication_date": "^2.0@beta",
         "drupal/redirect": "^1.7",
@@ -128,6 +131,7 @@
         "drupal/taxonomy_manager": "^2.0",
         "drupal/taxonomy_menu": "^3.5",
         "drupal/token_filter": "^2.0",
+        "drupal/tvi": "^2.0@alpha",
         "drupal/views_bootstrap": "^4.3",
         "drupal/views_bulk_edit": "^2.6",
         "drupal/views_bulk_operations": "^4.1",
@@ -137,6 +141,7 @@
         "drupal/webform_views": "^5.1",
         "drupal/webhooks": "^1.0@alpha",
         "drupal/webp": "^1.0@beta",
+        "drupal/workflow": "^1.7",
         "drush/drush": "^10.6",
         "facebook/php-business-sdk": "^16.0",
         "twbs/bootstrap-icons": "^1.10",
@@ -172,6 +177,9 @@
         "patches": {
           "drupal/core": {"Fix missing dependecies resolver":
         "https://www.drupal.org/files/issues/2022-12-26/3329660-2.patch"
+        },
+        "drupal/core": {"Fitvids fixer":
+        "https://www.drupal.org/files/issues/2020-07-13/fitvids-fix-oembed-issue-3158833-2.patch"
         }
         },
         "installer-paths": {

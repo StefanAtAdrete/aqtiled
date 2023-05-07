@@ -7,7 +7,7 @@ use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Provides the Field Token Value field type.
+ * Provides the Augmentor field type.
  *
  * @FieldType(
  *   id = "field_augmentor_type",
@@ -15,7 +15,7 @@ use Drupal\Core\Form\FormStateInterface;
  *   label = @Translation("Field Augmentor"),
  *   description = @Translation("Create a field using Augmentors."),
  *   default_widget = "augmentor_default_widget",
- *   default_formatter = "field_token_value_text",
+ *   default_formatter = "field_augmentor_formatter",
  *   cardinality = 1,
  *   category = "Augmentor",
  * )

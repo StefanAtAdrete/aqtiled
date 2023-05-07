@@ -42,7 +42,7 @@ interface AugmentorInterface extends PluginInspectionInterface, ConfigurableInte
   public function getUuid();
 
   /**
-   * Setsthe unique ID representing the augmentor.
+   * Sets the unique ID representing the augmentor.
    *
    * @param string $uuid
    *   The uuid for this augmentor.

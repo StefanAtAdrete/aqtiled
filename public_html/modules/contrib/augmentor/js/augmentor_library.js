@@ -21,10 +21,15 @@
             var field = $(this).attr('name');
             var data = settings['augmentor'][field]['data'];
             var targets = data['targets'];
+            var sourceFields = data['source_fields'];
             var action = data['action'];
             var type = data['type'];
             var explode = data['explode_separator'];
             var button = $(this);
+
+            if (sourceFields.length != 0) {
+              data.input = getFieldValues(sourceFields);
+            }
 
             $.ajax({
               url: settings['augmentor'][field]['url'],
@@ -86,6 +91,40 @@
     }
   };
 
+  // Get CKEditor fields values.
+  function getCkeditorFieldValue(sourceField) {
+    var sourceField = sourceField.attr('id');
+    var sourceFieldEditor = CKEDITOR.instances[sourceField];
+
+    if (typeof sourceFieldEditor != 'undefined') {
+      return sourceFieldEditor.getData();
+    }
+  }
+
+  // Get simple input, texarea, hidden, etc. fields values.
+  function getFieldValues(sourceFields) {
+    var data = '';
+
+    Object.keys(sourceFields).forEach(sourceFieldName => {
+      var sourceFields = $("[name^='" + sourceFieldName + "']");
+      for (let i = 0; i < sourceFields.length; i++) {
+        var sourceField = $(sourceFields[i]);
+        var ckeditorValue = getCkeditorFieldValue(sourceField);
+
+        if (typeof ckeditorValue != 'undefined') {
+          data += ckeditorValue;
+        }
+        else {
+          data += sourceField.val();
+        }
+
+        data += "\n\n";
+      }
+    });
+
+    return stripHtml(data);
+  }
+
   // Handle CKEditor fields updates.
   function updateCkeditorField(targetField, action, value) {
     var targetField = targetField.attr('id');
@@ -126,7 +165,7 @@
       value = Object.values(value);
     }
 
-    if (targetField.hasClass('form-autocomplete')) {
+    if (targetField.hasClass('form-autocomplete') || targetField.hasClass('form-select') || targetField.hasClass('form-radio') || targetField.hasClass('form-checkbox')) {
       button.closest('.form-wrapper').find('.augmentor-tags').remove();
       button.closest('.form-wrapper').append('<div class="augmentor-tags"></div>');
       var augmentorTags = button.closest('.form-wrapper').find('.augmentor-tags');
@@ -154,14 +193,51 @@
     if (!augmentorTags.find('input[value="' + tag.trim() + '"]').length) {
       var button = $('<input type="button" class="augmentor-tag" value= "' + tag.trim() + '">').click(function () {
         var existing_tags = [];
+        // Handling Autocomplete target field.
+        if (targetField.is("input") && targetField.hasClass('form-autocomplete')) {
+          if (targetField.val() != '') {
+            existing_tags = targetField.val().split(',');
+          }
 
-        if (targetField.val() != '') {
-          existing_tags = targetField.val().split(',');
+          existing_tags.push(tag);
+          targetField.val(stripHtml(existing_tags.join()));
+          $(this).remove();
         }
-
-        existing_tags.push(tag);
-        targetField.val(stripHtml(existing_tags.join()));
-        $(this).remove();
+        // Handling Radio target field.
+        if (targetField.is("input") && targetField.hasClass('form-radio')) {
+          var targetFieldName = targetField.attr('name');
+          var targetFieldSelector = '.field--name-' + targetFieldName.replace('_', '-') + ' label:contains("' + tag + '")';
+          $(targetFieldSelector).prev('input[type="radio"]').prop('checked', true);
+          $(this).remove();
+        }
+        // Handling Checkboxes target field.
+        if (targetField.is("input") && targetField.hasClass('form-checkbox')) {
+          var targetFieldName = targetField.attr('name');
+          targetFieldName = targetFieldName.replace(/\[.*?\]/g, '');
+          var targetFieldSelector = '.field--name-' + targetFieldName.replace('_', '-') + ' label:contains("' + tag + '")';
+          $(targetFieldSelector).prev('input[type="checkbox"]').prop('checked', true);
+          $(this).remove();
+        }
+        // Handling Select target field.
+        if (targetField.is("select") && targetField.hasClass('form-element--type-select')) {
+          var tag_val = targetField.find('option:contains("' + tag + '")').val();
+          if (tag_val) {
+            targetField.val(tag_val);
+          }
+          $(this).remove();
+        }
+        // Handling Multi-select target field.
+        if (targetField.is("select") && targetField.hasClass('form-element--type-select-multiple')) {
+          if (targetField.val() != '') {
+            existing_tags = targetField.val();
+          }
+          var tag_val = targetField.find('option:contains("' + tag + '")').val();
+          if (!existing_tags.includes(tag_val)) {
+            existing_tags.push(tag_val);
+          }
+          targetField.val(existing_tags);
+          $(this).remove();
+        }
       });
 
       augmentorTags.append(button);

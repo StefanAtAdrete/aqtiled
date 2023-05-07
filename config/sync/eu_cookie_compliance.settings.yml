@@ -55,7 +55,7 @@ cookie_name: consent_cookie
 exclude_uid_1: false
 better_support_for_screen_readers: true
 method: opt_in
-disabled_javascripts: themes/contrib/bootstrap_barrio/subtheme/js/facebook-pixel.js
+disabled_javascripts: themes/custom/b5subtheme/js/facebook-pixel.js
 automatic_cookies_removal: true
 allowed_cookies: ''
 consent_storage_method: basic
@@ -70,7 +70,7 @@ save_preferences_button_label: 'Save preferences'
 accept_all_categories_button_label: 'Acceptera alla cookies'
 enable_save_preferences_button: true
 domain_all_sites: false
-settings_tab_enabled: false
+settings_tab_enabled: true
 containing_element: body
 cookie_policy_version: 1.0.0
 cookie_value_disagreed: '0'

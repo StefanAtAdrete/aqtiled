@@ -10,7 +10,7 @@ use Drupal\augmentor\AugmentorManager;
 use Drupal\Core\Field\FieldDefinitionInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Url;
-use Drupal\file\Entity\File;
+use Drupal\Core\Entity\EntityStorageInterface;
 
 /**
  * An augmentor field widget.
@@ -32,6 +32,13 @@ class AugmentorWidget extends TextareaWidget implements ContainerFactoryPluginIn
   protected $augmentorManager;
 
   /**
+   * The file storage service.
+   *
+   * @var \Drupal\Core\Entity\EntityStorageInterface
+   */
+  protected $fileStorage;
+
+  /**
    * Construct a AugmentorWidget object.
    *
    * @param string $plugin_id
@@ -46,10 +53,13 @@ class AugmentorWidget extends TextareaWidget implements ContainerFactoryPluginIn
    *   Any third party settings.
    * @param \Drupal\augmentor\AugmentorManager $augmentor_manager
    *   The augmentor plugin manager.
+   * @param \Drupal\Core\Entity\EntityStorageInterface $file_storage
+   *   The file storage service.
    */
-  public function __construct($plugin_id, $plugin_definition, FieldDefinitionInterface $field_definition, array $settings, array $third_party_settings, AugmentorManager $augmentor_manager) {
+  public function __construct($plugin_id, $plugin_definition, FieldDefinitionInterface $field_definition, array $settings, array $third_party_settings, AugmentorManager $augmentor_manager, EntityStorageInterface $file_storage) {
     parent::__construct($plugin_id, $plugin_definition, $field_definition, $settings, $third_party_settings);
     $this->augmentorManager = $augmentor_manager;
+    $this->fileStorage = $file_storage;
   }
 
   /**
@@ -62,7 +72,8 @@ class AugmentorWidget extends TextareaWidget implements ContainerFactoryPluginIn
       $configuration['field_definition'],
       $configuration['settings'],
       $configuration['third_party_settings'],
-      $container->get('plugin.manager.augmentor.augmentors')
+      $container->get('plugin.manager.augmentor.augmentors'),
+      $container->get('entity_type.manager')->getStorage('file')
     );
   }
 
@@ -79,7 +90,6 @@ class AugmentorWidget extends TextareaWidget implements ContainerFactoryPluginIn
     $source_fields = $this->getSetting('source_fields');
     $entity = $items->getEntity();
     $source_fields_values = [];
-    $yolo = [];
 
     foreach ($source_fields as $field_name) {
       $field_type = $entity->get($field_name)->getFieldDefinition()->getType();
@@ -91,7 +101,7 @@ class AugmentorWidget extends TextareaWidget implements ContainerFactoryPluginIn
           switch ($field_type) {
             case 'image':
               $fid = $value['target_id'];
-              $file = File::load($fid);
+              $file = $this->fileStorage->load($fid);
               $value = $file->createFileUrl(FALSE);
               break;
 
@@ -248,7 +258,7 @@ class AugmentorWidget extends TextareaWidget implements ContainerFactoryPluginIn
 
     $element['explode_separator'] = [
       '#type' => 'textfield',
-      '#title' => t('Explode separator'),
+      '#title' => $this->t('Explode separator'),
       '#default_value' => $this->getSetting('explode_separator'),
       '#size' => 10,
       '#description' => $this->t('Split augmentor response into an array using this separator.'),
@@ -256,7 +266,7 @@ class AugmentorWidget extends TextareaWidget implements ContainerFactoryPluginIn
 
     $element['button_label'] = [
       '#type' => 'textfield',
-      '#title' => t('Button label'),
+      '#title' => $this->t('Button label'),
       '#default_value' => $this->getSetting('button_label'),
       '#size' => 60,
       '#description' => $this->t('Label of the button to execute the augmentor'),
@@ -273,31 +283,31 @@ class AugmentorWidget extends TextareaWidget implements ContainerFactoryPluginIn
     $summary = [];
 
     if ($augmentor = $this->getSetting('augmentor')) {
-      $summary[] = t('Augmentor name: @name', ['@name' => $augmentor]);
+      $summary[] = $this->t('Augmentor name: @name', ['@name' => $augmentor]);
     }
 
     if ($source = $this->getSetting('source_fields')) {
-      $summary[] = t('Source fields: @source', ['@source' => implode(', ', $source)]);
+      $summary[] = $this->t('Source fields: @source', ['@source' => implode(', ', $source)]);
     }
 
     if ($target = $this->getSetting('target_field')) {
-      $summary[] = t('Target fields: @target', ['@target' => $target]);
+      $summary[] = $this->t('Target fields: @target', ['@target' => $target]);
     }
 
     if ($action = $this->getSetting('action')) {
-      $summary[] = t('Action: @action', ['@action' => $action]);
+      $summary[] = $this->t('Action: @action', ['@action' => $action]);
     }
 
     if ($trim = $this->getSetting('trim')) {
-      $summary[] = t('Trim from: @trim', ['@trim' => $trim]);
+      $summary[] = $this->t('Trim from: @trim', ['@trim' => $trim]);
     }
 
     if ($button_label = $this->getSetting('button_label')) {
-      $summary[] = t('Button label: @label', ['@label' => $button_label]);
+      $summary[] = $this->t('Button label: @label', ['@label' => $button_label]);
     }
 
     if ($separator = $this->getSetting('explode_separator')) {
-      $summary[] = t('Explode separator: "@separator"', ['@separator' => $separator]);
+      $summary[] = $this->t('Explode separator: "@separator"', ['@separator' => $separator]);
     }
 
     return $summary;
@@ -321,7 +331,7 @@ class AugmentorWidget extends TextareaWidget implements ContainerFactoryPluginIn
    */
   protected function extractValue($input) {
     $value = '';
-    foreach ($input as $field_name => $field) {
+    foreach ($input as $field) {
       $type = key($field);
       switch ($type) {
         case 'image':
