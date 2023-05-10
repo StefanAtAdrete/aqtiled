@@ -10,7 +10,7 @@
     attach: function attach(context, settings) {
       var isLoading = false;
 
-      $('.augmentor-cta-link').each(function () {
+      $(context).find('.augmentor-cta-link').each(function () {
         $(this).click(function (event) {
           event.preventDefault();
 
@@ -65,8 +65,8 @@
                           break;
 
                         default:
-                          updateCkeditorField($(this), action, result[0]);
-                          updateSimpleField($(this), action, result[0]);
+                          updateCkeditorField($(this), action, result);
+                          updateSimpleField($(this), action, result);
                       }
                     });
                   }
@@ -93,11 +93,13 @@
 
   // Get CKEditor fields values.
   function getCkeditorFieldValue(sourceField) {
-    var sourceField = sourceField.attr('id');
-    var sourceFieldEditor = CKEDITOR.instances[sourceField];
+    if (typeof CKEDITOR !== 'undefined') {
+      var sourceField = sourceField.attr('id');
+      var sourceFieldEditor = CKEDITOR.instances[sourceField];
 
-    if (typeof sourceFieldEditor != 'undefined') {
-      return sourceFieldEditor.getData();
+      if (typeof sourceFieldEditor != 'undefined') {
+        return sourceFieldEditor.getData();
+      }
     }
   }
 
@@ -127,12 +129,14 @@
 
   // Handle CKEditor fields updates.
   function updateCkeditorField(targetField, action, value) {
-    var targetField = targetField.attr('id');
-    var targetFieldEditor = CKEDITOR.instances[targetField];
+    if (typeof CKEDITOR !== 'undefined') {
+      var targetField = targetField.attr('id');
+      var targetFieldEditor = CKEDITOR.instances[targetField];
 
-    if (typeof targetFieldEditor != 'undefined') {
-      value = transformValue(action, targetFieldEditor.getData(), value, '\n');
-      targetFieldEditor.setData(value);
+      if (typeof targetFieldEditor != 'undefined') {
+        value = transformValue(action, targetFieldEditor.getData(), value, '\n');
+        targetFieldEditor.setData(value);
+      }
     }
   }
 

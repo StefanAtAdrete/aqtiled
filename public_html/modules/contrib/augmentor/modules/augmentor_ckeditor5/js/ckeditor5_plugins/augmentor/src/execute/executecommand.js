@@ -10,11 +10,15 @@ export default class ExecuteCommand extends Command {
     const editor = this.editor;
 
     const selection = editor.model.document.selection;
-    const range = selection.getFirstRange();
-    let selectedText = null;
+    const ranges = selection.getRanges();
+    let selectedText = '';
 
-    for (const item of range.getItems()) {
-      selectedText = item.data;
+    for (let range of ranges) {
+      for (let item of range.getItems()) {
+        if (typeof item.data != 'undefined') {
+          selectedText = selectedText + item.data + ' ';
+        }
+      }
     }
 
     var options = {
@@ -37,20 +41,20 @@ export default class ExecuteCommand extends Command {
           }
           this._showError(JSON.parse(result.responseJSON));
         })
-        .then((result) => this._updateCkeditor(result, range))
+        .then((result) => this._updateCkeditor(result, selection))
         .catch((error) => {
           this._showError(error)
         });
     } );
   }
 
-  _updateCkeditor(result, range) {
+  _updateCkeditor(result, selection) {
     var output = JSON.parse(result);
     output = output.default.toString();
     const editor = this.editor;
     const viewFragment = editor.data.processor.toView( output );
     const modelFragment = editor.data.toModel( viewFragment );
-    editor.model.insertContent(modelFragment, range);
+    editor.model.insertContent(modelFragment, selection);
   }
 
   _showError(error) {

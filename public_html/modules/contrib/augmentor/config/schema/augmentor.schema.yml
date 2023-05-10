@@ -44,3 +44,9 @@ action.configuration.entity:augmentor_action:*:
     action:
       type: string
       label: 'Action'
+    text_format:
+      type: string
+      label: 'Text Format'
+    explode_separator:
+      type: string
+      label: 'Explode separator'

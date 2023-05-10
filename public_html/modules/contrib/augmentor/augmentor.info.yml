@@ -7,7 +7,7 @@ configure: augmentor.list
 dependencies:
   - key:key
 
-# Information added by Drupal.org packaging script on 2023-05-05
-version: '1.0.2'
+# Information added by Drupal.org packaging script on 2023-05-10
+version: '1.0.4'
 project: 'augmentor'
-datestamp: 1683252370
+datestamp: 1683726348

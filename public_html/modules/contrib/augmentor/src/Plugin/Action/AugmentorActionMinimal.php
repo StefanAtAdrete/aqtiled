@@ -81,9 +81,18 @@ class AugmentorActionMinimal extends ConfigurableActionBase implements Container
         $target_field = $this->configuration[$target_field_key];
         $response_field = $this->configuration[$response_field_key];
         if ($object->hasField($target_field) && !empty($result) && array_key_exists($response_field, $result)) {
-          $object->set($target_field, $result[$response_field]);
-//          Note: We couldn't save the entity because when its already in the same presave event.
-//          $object->save();
+          if (in_array($object->get($target_field)->getFieldDefinition()->getType(), ['text_long', 'text_with_summary'])) {
+            $new_result = [
+              'value' => $result[$response_field],
+              'format' => $this->configuration['text_format'],
+            ];
+            $object->set($target_field, $new_result);
+          }
+          else {
+            $object->set($target_field, $result[$response_field]);
+          }
+          // Note: We couldn't save the entity because when its already in the same presave event.
+          // $object->save();
         }
       }
     }
@@ -105,6 +114,8 @@ class AugmentorActionMinimal extends ConfigurableActionBase implements Container
     return $fields + [
       'augmentor' => NULL,
       'action' => NULL,
+      'text_format' => NULL,
+      'explode_separator' => NULL,
     ];
   }
 
@@ -119,7 +130,7 @@ class AugmentorActionMinimal extends ConfigurableActionBase implements Container
       $source_field_title = 'Source Field ' . $i;
       $form[$source_field_key] = [
         '#type' => 'select',
-        '#title' => $this->t($source_field_title),
+        '#title' => $source_field_title,
         '#options' => $allowed_fields ?? [],
         '#default_value' => $this->configuration[$source_field_key] ?? '',
         '#empty_option' => $this->t('- Select -'),
@@ -135,10 +146,10 @@ class AugmentorActionMinimal extends ConfigurableActionBase implements Container
       $target_field_key = 'target_field_' . $i;
       $target_field_title = 'Target Field ' . $i;
       $response_field_key = 'response_key_' . $i;
-      $response_field_title = 'Target Key ' . $i;
+      $response_field_title = 'Response key to use ' . $i;
       $form[$target_field_key] = [
         '#type' => 'select',
-        '#title' => $this->t($target_field_title),
+        '#title' => $target_field_title,
         '#options' => $allowed_fields ?? [],
         '#default_value' => $this->configuration[$target_field_key] ?? '',
         '#empty_option' => $this->t('- Select -'),
@@ -146,7 +157,7 @@ class AugmentorActionMinimal extends ConfigurableActionBase implements Container
       ];
       $form[$response_field_key] = [
         '#type' => 'textfield',
-        '#title' => $this->t($response_field_title),
+        '#title' => $response_field_title,
         '#default_value' => $this->configuration[$response_field_key] ?? '',
         '#empty_option' => $this->t('- Select -'),
         '#required' => FALSE,
@@ -177,8 +188,28 @@ class AugmentorActionMinimal extends ConfigurableActionBase implements Container
       '#default_value' => $this->configuration['action'] ?? '',
       '#required' => TRUE,
     ];
+    $text_formats = filter_formats(\Drupal::currentUser());
+    $text_format_options = [];
+    foreach ($text_formats as $text_format) {
+      $text_format_options[$text_format->id()] = $text_format->label();
+    }
+    $form['text_format'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Text Format'),
+      '#options' => $text_format_options,
+      '#default_value' => $this->configuration['text_format'] ?? '',
+      '#empty_option' => $this->t('- Select -'),
+    ];
+    $form['explode_separator'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Explode separator'),
+      '#default_value' => $this->configuration['explode_separator'] ?? '',
+      '#size' => 10,
+      '#description' => $this->t('Split augmentor response into an array using this separator.'),
+    ];
     return $form;
   }
+
   /**
    * {@inheritdoc}
    */
@@ -193,6 +224,8 @@ class AugmentorActionMinimal extends ConfigurableActionBase implements Container
     }
     $this->configuration['augmentor'] = $form_state->getValue('augmentor');
     $this->configuration['action'] = $form_state->getValue('action');
+    $this->configuration['text_format'] = $form_state->getValue('text_format');
+    $this->configuration['explode_separator'] = $form_state->getValue('explode_separator');
   }
 
   /**

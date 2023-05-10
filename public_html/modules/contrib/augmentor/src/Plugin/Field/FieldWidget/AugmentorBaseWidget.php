@@ -94,7 +94,7 @@ abstract class AugmentorBaseWidget extends TextareaWidget implements ContainerFa
 
       if ($field_type != 'entity_reference' && $field_type != 'entity_reference_revisions' && !$entity->get($field_name)->isEmpty()) {
         $values = $entity->get($field_name)->getValue();
-        
+
         foreach ($values as $value) {
           switch ($field_type) {
             case 'image':
@@ -116,6 +116,8 @@ abstract class AugmentorBaseWidget extends TextareaWidget implements ContainerFa
     $button_label = $this->getSetting('button_label');
     $augmentor = $this->getSetting('augmentor');
     $targets = $this->getSetting('targets');
+    // Remove actions config.
+    unset($targets['actions']);
     $action = $this->getSetting('action');
     $trim = $this->getSetting('trim');
     $explode_separator = $this->getSetting('explode_separator');

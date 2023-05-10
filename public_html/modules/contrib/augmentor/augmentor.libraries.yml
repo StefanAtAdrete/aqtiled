@@ -9,8 +9,3 @@ augmentor_library:
     - core/drupal
     - core/drupalSettings
     - core/drupal.message
-
-augmentor_ckeditor:
-  css:
-    theme:
-      css/augmentor_ckeditor.css: {}

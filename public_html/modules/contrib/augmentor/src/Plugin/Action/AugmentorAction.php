@@ -20,7 +20,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   deriver = "Drupal\augmentor\Plugin\Action\Derivative\AugmentorActionDeriver",
  * )
  */
-
 class AugmentorAction extends ConfigurableActionBase implements ContainerFactoryPluginInterface {
 
   /**
@@ -75,7 +74,16 @@ class AugmentorAction extends ConfigurableActionBase implements ContainerFactory
     $targets = $this->configuration['targets'];
     foreach ($targets as $target) {
       if ($object->hasField($target['target_field']) && !empty($result) && array_key_exists($target['key'], $result)) {
-        $object->set($target['target_field'], $result[$target['key']]);
+        if (in_array($object->get($target['target_field'])->getFieldDefinition()->getType(), ['text_long', 'text_with_summary'])) {
+          $new_result = [
+            'value' => $result[$target['key']],
+            'format' => $this->configuration['text_format'],
+          ];
+          $object->set($target['target_field'], $new_result);
+        }
+        else {
+          $object->set($target['target_field'], $result[$target['key']]);
+        }
       }
     }
     $object->save();
@@ -90,6 +98,8 @@ class AugmentorAction extends ConfigurableActionBase implements ContainerFactory
       'targets' => [],
       'augmentor' => NULL,
       'action' => NULL,
+      'text_format' => NULL,
+      'explode_separator' => NULL,
     ];
   }
 
@@ -198,6 +208,25 @@ class AugmentorAction extends ConfigurableActionBase implements ContainerFactory
       '#default_value' => $this->configuration['action'] ?? '',
       '#required' => TRUE,
     ];
+    $text_formats = filter_formats(\Drupal::currentUser());
+    $text_format_options = [];
+    foreach ($text_formats as $text_format) {
+      $text_format_options[$text_format->id()] = $text_format->label();
+    }
+    $form['text_format'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Text Format'),
+      '#options' => $text_format_options,
+      '#default_value' => $this->configuration['text_format'] ?? '',
+      '#empty_option' => $this->t('- Select -'),
+    ];
+    $form['explode_separator'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Explode separator'),
+      '#default_value' => $this->configuration['explode_separator'] ?? '',
+      '#size' => 10,
+      '#description' => $this->t('Split augmentor response into an array using this separator.'),
+    ];
     return $form;
   }
 
@@ -242,6 +271,8 @@ class AugmentorAction extends ConfigurableActionBase implements ContainerFactory
     $this->configuration['targets'] = $targets;
     $this->configuration['augmentor'] = $form_state->getValue('augmentor');
     $this->configuration['action'] = $form_state->getValue('action');
+    $this->configuration['text_format'] = $form_state->getValue('text_format');
+    $this->configuration['explode_separator'] = $form_state->getValue('explode_separator');
   }
 
   /**
