@@ -52,6 +52,7 @@ module:
   config_ignore: 0
   config_split: 0
   contact: 0
+  content_moderation: 0
   contextual: 0
   crop: 0
   ctools_entity_mask: 0
@@ -77,8 +78,9 @@ module:
   file_mdm_exif: 0
   file_mdm_font: 0
   filter: 0
-  fitvids: 0
   focal_point: 0
+  fontawesome: 0
+  fontawesome_media: 0
   help: 0
   history: 0
   honeypot: 0
@@ -111,6 +113,7 @@ module:
   menu_link_content: 0
   menu_ui: 0
   metatag: 0
+  metatag_facebook: 0
   metatag_open_graph: 0
   metatag_open_graph_products: 0
   metatag_verification: 0
@@ -131,6 +134,7 @@ module:
   rest: 0
   schema_metatag: 0
   schema_product: 0
+  schema_web_page: 0
   schema_web_site: 0
   search: 0
   seckit: 0
@@ -145,6 +149,7 @@ module:
   simple_sitemap_views: 0
   state_machine: 0
   statistics: 0
+  svg_image: 0
   svg_image_field: 0
   svg_image_field_media_bundle: 0
   syslog: 0
@@ -178,6 +183,7 @@ module:
   webform_ui: 0
   webform_views: 0
   webp: 0
+  workflows: 0
   pathauto: 1
   webform_bootstrap: 1
   content_translation: 10

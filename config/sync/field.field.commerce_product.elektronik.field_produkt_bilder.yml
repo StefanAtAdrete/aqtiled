@@ -1,0 +1,39 @@
+uuid: 798e2021-c70c-4940-b986-50a35a1932fd
+langcode: sv
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.elektronik
+    - field.storage.commerce_product.field_produkt_bilder
+    - media.type.audio
+    - media.type.document
+    - media.type.image
+    - media.type.remote_video
+    - media.type.vector_image
+    - media.type.video
+id: commerce_product.elektronik.field_produkt_bilder
+field_name: field_produkt_bilder
+entity_type: commerce_product
+bundle: elektronik
+label: 'Produkt bilder'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      audio: audio
+      document: document
+      image: image
+      remote_video: remote_video
+      vector_image: vector_image
+      video: video
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: audio
+field_type: entity_reference

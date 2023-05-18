@@ -13,6 +13,7 @@ dependencies:
     - contact
     - eu_cookie_compliance
     - filter
+    - fontawesome
     - media
     - search
     - shortcut
@@ -27,6 +28,7 @@ permissions:
   - 'access checkout'
   - 'access comments'
   - 'access content'
+  - 'access fontawesome additional settings'
   - 'access shortcuts'
   - 'access site-wide contact form'
   - 'display eu cookie compliance popup'

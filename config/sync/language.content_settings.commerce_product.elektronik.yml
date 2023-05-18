@@ -1,0 +1,11 @@
+uuid: ce4d58fe-d601-472b-9f3a-4270c2b6f05f
+langcode: sv
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.elektronik
+id: commerce_product.elektronik
+target_entity_type_id: commerce_product
+target_bundle: elektronik
+default_langcode: site_default
+language_alterable: false

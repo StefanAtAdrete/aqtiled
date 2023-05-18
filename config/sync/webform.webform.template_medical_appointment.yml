@@ -313,7 +313,7 @@ settings:
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
   confirmation_type: page
-  confirmation_url: 'http://aqtiled.lndo.site/node/1'
+  confirmation_url: 'http://aqtiled.com/node/1'
   confirmation_title: 'Thank You'
   confirmation_message: 'Your request has been sent. A care specialist will call you back within XX hours to schedule an appointment.'
   confirmation_attributes: {  }

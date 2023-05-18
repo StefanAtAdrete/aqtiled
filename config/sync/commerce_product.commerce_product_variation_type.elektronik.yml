@@ -1,0 +1,10 @@
+uuid: a0edabc3-fc78-4ac6-81ad-143c3857d302
+langcode: sv
+status: true
+dependencies: {  }
+id: elektronik
+label: Elektronik
+traits: {  }
+locked: false
+orderItemType: default
+generateTitle: null

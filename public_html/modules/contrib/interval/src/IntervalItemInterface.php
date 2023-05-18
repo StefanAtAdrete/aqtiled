@@ -15,7 +15,7 @@ interface IntervalItemInterface {
   /**
    * Gets the period value for this item.
    *
-   * @return int
+   * @return string
    *   The period for this item
    */
   public function getPeriod();

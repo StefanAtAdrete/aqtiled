@@ -69,7 +69,7 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: field
-          label: Innehållstyp
+          label: 'Content type'
           exclude: false
           alter:
             alter_text: false
@@ -331,7 +331,7 @@ display:
           exposed: true
           expose:
             operator_id: type_op
-            label: Innehållstyp
+            label: 'Content type'
             description: ''
             use_operator: false
             operator: type_op
