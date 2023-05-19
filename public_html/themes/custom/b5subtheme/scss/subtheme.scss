@@ -33,3 +33,9 @@ div#block-cartflyout {
     border: var(--bs-dropdown-border-width) solid var(--bs-dropdown-border-color);
     border-radius: var(--bs-dropdown-border-radius);
 }
+
+/* Taxonomy page */
+
+article.contextual-region.node.node--type-article.node--view-mode-teaser h2 {
+    display: none;
+}

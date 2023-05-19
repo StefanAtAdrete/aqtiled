@@ -33,6 +33,11 @@ div#block-cartflyout {
   border-radius: var(--bs-dropdown-border-radius);
 }
 
+/* Taxonomy page */
+article.contextual-region.node.node--type-article.node--view-mode-teaser h2, article.contextual-region.node.node--type-article.node--view-mode-teaser .h2 {
+  display: none;
+}
+
 /*!
  * Bootstrap  v5.2.3 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
