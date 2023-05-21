@@ -38,6 +38,11 @@ article.contextual-region.node.node--type-article.node--view-mode-teaser h2, art
   display: none;
 }
 
+/* slidesshow thumbnails */
+.views-content-field-produkt-bilder {
+  float: left;
+}
+
 /*!
  * Bootstrap  v5.2.3 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
