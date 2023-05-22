@@ -56,4 +56,23 @@ class LicenseStorage extends CommerceContentEntityStorage implements LicenseStor
     return $license;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function getExistingLicense(ProductVariationInterface $variation, $uid) {
+    $existing_licenses_ids = $this->getQuery()
+      ->accessCheck(TRUE)
+      ->condition('state', ['active', 'renewal_in_progress'], 'IN')
+      ->condition('uid', $uid)
+      ->condition('product_variation', $variation->id())
+      ->execute();
+
+    if (!empty($existing_licenses_ids)) {
+      $existing_license_id = array_shift($existing_licenses_ids);
+      return $this->load($existing_license_id);
+    }
+
+    return FALSE;
+  }
+
 }

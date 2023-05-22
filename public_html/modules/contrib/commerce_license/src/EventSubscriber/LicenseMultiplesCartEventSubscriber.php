@@ -2,14 +2,14 @@
 
 namespace Drupal\commerce_license\EventSubscriber;
 
-use Drupal\Core\Messenger\MessengerInterface;
-use Drupal\Core\Messenger\MessengerTrait;
-use Drupal\Core\StringTranslation\StringTranslationTrait;
-use Drupal\Core\Url;
 use Drupal\commerce_cart\Event\CartEntityAddEvent;
 use Drupal\commerce_cart\Event\CartEvents;
 use Drupal\commerce_cart\Event\CartOrderItemUpdateEvent;
 use Drupal\commerce_order\Entity\OrderItemInterface;
+use Drupal\Core\Messenger\MessengerInterface;
+use Drupal\Core\Messenger\MessengerTrait;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
+use Drupal\Core\Url;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
@@ -33,7 +33,7 @@ class LicenseMultiplesCartEventSubscriber implements EventSubscriberInterface {
    *   The messenger.
    */
   public function __construct(MessengerInterface $messenger) {
-    $this->messenger = $messenger;
+    $this->setMessenger($messenger);
   }
 
   /**
@@ -62,8 +62,10 @@ class LicenseMultiplesCartEventSubscriber implements EventSubscriberInterface {
    *
    * @param \Drupal\commerce_cart\Event\CartEntityAddEvent $event
    *   The cart event.
+   *
+   * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  public function onCartEntityAdd(CartEntityAddEvent $event) {
+  public function onCartEntityAdd(CartEntityAddEvent $event): void {
     $order_item = $event->getOrderItem();
 
     // Only act if the order item has a license reference field.
@@ -93,8 +95,10 @@ class LicenseMultiplesCartEventSubscriber implements EventSubscriberInterface {
    *
    * @param \Drupal\commerce_cart\Event\CartOrderItemUpdateEvent $event
    *   The cart event.
+   *
+   * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  public function onCartItemUpdate(CartOrderItemUpdateEvent $event) {
+  public function onCartItemUpdate(CartOrderItemUpdateEvent $event): void {
     $order_item = $event->getOrderItem();
 
     // Only act if the order item has a license reference field.
@@ -125,8 +129,10 @@ class LicenseMultiplesCartEventSubscriber implements EventSubscriberInterface {
    *
    * @param \Drupal\commerce_order\Entity\OrderItemInterface $order_item
    *   The order item.
+   *
+   * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  protected function forceOrderItemQuantity(OrderItemInterface $order_item) {
+  protected function forceOrderItemQuantity(OrderItemInterface $order_item): void {
     // Force the quantity back to 1.
     $order_item->setQuantity(1);
 

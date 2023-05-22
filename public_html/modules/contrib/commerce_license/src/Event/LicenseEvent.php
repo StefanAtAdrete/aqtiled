@@ -35,7 +35,7 @@ class LicenseEvent extends EventBase {
    * @return \Drupal\commerce_license\Entity\LicenseInterface
    *   Gets the license.
    */
-  public function getLicense() {
+  public function getLicense(): LicenseInterface {
     return $this->license;
   }
 

@@ -78,6 +78,7 @@
         "drupal/field_token_value": "^3.0",
         "drupal/fitvids": "^2.0",
         "drupal/flag": "^4.0@beta",
+        "drupal/flexslider": "^2.0",
         "drupal/focal_point": "^1.5",
         "drupal/fontawesome": "^2.25",
         "drupal/fontawesome_iconpicker": " ^3",

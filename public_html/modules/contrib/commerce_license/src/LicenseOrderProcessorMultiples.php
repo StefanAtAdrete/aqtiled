@@ -32,38 +32,61 @@ class LicenseOrderProcessorMultiples implements OrderProcessorInterface {
    *   The messenger.
    */
   public function __construct(MessengerInterface $messenger) {
-    $this->messenger = $messenger;
+    $this->setMessenger($messenger);
   }
 
   /**
    * {@inheritdoc}
    */
   public function process(OrderInterface $order) {
+    // Collect licenses by types and configurations. Granting the same license
+    // type with the same configuration should be avoided.
+    /** @var \Drupal\commerce_product\Entity\ProductVariationInterface[] $purchased_entities_by_license_hash */
+    $purchased_entities_by_license_hash = [];
+
     foreach ($order->getItems() as $order_item) {
       // Skip order items that do not have a license reference field.
       if (!$order_item->hasField('license')) {
         continue;
       }
 
-      // @todo allow license type plugins to respond here, as for types that
-      // collect user data in the checkout form, the same product variation can
-      // result in different licenses.
-      $quantity = $order_item->getQuantity();
-      if ($quantity > 1) {
-        // Force the quantity back to 1.
-        $order_item->setQuantity(1);
+      $purchased_entity = $order_item->getPurchasedEntity();
 
-        $purchased_entity = $order_item->getPurchasedEntity();
-        if ($purchased_entity) {
-          // Note that this message shows both when attempting to increase the
-          // quantity of a license product already in the cart, and when
-          // attempting to put more than 1 of a license product into the cart.
-          // In the latter case, the message isn't as clear as it could be, but
-          // site builders should be hiding the quantity field from the add to
-          // cart form for license products, so this is moot.
-          $this->messenger()->addError($this->t("You may only have one of @product-label in your cart.", [
-            '@product-label' => $purchased_entity->label(),
+      if ($purchased_entity && $purchased_entity->hasField('license_type') && !$purchased_entity->get('license_type')->isEmpty()) {
+        // Force the quantity to 1.
+        if ($order_item->getQuantity() > 1) {
+          $order_item->setQuantity(1);
+          $this->messenger()->addWarning($this->t('You may only have a single %product-label in your cart.', [
+            '%product-label' => $purchased_entity->label(),
           ]));
+        }
+
+        /** @var \Drupal\commerce\Plugin\Field\FieldType\PluginItem $license_type */
+        $license_type = $purchased_entity->get('license_type')->first();
+        $license_hash = \hash('sha256', \serialize($license_type->getValue()));
+
+        // Check if this $purchased_entity is already in the cart.
+        if (in_array($purchased_entity, $purchased_entities_by_license_hash)) {
+          $order->removeItem($order_item);
+          // Remove success message from user facing messages.
+          $this->messenger()->deleteByType($this->messenger()::TYPE_STATUS);
+          $this->messenger()->addError($this->t('You may only have one of %product-label in your cart.', [
+            '%product-label' => $purchased_entity->label(),
+          ]));
+        }
+        // If another $order_item resolves to the same license.
+        elseif (array_key_exists($license_hash, $purchased_entities_by_license_hash)) {
+          $order->removeItem($order_item);
+          // Remove success message from user facing messages.
+          $this->messenger()->deleteByType($this->messenger()::TYPE_STATUS);
+          $this->messenger()->addError($this->t('Removed %removed-product-label as %product-label in your cart already grants the same license.', [
+            '%product-label' => $purchased_entities_by_license_hash[$license_hash]->label(),
+            '%removed-product-label' => $purchased_entity->label(),
+          ]));
+        }
+        // Add this to the array to check against.
+        else {
+          $purchased_entities_by_license_hash[$license_hash] = $purchased_entity;
         }
       }
     }

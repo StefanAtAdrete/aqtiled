@@ -2,6 +2,9 @@
 
 namespace Drupal\commerce_license\Event;
 
+/**
+ * The license events.
+ */
 final class LicenseEvents {
 
   /**
@@ -11,7 +14,7 @@ final class LicenseEvents {
    *
    * @see \Drupal\commerce_license\Event\LicenseEvent
    */
-  const LICENSE_LOAD = 'commerce_license.commerce_license.load';
+  public const LICENSE_LOAD = 'commerce_license.commerce_license.load';
 
   /**
    * Name of the event fired after creating a new license.
@@ -20,9 +23,9 @@ final class LicenseEvents {
    *
    * @Event
    *
-   * @see  \Drupal\commerce_license\Event\LicenseEvent
+   * @see \Drupal\commerce_license\Event\LicenseEvent
    */
-  const LICENSE_CREATE = 'commerce_license.commerce_license.create';
+  public const LICENSE_CREATE = 'commerce_license.commerce_license.create';
 
   /**
    * Name of the event fired before saving a license.
@@ -31,7 +34,7 @@ final class LicenseEvents {
    *
    * @see \Drupal\commerce_license\Event\LicenseEvent
    */
-  const LICENSE_PRESAVE = 'commerce_license.commerce_license.presave';
+  public const LICENSE_PRESAVE = 'commerce_license.commerce_license.presave';
 
   /**
    * Name of the event fired after saving a new license.
@@ -40,7 +43,7 @@ final class LicenseEvents {
    *
    * @see \Drupal\commerce_license\Event\LicenseEvent
    */
-  const LICENSE_INSERT = 'commerce_license.commerce_license.insert';
+  public const LICENSE_INSERT = 'commerce_license.commerce_license.insert';
 
   /**
    * Name of the event fired after saving an existing license.
@@ -49,7 +52,7 @@ final class LicenseEvents {
    *
    * @see \Drupal\commerce_license\Event\LicenseEvent
    */
-  const LICENSE_UPDATE = 'commerce_license.commerce_license.update';
+  public const LICENSE_UPDATE = 'commerce_license.commerce_license.update';
 
   /**
    * Name of the event fired before deleting a license.
@@ -58,7 +61,7 @@ final class LicenseEvents {
    *
    * @see \Drupal\commerce_license\Event\LicenseEvent
    */
-  const LICENSE_PREDELETE = 'commerce_license.commerce_license.predelete';
+  public const LICENSE_PREDELETE = 'commerce_license.commerce_license.predelete';
 
   /**
    * Name of the event fired after deleting a license.
@@ -67,6 +70,6 @@ final class LicenseEvents {
    *
    * @see \Drupal\commerce_license\Event\LicenseEvent
    */
-  const LICENSE_DELETE = 'commerce_license.commerce_license.delete';
+  public const LICENSE_DELETE = 'commerce_license.commerce_license.delete';
 
 }
