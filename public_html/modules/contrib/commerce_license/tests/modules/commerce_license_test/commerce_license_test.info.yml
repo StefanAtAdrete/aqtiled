@@ -6,7 +6,7 @@ core_version_requirement: ^9.3 || ^10
 dependencies:
   - commerce_license:commerce_license
 
-# Information added by Drupal.org packaging script on 2023-05-21
-version: '8.x-2.0-rc1'
+# Information added by Drupal.org packaging script on 2023-05-25
+version: '8.x-2.0-rc2'
 project: 'commerce_license'
-datestamp: 1684643345
+datestamp: 1684979379

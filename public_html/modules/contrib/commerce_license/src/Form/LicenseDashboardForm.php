@@ -2,6 +2,7 @@
 
 namespace Drupal\commerce_license\Form;
 
+use Drupal\commerce_checkout\Plugin\Commerce\CheckoutPane\Login;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
@@ -30,12 +31,20 @@ class LicenseDashboardForm extends FormBase {
   protected $traitManager;
 
   /**
+   * The checkout pane manager.
+   *
+   * @var \Drupal\commerce_checkout\CheckoutPaneManager
+   */
+  protected $paneManager;
+
+  /**
    * {@inheritdoc}
    */
   public static function create(ContainerInterface $container): LicenseDashboardForm {
     $instance = parent::create($container);
     $instance->entityTypeManager = $container->get('entity_type.manager');
     $instance->traitManager = $container->get('plugin.manager.commerce_entity_trait');
+    $instance->paneManager = $container->get('plugin.manager.commerce_checkout_pane');
     return $instance;
   }
 
@@ -56,10 +65,18 @@ class LicenseDashboardForm extends FormBase {
       $checkout_flow_plugin = $checkout_flow->getPlugin();
       $configuration = $checkout_flow_plugin->getConfiguration();
       $panes = $configuration['panes'] ?? [];
-      $login_pane = $panes['login'] ?? [];
-      $allow_guest_checkout = $login_pane['allow_guest_checkout'] ?? TRUE;
-      if (!$allow_guest_checkout) {
-        $valid_checkout_flows[$checkout_flow->id()] = $checkout_flow;
+      foreach ($panes as $pane_key => $pane) {
+        if ($pane['step'] === '_disabled') {
+          continue;
+        }
+        $pane_instance = $this->paneManager->createInstance($pane_key, $pane, $checkout_flow_plugin);
+        if ($pane_instance instanceof Login) {
+          $allow_guest_checkout = $pane['allow_guest_checkout'] ?? TRUE;
+          if (!$allow_guest_checkout) {
+            $valid_checkout_flows[$checkout_flow->id()] = $checkout_flow;
+            continue 2;
+          }
+        }
       }
     }
     if (!empty($valid_checkout_flows)) {
@@ -169,7 +186,7 @@ class LicenseDashboardForm extends FormBase {
     $product_variation_types = $this->entityTypeManager->getStorage('commerce_product_variation_type')->loadMultiple();
     $valid_product_variation_types = [];
     foreach ($product_variation_types as $product_variation_type) {
-      if ($product_variation_type->hasTrait('commerce_license') && array_key_exists($product_variation_type->getOrderItemTypeId(), $valid_order_types)) {
+      if ($product_variation_type->hasTrait('commerce_license') && array_key_exists($product_variation_type->getOrderItemTypeId(), $valid_order_item_types)) {
         $valid_product_variation_types[$product_variation_type->id()] = $product_variation_type;
       }
     }
@@ -245,14 +262,20 @@ class LicenseDashboardForm extends FormBase {
 
     // Products.
     $commerce_product_storage = $this->entityTypeManager->getStorage('commerce_product');
-    $count = $commerce_product_storage->getQuery()->accessCheck(TRUE)->condition('type', array_keys($valid_product_types), 'IN')->count()->execute();
-    $valid_product_ids = $commerce_product_storage->getQuery()->accessCheck(TRUE)->condition('type', array_keys($valid_product_types), 'IN')->range(0, 10)->execute();
+    $count = 0;
+    $valid_product_ids = [];
+    if (!empty($valid_product_types)) {
+      $count = $commerce_product_storage->getQuery()->accessCheck(TRUE)->condition('type', array_keys($valid_product_types), 'IN')->count()->execute();
+      $valid_product_ids = $commerce_product_storage->getQuery()->accessCheck(TRUE)->condition('type', array_keys($valid_product_types), 'IN')->range(0, 10)->execute();
+    }
     /** @var \Drupal\commerce_product\Entity\ProductInterface[] $valid_products */
     $valid_products = $commerce_product_storage->loadMultiple($valid_product_ids);
     if (!empty($valid_products)) {
       $requirements['commerce_license_product'] = [
         'title' => $this->t('Product'),
-        'value' => $this->formatPlural($count, '@count license product.', '@count license products. Up to 10 are listed below'),
+        'value' => $this->formatPlural($count, '@count license product.', '@count license products. @product_count are listed below.', [
+          '@product_count' => count($valid_products),
+        ]),
         'description' => $this->t('Products are defined using a valid product type.'),
         'severity' => SystemManager::REQUIREMENT_OK,
       ];
