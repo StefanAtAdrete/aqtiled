@@ -96,7 +96,7 @@ article.contextual-region.node.node--type-article.node--view-mode-teaser h2, art
 }
 
 /* Add to cart form */
-.button--add-to-cart {
+.button--add-to-cart, input#edit-submit--2 {
   display: none;
 }
 
