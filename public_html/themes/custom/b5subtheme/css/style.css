@@ -95,6 +95,11 @@ article.contextual-region.node.node--type-article.node--view-mode-teaser h2, art
   float: left;
 }
 
+/* Add to cart form */
+.button--add-to-cart {
+  display: none;
+}
+
 /*!
  * Bootstrap  v5.2.3 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
