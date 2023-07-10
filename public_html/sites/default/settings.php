@@ -837,7 +837,6 @@ $databases['default']['default'] = array (
 $settings['config_sync_directory'] = '../config/sync';
 $settings['simple_sitemap_engines.index_now.key'] = 'b52a579f-d217-4838-a9c4-c799fc61285d';
 
-
  if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
    include $app_root . '/' . $site_path . '/settings.local.php';
  }

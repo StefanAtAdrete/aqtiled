@@ -20,6 +20,6 @@
     "license": "GPL-2.0-or-later",
     "require": {
         "kint-php/kint": "^3.0 | ^4.0@beta",
-        "drupal/devel": "^4.1"
+        "drupal/devel": "^4.1 | ^5.1"
     }
 }

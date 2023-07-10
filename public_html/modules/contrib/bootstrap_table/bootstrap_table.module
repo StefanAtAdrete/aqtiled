@@ -1,0 +1,66 @@
+<?php
+
+/**
+ * @file
+ * Provides Views integration for the jQuery DataTables plugin.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function bootstrap_table_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.bootstrap_table':
+      $output = '<h3>' . t('About') . '</h3>';
+      $output .= t('This simple views module easy integrate library bootstrap-table and almost extensions');
+      $output .= '<h5><a href="https://examples.bootstrap-table.com/#options/columns-toggle-all.html">' . t('Options') . '</a></h5>';
+      $output .= '<ul>';
+      $output .= '<li>' . t('Save State') . '</li>';
+      $output .= '<li>' . t('Table Tools') . '</li>';
+      $output .= '<li>' . t('Show Refresh') . '</li>';
+      $output .= '<li>' . t('Columns Toggle All') . '</li>';
+      $output .= '<li>' . t('Pagination switch') . '</li>';
+      $output .= '<li>' . t('Show Toggle') . '</li>';
+      $output .= '<li>' . t('Show Fullscreen') . '</li>';
+      $output .= '<li>' . t('Card View') . '</li>';
+      $output .= '</ul>';
+      $output .= '<h5><a href="https://examples.bootstrap-table.com/#extensions/auto-refresh.html">' . t('Extensions') . '</a></h5>';
+      $output .= '<ul>';
+      $output .= '<li>' . t('Auto Refresh') . '</li>';
+      $output .= '<li>' . t('Copy Rows this feature') . '</li>';
+      $output .= '<li>' . t('Copy Rows') . '</li>';
+      $output .= '<li>' . t('Export') . '</li>';
+      $output .= '<li>' . t('Filter Control') . '</li>';
+      $output .= '<li>' . t('Group By') . '</li>';
+      $output .= '<li>' . t('Multiple Sort') . '</li>';
+      $output .= '<li>' . t('Page Jump To') . '</li>';
+      $output .= '<li>' . t('Reorder Rows') . '</li>';
+      $output .= '<li>' . t('Resizable') . '</li>';
+      $output .= '<li>' . t('Sticky Header') . '</li>';
+      $output .= '<li>' . t('Sum total columns') . '</li>';
+      $output .= '<li>' . t('Ajax support') . '</li>';
+      $output .= '</ul>';
+      return $output;
+    default:
+      break;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function bootstrap_table_theme($existing, $type, $theme, $path) {
+  return [
+    'views_view_bootstraptable' => [
+      'variables' => [
+        'header' => NULL,
+        'rows' => NULL,
+        'attributes' => NULL,
+        'caption' => NULL,
+      ],
+      'file' => 'bootstrap_table.theme.inc',
+    ],
+  ];
+}

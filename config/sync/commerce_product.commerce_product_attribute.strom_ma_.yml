@@ -1,7 +1,0 @@
-uuid: eda3f9f1-d1c3-4178-b472-e97c3bf1a5bb
-langcode: sv
-status: true
-dependencies: {  }
-id: strom_ma_
-label: 'Ström (mA)'
-elementType: select

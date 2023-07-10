@@ -74,7 +74,9 @@ class AugmentorAction extends ConfigurableActionBase implements ContainerFactory
     $targets = $this->configuration['targets'];
     foreach ($targets as $target) {
       if ($object->hasField($target['target_field']) && !empty($result) && array_key_exists($target['key'], $result)) {
-        if (in_array($object->get($target['target_field'])->getFieldDefinition()->getType(), ['text_long', 'text_with_summary'])) {
+        if (in_array($object->get($target['target_field'])->getFieldDefinition()->getType(), [
+          'text_long', 'text_with_summary',
+        ])) {
           $new_result = [
             'value' => $result[$target['key']],
             'format' => $this->configuration['text_format'],

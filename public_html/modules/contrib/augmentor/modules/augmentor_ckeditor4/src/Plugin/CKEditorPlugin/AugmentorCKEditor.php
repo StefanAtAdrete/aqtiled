@@ -124,7 +124,7 @@ class AugmentorCKEditor extends CKEditorPluginBase implements CKEditorPluginConf
       $form[$uuid] = [
         '#type' => 'checkbox',
         '#title' => $augmentor['label'],
-        '#default_value' => isset($settings['plugins']['augmentor_ckeditor'][$uuid]) ? $settings['plugins']['augmentor_ckeditor'][$uuid] : FALSE,
+        '#default_value' => $settings['plugins']['augmentor_ckeditor'][$uuid] ?? FALSE,
       ];
     }
 

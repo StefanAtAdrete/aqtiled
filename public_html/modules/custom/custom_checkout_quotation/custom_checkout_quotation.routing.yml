@@ -1,0 +1,15 @@
+custom_checkout_quotation.example:
+  path: '/custom-checkout-quotation/example'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\custom_checkout_quotation\Controller\CustomCheckoutQuotationController::build'
+  requirements:
+    _permission: 'access content'
+
+custom_checkout_quotation.settings_form:
+  path: '/admin/config/system/custom-checkout-quotation'
+  defaults:
+    _title: 'Custom Checkout Quotation settings'
+    _form: 'Drupal\custom_checkout_quotation\Form\SettingsForm'
+  requirements:
+    _permission: 'administer custom_checkout_quotation configuration'

@@ -1,0 +1,28 @@
+accordion:
+  version: 1.0
+  css:
+    theme:
+      layouts/accordion/accordion.css: {}
+  js:
+    layouts/accordion/accordion.js: {}
+  dependencies:
+    - jquery_ui_accordion/accordion
+tabs:
+  version: 1.0
+  css:
+    theme:
+      layouts/tabs/tabs.css: {}
+  js:
+    layouts/tabs/tabs.js: {}
+  dependencies:
+    - jquery_ui_tabs/tabs
+accordion_in_lb:
+  version: 1.0
+  css:
+    theme:
+      layouts/accordion/accordion.lb.css: {}
+tabs_in_lb:
+  version: 1.0
+  css:
+    theme:
+      layouts/tabs/tabs.lb.css: {}

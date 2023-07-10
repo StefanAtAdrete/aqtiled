@@ -1,0 +1,4 @@
+administer custom_checkout_quotation configuration:
+  title: 'Administer custom_checkout_quotation configuration'
+  description: 'Optional description.'
+  restrict access: true

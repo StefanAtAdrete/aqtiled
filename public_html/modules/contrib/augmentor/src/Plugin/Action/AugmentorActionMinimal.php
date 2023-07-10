@@ -81,7 +81,9 @@ class AugmentorActionMinimal extends ConfigurableActionBase implements Container
         $target_field = $this->configuration[$target_field_key];
         $response_field = $this->configuration[$response_field_key];
         if ($object->hasField($target_field) && !empty($result) && array_key_exists($response_field, $result)) {
-          if (in_array($object->get($target_field)->getFieldDefinition()->getType(), ['text_long', 'text_with_summary'])) {
+          if (in_array($object->get($target_field)->getFieldDefinition()->getType(), [
+            'text_long', 'text_with_summary',
+          ])) {
             $new_result = [
               'value' => $result[$response_field],
               'format' => $this->configuration['text_format'],
@@ -91,7 +93,8 @@ class AugmentorActionMinimal extends ConfigurableActionBase implements Container
           else {
             $object->set($target_field, $result[$response_field]);
           }
-          // Note: We couldn't save the entity because when its already in the same presave event.
+          // Note: We couldn't save the entity because when its already
+          // in the same presave event.
           // $object->save();
         }
       }

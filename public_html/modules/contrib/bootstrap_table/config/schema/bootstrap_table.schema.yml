@@ -1,0 +1,37 @@
+views.view.bootstraptable:
+  type: views_style
+  label: 'BootstrapTable'
+  mapping:
+    search_box:
+      type: boolean
+      label: Search Box
+    table_info:
+      type: boolean
+      label: Table information
+    save_state:
+      type: boolean
+      label: Save state
+    show-refresh:
+      type: boolean
+      label: Show refresh
+    show-columns-toggle-all:
+      type: boolean
+      label: Show columns toggle
+    show-pagination-switch:
+      type: boolean
+      label: Show pagination switch
+    show-toggle:
+      type: boolean
+      label: Show toggle
+    show-fullscreen:
+      type: boolean
+      label: Show fullscreen
+    cache:
+      type: boolean
+      label: Cache
+    card-view:
+      type: boolean
+      label: Card view
+    height:
+      type: integer
+      label: Height

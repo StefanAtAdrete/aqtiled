@@ -26,16 +26,6 @@ services:
     tags:
       - { name: commerce_order.order_type_resolver, priority: -100 }
 
-  commerce_order.chain_order_item_type_resolver:
-    class: Drupal\commerce_order\Resolver\ChainOrderItemTypeResolver
-    tags:
-      - { name: service_collector, call: addResolver, tag: commerce_order.order_item_type_resolver }
-
-  commerce_order.default_order_item_type_resolver:
-    class: Drupal\commerce_order\Resolver\DefaultOrderItemTypeResolver
-    tags:
-      - { name: commerce_order.order_item_type_resolver, priority: -100 }
-
   commerce_order.adjustment_transformer:
     class: Drupal\commerce_order\AdjustmentTransformer
     arguments: ['@plugin.manager.commerce_adjustment_type', '@commerce_price.rounder']

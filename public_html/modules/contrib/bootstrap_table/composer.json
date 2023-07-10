@@ -1,0 +1,23 @@
+{
+  "name": "drupal/bootstrap_table",
+  "description": "This simple views module easy integrate library bootstrap-table and almost extensions",
+  "type": "drupal-module",
+  "minimum-stability": "stable",
+  "homepage": "https://www.drupal.org/project/bootstrap_table",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/bootstrap_table",
+    "source": "https://git.drupalcode.org/project/bootstrap_table"
+  },
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "NGUYEN Bao",
+      "email": "n.bao@yahoo.com",
+      "homepage": "https://www.drupal.org/u/lazzyvn",
+      "role": "Maintainer"
+    }
+  ],
+  "require": {
+    "drupal/core": "^9 || ^10"
+  }
+}

@@ -127,6 +127,9 @@ class EntityOperations extends FieldPluginBase {
    * {@inheritdoc}
    */
   public function render(ResultRow $values) {
+    if (empty($this->getEntity($values))) {
+      return [];
+    }
     $entity = $this->getEntity($values);
     // Allow for the case where there is no entity, if we are on a non-required
     // relationship.

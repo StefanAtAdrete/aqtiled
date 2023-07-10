@@ -1,7 +1,0 @@
-uuid: ea32f20a-0e70-40dd-b2d9-dfe5e849c903
-langcode: sv
-status: true
-dependencies: {  }
-id: drivdon
-label: Drivdon
-elementType: select

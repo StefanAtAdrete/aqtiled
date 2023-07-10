@@ -94,11 +94,21 @@
   // Get CKEditor fields values.
   function getCkeditorFieldValue(sourceField) {
     if (typeof CKEDITOR !== 'undefined') {
+      // Ckeditor 4.
       var sourceField = sourceField.attr('id');
       var sourceFieldEditor = CKEDITOR.instances[sourceField];
 
       if (typeof sourceFieldEditor != 'undefined') {
         return sourceFieldEditor.getData();
+      }
+    }
+    else {
+      // Ckeditor 5.
+      let editors = Drupal.CKEditor5Instances.entries();
+      for (let [key, editor] of editors) {
+        if (editor.sourceElement.id == sourceField.attr('id')) {
+          return editor.getData();
+        }
       }
     }
   }
@@ -111,6 +121,9 @@
       var sourceFields = $("[name^='" + sourceFieldName + "']");
       for (let i = 0; i < sourceFields.length; i++) {
         var sourceField = $(sourceFields[i]);
+        if (sourceField.hasClass('form-element--editor-format')) {
+          continue;
+        }
         var ckeditorValue = getCkeditorFieldValue(sourceField);
 
         if (typeof ckeditorValue != 'undefined') {

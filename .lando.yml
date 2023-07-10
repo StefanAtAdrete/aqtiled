@@ -1,17 +1,27 @@
 name: aqtiled
 recipe: lamp
 config:
+  public_html:
+    volumes:
+      - type: bind
+        source: ./web
+        target: /app
+        cached: true
   webroot: public_html
   xdebug: false
-  conf:
-    php: .vscode/php.ini
-  php: '8.1'
+  config:
+    php: php_config/php.ini
+  php: "8.1"
 services:
   mailhog:
-    type: 'mailhog:v1.0.0'
+    type: "mailhog:v1.0.0"
     portforward: true
     hogfrom:
       - appserver
+    appserver:
+      build_as_root:
+        - apt-get update -y
+        - apt-get install -y php8.1-opcache
   phpmyadmin:
     type: phpmyadmin
     hosts:

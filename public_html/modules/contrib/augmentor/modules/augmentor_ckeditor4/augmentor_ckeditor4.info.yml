@@ -7,7 +7,7 @@ dependencies:
   - drupal:ckeditor
   - augmentor:augmentor
 
-# Information added by Drupal.org packaging script on 2023-05-10
-version: '1.0.4'
+# Information added by Drupal.org packaging script on 2023-06-07
+version: '1.0.5'
 project: 'augmentor'
-datestamp: 1683726348
+datestamp: 1686154002

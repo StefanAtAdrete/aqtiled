@@ -1,0 +1,6 @@
+custom_checkout_quotation.settings_form:
+  title: Custom Checkout Quotation
+  description: Configure Custom Checkout Quotation.
+  parent: system.admin_config_system
+  route_name: custom_checkout_quotation.settings_form
+  weight: 10

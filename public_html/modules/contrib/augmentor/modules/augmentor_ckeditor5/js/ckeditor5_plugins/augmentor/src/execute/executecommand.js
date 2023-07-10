@@ -10,6 +10,7 @@ export default class ExecuteCommand extends Command {
     const editor = this.editor;
 
     const selection = editor.model.document.selection;
+    const selectionLastPosition = selection.getLastPosition();
     const ranges = selection.getRanges();
     let selectedText = '';
 
@@ -41,20 +42,22 @@ export default class ExecuteCommand extends Command {
           }
           this._showError(JSON.parse(result.responseJSON));
         })
-        .then((result) => this._updateCkeditor(result, selection))
+        .then((result) => this._updateCkeditor(result, selectionLastPosition))
         .catch((error) => {
           this._showError(error)
         });
     } );
   }
 
-  _updateCkeditor(result, selection) {
+  _updateCkeditor(result, position) {
     var output = JSON.parse(result);
-    output = output.default.toString();
+    output = "<br/>" + output.default.toString();
+    // Replace "\n" with "<br/>" as Ckeditor5 doesn't support \n
+    output = output.replaceAll("\n", "<br/>");
     const editor = this.editor;
     const viewFragment = editor.data.processor.toView( output );
     const modelFragment = editor.data.toModel( viewFragment );
-    editor.model.insertContent(modelFragment, selection);
+    editor.model.insertContent(modelFragment, position);
   }
 
   _showError(error) {

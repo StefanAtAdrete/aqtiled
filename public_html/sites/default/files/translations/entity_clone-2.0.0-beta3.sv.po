@@ -1,0 +1,26 @@
+# Swedish translation of Entity Clone (2.0.0-beta3)
+# Copyright (c) 2023 by the Swedish translation team
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Entity Clone (2.0.0-beta3)\n"
+"POT-Creation-Date: 2023-04-24 13:22+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Language-Team: Swedish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+msgid "Enabled"
+msgstr "Aktiverad"
+msgid "Label"
+msgstr "Etikett"
+msgid "@type"
+msgstr "@type"
+msgid "Clone"
+msgstr "Klona"
+msgid "About"
+msgstr "Om"
+msgid "Entity type"
+msgstr "Objektstyp"

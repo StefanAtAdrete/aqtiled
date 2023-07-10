@@ -1,0 +1,64 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Custom Checkout Quotation module.
+ *
+ * @DCG
+ * This file is no longer required in Drupal 8.
+ * @see https://www.drupal.org/node/2217931
+ */
+
+ /**
+ * Implements hook_form().
+ */
+function custom_checkout_quotation_form($form, FormStateInterface $form_state) {
+    $form['#prefix'] = '<div id="quotation-form-wrapper">';
+    $form['#suffix'] = '</div>';
+  
+    // Fetch the current cart and its items.
+    $cart = \Drupal\commerce_cart\CartProviderInterface::getCart('default');
+    $cart_items = $cart->getItems();
+  
+    // Display the cart items in the form.
+    foreach ($cart_items as $cart_item) {
+      $product_variation = $cart_item->getPurchasedEntity();
+      $form['items'][$cart_item->id()] = [
+        '#type' => 'item',
+        '#markup' => $product_variation->label(),
+      ];
+    }
+  
+    // Add a button to trigger the quotation request.
+    $form['request_quotation'] = [
+      '#type' => 'submit',
+      '#value' => t('Request Quotation'),
+      '#submit' => ['::requestQuotationSubmit'],
+    ];
+  
+    return $form;
+  }
+  
+  /**
+   * Form submission handler for the quotation request.
+   */
+  function custom_checkout_quotation_requestQuotationSubmit($form, FormStateInterface $form_state) {
+    // Fetch the current cart.
+    $cart = \Drupal\commerce_cart\CartProviderInterface::getCart('default');
+  
+    // Save the quotation request.
+    $quotation = \Drupal\commerce_order\Entity\Order::create([
+      'type' => 'quotation',
+      'cart_id' => $cart->id(),
+      'total' => $cart->getTotalPrice(),
+      // Add any additional information you want to store with the quotation.
+    ]);
+    $quotation->save();
+  
+    // Set a message to inform the user about the successful quotation request.
+    drupal_set_message(t('Your quotation request has been submitted successfully.'));
+  
+    // Redirect the user to a confirmation page or any desired destination.
+    $form_state->setRedirect('<front>');
+  }
+  
