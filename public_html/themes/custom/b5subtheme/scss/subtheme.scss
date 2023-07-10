@@ -91,13 +91,65 @@ article.contextual-region.node.node--type-article.node--view-mode-teaser h2 {
     display: none;
 }
 
+article.contextual-region.node.node--type-article.node--view-mode-teaser h2.card-title  {
+    display: inline-block;
+}
+
+/* Productpage */
+.node--view-mode-symbol-referens {
+
+}
+
+.node--view-mode-symbol-referens h2 {
+    display: none;
+}
+
+#ikoner img {
+    /* border: 1px solid; */
+    width: 30%;
+    float: left;
+    margin: 0 5% 5% 0;
+}
+
+
 /* slidesshow thumbnails */
 
 .views-content-field-produkt-bilder {
     float: left;
 }
 
+
 /* Add to cart form */
-.button--add-to-cart, input#edit-submit--2 {
+input.button--add-to-cart {
     display: none;
+}
+
+.cart-block--contents.is-outside-horizontal.cart-block--contents__expanded {
+    z-index: 9999;
+}
+
+/* Superfish */
+a#superfish-main-toggle span {
+    color: #fff;
+    font-size: 44px;
+}
+
+#superfish-main-toggle {
+    margin: 0;
+    padding: 0;
+    float: right;
+}
+
+a#superfish-main-toggle {
+text-decoration: none;
+color: #fff;
+}
+
+a#superfish-main-toggle.sf-expanded {
+    /* float: right; */
+    /* display: block; */
+    margin-top: -60px;
+    /* padding: 0px; */
+    z-index: 9999;
+    left: 90%;
 }
