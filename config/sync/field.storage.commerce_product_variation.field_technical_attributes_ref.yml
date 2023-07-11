@@ -1,0 +1,20 @@
+uuid: cce3c5ca-2127-42db-8693-22287e1b1c42
+langcode: sv
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - node
+id: commerce_product_variation.field_technical_attributes_ref
+field_name: field_technical_attributes_ref
+entity_type: commerce_product_variation
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

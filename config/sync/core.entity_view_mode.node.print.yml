@@ -1,0 +1,15 @@
+uuid: a0d77115-650c-4029-96f7-7146f416408d
+langcode: sv
+status: false
+dependencies:
+  module:
+    - node
+  enforced:
+    module:
+      - book
+_core:
+  default_config_hash: es9asR8rmvOZwRXJRTBJ1TlLL1hzbVn4ZGuqR1pvU0E
+id: node.print
+label: Utskrift
+targetEntityType: node
+cache: true

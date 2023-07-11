@@ -1,0 +1,14 @@
+uuid: 63974f91-5a12-46e3-a0e4-2474b81e7efb
+langcode: sv
+status: true
+dependencies: {  }
+id: led_products
+label: 'LED produkter'
+traits: {  }
+locked: false
+description: ''
+variationType: led_products
+variationTypes:
+  - led_products
+multipleVariations: true
+injectVariationFields: true

@@ -1,0 +1,10 @@
+uuid: 6cf22523-728a-4960-9fd1-9b00bf9f8721
+langcode: sv
+status: true
+dependencies: {  }
+id: divitushiluslenufri
+label: divitushiluslenufri
+traits: {  }
+locked: false
+orderItemType: default
+generateTitle: true

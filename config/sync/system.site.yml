@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: VDJxTZtQR21qB4lvOq8zszJZLvLKrSPQpdn2E3T71Ww
+langcode: sv
+uuid: eda3eded-9515-4c21-94ed-3bb7c7316797
+name: Aqtiled
+mail: info@aqtiled.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: sv
+mail_notification: ''

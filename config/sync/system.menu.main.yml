@@ -1,0 +1,10 @@
+uuid: 1050900a-5286-4234-8c62-30b759a1cc7f
+langcode: sv
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Q2Ra3jfoIVk0f3SjxJX61byRQFVBAbpzYDQOiY-kno8
+id: main
+label: Huvudmeny
+description: 'Länkar för sektion i webbplats'
+locked: true

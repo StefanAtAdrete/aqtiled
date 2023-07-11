@@ -1,0 +1,33 @@
+uuid: 8c2952af-87e8-42ef-94b6-6c99dc500dcb
+langcode: sv
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_taxonomy_term
+    - node.type.page
+    - taxonomy.vocabulary.inspiriation
+    - taxonomy.vocabulary.losningar
+    - taxonomy.vocabulary.tags
+id: node.page.field_taxonomy_term
+field_name: field_taxonomy_term
+entity_type: node
+bundle: page
+label: Nyckelord
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tags: tags
+      inspiriation: inspiriation
+      losningar: losningar
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: tags
+field_type: entity_reference

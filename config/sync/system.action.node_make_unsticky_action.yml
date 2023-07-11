@@ -1,0 +1,13 @@
+uuid: 807fab9e-90e0-440d-a656-a4e566bd89dd
+langcode: sv
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: lDM9mvIGAu8Sw8rt-uCO4Sr7yX5VPrDPxYcawkbKd6k
+id: node_make_unsticky_action
+label: 'Ta bort visning överst i listor'
+type: node
+plugin: node_make_unsticky_action
+configuration: {  }

@@ -1,0 +1,13 @@
+uuid: b0bfb986-e108-4b0e-a90e-153ea30f7665
+langcode: sv
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: FrZy1tmuXJcOxhXlBoI1Hsnen5TT-9OCC1iolWH84go
+id: media_delete_action
+label: 'Radera media'
+type: media
+plugin: 'entity:delete_action:media'
+configuration: {  }

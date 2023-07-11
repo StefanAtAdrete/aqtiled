@@ -1,0 +1,10 @@
+uuid: 6002164a-1969-49f2-a907-2b4adeadb2b6
+langcode: sv
+status: true
+dependencies:
+  module:
+    - node
+id: node.symbol_referens
+label: 'Symbol referens'
+targetEntityType: node
+cache: true

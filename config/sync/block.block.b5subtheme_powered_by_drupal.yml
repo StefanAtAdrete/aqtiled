@@ -1,0 +1,22 @@
+uuid: 0d0b4e4d-2bfd-45c3-8941-658a157e6319
+langcode: sv
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - b5subtheme
+_core:
+  default_config_hash: TalCR-kPomwZLXjW-BJ4C719R7gkIf-_QzNw4-k6EI8
+id: b5subtheme_powered_by_drupal
+theme: b5subtheme
+region: footer
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Drivs av Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

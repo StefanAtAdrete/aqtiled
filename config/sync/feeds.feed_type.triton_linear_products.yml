@@ -1,0 +1,301 @@
+uuid: 1e8d44fc-555b-42be-8b46-f2fb64a00232
+langcode: sv
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.led_products
+    - field.field.commerce_product_variation.led_products.attribute_effect_w
+    - field.field.commerce_product_variation.led_products.attribute_end_cap
+    - field.field.commerce_product_variation.led_products.attribute_length_mm
+    - field.field.commerce_product_variation.led_products.dimensions
+    - field.field.commerce_product_variation.led_products.field_artnr
+    - field.field.commerce_product_variation.led_products.field_effect_artnr
+    - field.field.commerce_product_variation.led_products.field_info
+    - field.field.commerce_product_variation.led_products.field_length_artnr
+    - field.field.commerce_product_variation.led_products.field_optics_degrees_
+    - field.field.commerce_product_variation.led_products.field_series_artnr
+    - field.field.commerce_product_variation.led_products.weight
+  module:
+    - commerce_feeds
+    - commerce_product
+    - feeds_tamper
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      64b45c61-9e98-4d40-9652-2257c3286389:
+        find: ','
+        replace: .
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: 64b45c61-9e98-4d40-9652-2257c3286389
+        plugin: find_replace
+        source: price_euro_15mm_bracket
+        weight: 0
+        label: 'Find replace'
+label: 'Triton linear products'
+id: triton_linear_products
+description: 'Triton MAX and OPTI products'
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'private://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:commerce_product_variation'
+processor_configuration:
+  values:
+    type: led_products
+  langcode: und
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: true
+  authorize: true
+  revision: false
+  expire: 15552000
+  owner_feed_author: true
+  owner_id: 0
+custom_sources:
+  artnr:
+    value: Artnr
+    label: Artnr
+    machine_name: artnr
+    type: csv
+  price_eur:
+    value: 'Price EUR'
+    label: 'Price EUR'
+    machine_name: price_eur
+    type: csv
+  effect_w_:
+    value: 'Effect (W)'
+    label: 'Effect (W)'
+    machine_name: effect_w_
+    type: csv
+  series:
+    value: Series
+    label: Series
+    machine_name: series
+    type: csv
+  end_cap:
+    value: 'End Cap'
+    label: 'End Cap'
+    machine_name: end_cap
+    type: csv
+  length_mm_:
+    value: 'Length (mm)'
+    label: 'Length (mm)'
+    machine_name: length_mm_
+    type: csv
+  weight_kg_:
+    value: 'Weight (kg)'
+    label: 'Weight (kg)'
+    machine_name: weight_kg_
+    type: csv
+  width_mm_:
+    value: 'Width (mm)'
+    label: 'Width (mm)'
+    machine_name: width_mm_
+    type: csv
+  height_mm_:
+    value: 'Height (mm)'
+    label: 'Height (mm)'
+    machine_name: height_mm_
+    type: csv
+  effect_artnr:
+    value: 'Effect Artnr'
+    label: 'Effect Artnr'
+    machine_name: effect_artnr
+    type: csv
+  length_mm_dimensions:
+    value: 'Length (mm)'
+    label: 'Length (mm)'
+    machine_name: length_mm_dimensions
+    type: csv
+  length_artnr:
+    value: 'Length artnr'
+    label: 'Length artnr'
+    machine_name: length_artnr
+    type: csv
+  main_product_id:
+    value: 'Main product ID'
+    label: 'Main product ID'
+    machine_name: main_product_id
+    type: csv
+  '':
+    value: ''
+    label: ''
+    machine_name: ''
+    type: blank
+  tamper_title:
+    value: tamper_title
+    label: tamper_title
+    machine_name: tamper_title
+    type: blank
+  series_artnr:
+    value: 'Series Artnr'
+    label: 'Series Artnr'
+    machine_name: series_artnr
+    type: csv
+  series_info:
+    value: 'Series info'
+    label: 'Series info'
+    machine_name: series_info
+    type: csv
+  price_euro_15mm_bracket:
+    value: 'Price EURO 15mm bracket'
+    label: 'Price EURO 15mm bracket'
+    machine_name: price_euro_15mm_bracket
+    type: csv
+  endcap_info:
+    value: 'EndCap Info'
+    label: 'EndCap Info'
+    machine_name: endcap_info
+    type: csv
+  length_mm:
+    value: 'Length (mm)'
+    label: 'Length (mm)'
+    machine_name: length_mm
+    type: csv
+  series_info_:
+    value: 'Series Info'
+    label: 'Series Info'
+    machine_name: series_info_
+    type: csv
+  series_info_1:
+    value: 'Series Info'
+    label: 'Series Info'
+    machine_name: series_info_1
+    type: csv
+  length_artnr_:
+    value: 'Length Artnr'
+    label: 'Length Artnr'
+    machine_name: length_artnr_
+    type: csv
+  length_mm_attribute:
+    value: 'Length (mm)'
+    label: 'Length (mm)'
+    machine_name: length_mm_attribute
+    type: csv
+  optics_degrees_:
+    value: 'Optics (Degrees)'
+    label: 'Optics (Degrees)'
+    machine_name: optics_degrees_
+    type: csv
+  product_info:
+    value: 'Product info'
+    label: 'Product info'
+    machine_name: product_info
+    type: csv
+mappings:
+  -
+    target: price
+    map:
+      number: price_euro_15mm_bracket
+    settings:
+      currency_code: EUR
+  -
+    target: attribute_effect_w
+    map:
+      target_id: effect_w_
+    settings:
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: effect_w
+  -
+    target: sku
+    map:
+      value: artnr
+    settings: {  }
+    unique:
+      value: 1
+  -
+    target: attribute_end_cap
+    map:
+      target_id: endcap_info
+    settings:
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: end_cap
+  -
+    target: field_series_artnr
+    map:
+      value: series_artnr
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: weight
+    map:
+      number: weight_kg_
+    settings:
+      unit: kg
+  -
+    target: field_effect_artnr
+    map:
+      value: effect_artnr
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_length_artnr
+    map:
+      value: length_artnr_
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: product_id
+    map:
+      target_id: main_product_id
+    settings:
+      reference_by: product_id
+      autocreate: 0
+      autocreate_bundle: false
+  -
+    target: field_artnr
+    map:
+      value: artnr
+    settings:
+      language: null
+  -
+    target: title
+    map:
+      value: series_info_1
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: attribute_length_mm
+    map:
+      target_id: length_mm_attribute
+    settings:
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: length_mm
+  -
+    target: dimensions
+    map:
+      length: length_mm_attribute
+      width: width_mm_
+      height: height_mm_
+    settings:
+      unit: mm
+  -
+    target: field_optics_degrees_
+    map:
+      value: optics_degrees_
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_info
+    map:
+      value: product_info
+    settings:
+      language: null

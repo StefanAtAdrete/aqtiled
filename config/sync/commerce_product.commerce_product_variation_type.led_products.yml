@@ -1,0 +1,12 @@
+uuid: 6ba23971-ce4d-4583-9ff3-a41cbda02935
+langcode: sv
+status: true
+dependencies: {  }
+id: led_products
+label: 'LED produkter'
+traits:
+  - purchasable_entity_dimensions
+  - purchasable_entity_shippable
+locked: false
+orderItemType: default
+generateTitle: false

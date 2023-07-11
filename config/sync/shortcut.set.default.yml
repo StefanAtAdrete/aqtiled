@@ -1,0 +1,8 @@
+uuid: 87a7ae89-3d65-4c9c-897e-397a4e8de8cd
+langcode: sv
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: U5VlGjd_SfV0Qm_EfnaynOfc549cNscFAx48JfYoMRI
+id: default
+label: Förvald

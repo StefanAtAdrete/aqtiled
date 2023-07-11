@@ -1,0 +1,100 @@
+_core:
+  default_config_hash: CXhei_vpaZk-3f_Mj2cH0YmpK-ZpKHoSzVA3yZrDq0g
+langcode: sv
+definitions:
+  contact__site_page:
+    menu_name: footer
+    parent: ''
+    weight: 0
+    expanded: false
+    enabled: true
+  'taxonomy_menu__menu_link:taxonomy_menu__menu_link__produkter__2':
+    expanded: true
+    parent: 'admin:admin_toolbar_tools.extra_links:entity.menu.edit_form.main'
+    weight: 0
+    menu_name: main
+    enabled: true
+  'taxonomy_menu__menu_link:taxonomy_menu__menu_link__produkter__10':
+    expanded: true
+    parent: 'taxonomy_menu.menu_link:taxonomy_menu.menu_link.produkter.2'
+    weight: 0
+    menu_name: main
+    enabled: true
+  'taxonomy_menu__menu_link:taxonomy_menu__menu_link__produkter__5':
+    expanded: true
+    parent: 'taxonomy_menu.menu_link:taxonomy_menu.menu_link.produkter.10'
+    weight: 0
+    menu_name: main
+    enabled: true
+  'taxonomy_menu__menu_link:taxonomy_menu__menu_link__produkter__1':
+    expanded: true
+    parent: 'taxonomy_menu.menu_link:taxonomy_menu.menu_link.produkter.2'
+    weight: 2
+    menu_name: main
+    enabled: true
+  'taxonomy_menu__menu_link:taxonomy_menu__menu_link__inspiration__7':
+    expanded: true
+    parent: 'admin:'
+    weight: 1
+    menu_name: main
+    enabled: true
+  'taxonomy_menu__menu_link:taxonomy_menu__menu_link__inspiration__11':
+    expanded: true
+    parent: 'taxonomy_menu.menu_link:taxonomy_menu.menu_link.inspiration.7'
+    weight: 5
+    menu_name: main
+    enabled: true
+  'taxonomy_menu__menu_link:taxonomy_menu__menu_link__inspiration__12':
+    expanded: true
+    parent: 'taxonomy_menu.menu_link:taxonomy_menu.menu_link.inspiration.11'
+    weight: 2
+    menu_name: main
+    enabled: true
+  'taxonomy_menu__menu_link:taxonomy_menu__menu_link__inspiration__9':
+    expanded: true
+    parent: 'taxonomy_menu.menu_link:taxonomy_menu.menu_link.inspiration.12'
+    weight: 9
+    menu_name: main
+    enabled: true
+  'taxonomy_menu__menu_link:taxonomy_menu__menu_link__losningar__6':
+    expanded: true
+    parent: 'admin:'
+    weight: 1
+    menu_name: main
+    enabled: true
+  'taxonomy_menu__menu_link:taxonomy_menu__menu_link__losningar__8':
+    expanded: true
+    parent: 'taxonomy_menu.menu_link:taxonomy_menu.menu_link.losningar.6'
+    weight: 1
+    menu_name: main
+    enabled: true
+  'taxonomy_menu__menu_link:taxonomy_menu__menu_link__produkter__20':
+    expanded: true
+    parent: 'taxonomy_menu.menu_link:taxonomy_menu.menu_link.produkter.2'
+    weight: 0
+    menu_name: main
+    enabled: true
+  standard__front_page:
+    enabled: false
+    menu_name: main
+    parent: ''
+    expanded: false
+    weight: 0
+  'taxonomy_menu__menu_link:taxonomy_menu__menu_link__losningar__21':
+    weight: -50
+    menu_name: main
+    parent: 'taxonomy_menu.menu_link:taxonomy_menu.menu_link.losningar.6'
+    expanded: true
+    enabled: true
+  'taxonomy_menu__menu_link:taxonomy_menu__menu_link__losningar__17':
+    weight: -50
+    parent: 'taxonomy_menu.menu_link:taxonomy_menu.menu_link.losningar.18'
+    menu_name: main
+    expanded: true
+    enabled: true
+  'taxonomy_menu__menu_link:taxonomy_menu__menu_link__losningar__18':
+    weight: -49
+    menu_name: main
+    parent: 'taxonomy_menu.menu_link:taxonomy_menu.menu_link.losningar.6'
+    expanded: true
+    enabled: true

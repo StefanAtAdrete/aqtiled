@@ -1,0 +1,20 @@
+uuid: 8fb58058-77cd-4134-80c9-1c8979a53cab
+langcode: sv
+status: true
+dependencies:
+  module:
+    - media
+    - node
+id: node.field_producent_logo
+field_name: field_producent_logo
+entity_type: node
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

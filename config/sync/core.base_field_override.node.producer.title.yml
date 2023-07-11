@@ -1,0 +1,18 @@
+uuid: 9e838fbd-cc68-4ce1-a4a3-182ae1783eb7
+langcode: sv
+status: true
+dependencies:
+  config:
+    - node.type.producer
+id: node.producer.title
+field_name: title
+entity_type: node
+bundle: producer
+label: Produktägare
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

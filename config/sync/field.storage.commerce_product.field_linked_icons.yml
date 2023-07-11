@@ -1,0 +1,20 @@
+uuid: f37a1eb7-14ad-41de-8ffb-cb09c15d1420
+langcode: sv
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - node
+id: commerce_product.field_linked_icons
+field_name: field_linked_icons
+entity_type: commerce_product
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

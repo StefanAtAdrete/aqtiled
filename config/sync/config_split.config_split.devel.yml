@@ -1,0 +1,18 @@
+uuid: 59dd01af-5950-4aff-a055-0a8493df5daf
+langcode: sv
+status: true
+dependencies: {  }
+id: devel
+label: Devel
+description: 'Devel split'
+weight: 0
+folder: devel
+module:
+  devel: 0
+  devel_generate: 0
+  devel_generate_commerce: 0
+theme: {  }
+blacklist: {  }
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true

@@ -1,0 +1,12 @@
+uuid: d52d9c7c-7e8f-4205-a404-ec49654d5661
+langcode: sv
+status: true
+dependencies:
+  module:
+    - user
+_core:
+  default_config_hash: flXhTcp55yLcyy7ZLOhPGKGZobZQJdkAFVWV3LseiuI
+id: user.register
+label: Registrera
+targetEntityType: user
+cache: true

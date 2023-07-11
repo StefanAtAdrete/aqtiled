@@ -1,0 +1,11 @@
+uuid: f95d5ac9-434d-4f18-b6ec-5db7acd2d046
+langcode: sv
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 1noCXlegCr5HFehQRF1ViXy1jhU1jZ_sNN99a8Sj5jo
+id: front
+label: Startsida
+tags:
+  canonical_url: '[site:url]'
+  shortlink: '[site:url]'

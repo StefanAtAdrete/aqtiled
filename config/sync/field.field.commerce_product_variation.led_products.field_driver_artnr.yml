@@ -1,0 +1,23 @@
+uuid: c79fa041-ed64-4289-94ca-e3d26b815afb
+langcode: sv
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.led_products
+    - field.storage.commerce_product_variation.field_driver_artnr
+id: commerce_product_variation.led_products.field_driver_artnr
+field_name: field_driver_artnr
+entity_type: commerce_product_variation
+bundle: led_products
+label: 'Driver Artnr'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

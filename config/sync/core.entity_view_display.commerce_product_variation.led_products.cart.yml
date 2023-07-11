@@ -1,0 +1,95 @@
+uuid: d1aa628d-42fa-48d8-86c1-754ab5172399
+langcode: sv
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.led_products
+    - core.entity_view_mode.commerce_product_variation.cart
+    - field.field.commerce_product_variation.led_products.attribute_effect_w
+    - field.field.commerce_product_variation.led_products.attribute_end_cap
+    - field.field.commerce_product_variation.led_products.attribute_length_mm
+    - field.field.commerce_product_variation.led_products.dimensions
+    - field.field.commerce_product_variation.led_products.feeds_item
+    - field.field.commerce_product_variation.led_products.field_artnr
+    - field.field.commerce_product_variation.led_products.field_driver
+    - field.field.commerce_product_variation.led_products.field_driver_artnr
+    - field.field.commerce_product_variation.led_products.field_driver_info
+    - field.field.commerce_product_variation.led_products.field_effect_artnr
+    - field.field.commerce_product_variation.led_products.field_effect_info
+    - field.field.commerce_product_variation.led_products.field_end_cap_info
+    - field.field.commerce_product_variation.led_products.field_end_cap_media
+    - field.field.commerce_product_variation.led_products.field_info
+    - field.field.commerce_product_variation.led_products.field_ip
+    - field.field.commerce_product_variation.led_products.field_ip_artnr
+    - field.field.commerce_product_variation.led_products.field_length_artnr
+    - field.field.commerce_product_variation.led_products.field_length_mm
+    - field.field.commerce_product_variation.led_products.field_media_product_variation
+    - field.field.commerce_product_variation.led_products.field_optics_degrees_
+    - field.field.commerce_product_variation.led_products.field_series
+    - field.field.commerce_product_variation.led_products.field_series_artnr
+    - field.field.commerce_product_variation.led_products.field_technical_attributes_ref
+    - field.field.commerce_product_variation.led_products.field_wireless_protocols
+    - field.field.commerce_product_variation.led_products.weight
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: commerce_product_variation.led_products.cart
+targetEntityType: commerce_product_variation
+bundle: led_products
+mode: cart
+content:
+  field_artnr:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_info:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  product_id:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  add_to_cart_link: true
+  attribute_effect_w: true
+  attribute_end_cap: true
+  attribute_length_mm: true
+  dimensions: true
+  feeds_item: true
+  field_driver: true
+  field_driver_artnr: true
+  field_driver_info: true
+  field_effect_artnr: true
+  field_effect_info: true
+  field_end_cap_info: true
+  field_end_cap_media: true
+  field_ip: true
+  field_ip_artnr: true
+  field_length_artnr: true
+  field_length_mm: true
+  field_media_product_variation: true
+  field_optics_degrees_: true
+  field_series: true
+  field_series_artnr: true
+  field_technical_attributes_ref: true
+  field_wireless_protocols: true
+  langcode: true
+  list_price: true
+  price: true
+  sku: true
+  title: true
+  weight: true

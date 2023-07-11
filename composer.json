@@ -52,7 +52,7 @@
         "drupal/commerce_pricelist": "^2.8",
         "drupal/commerce_shipping": "^2.2",
         "drupal/commerce_stock": "^1.0@beta",
-        "drupal/config_ignore": "^2.3",
+        "drupal/config_ignore": "^2.4",
         "drupal/config_split": "^1.7",
         "drupal/core": "^9.5",
         "drupal/core-composer-scaffold": "^9.4",

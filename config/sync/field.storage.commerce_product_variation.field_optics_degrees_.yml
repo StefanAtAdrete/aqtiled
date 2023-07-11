@@ -1,0 +1,20 @@
+uuid: 3e5de9c2-6572-46e6-8292-fe299df68aa1
+langcode: sv
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product_variation.field_optics_degrees_
+field_name: field_optics_degrees_
+entity_type: commerce_product_variation
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

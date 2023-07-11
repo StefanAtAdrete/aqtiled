@@ -1,0 +1,20 @@
+uuid: c46f7ba5-bf08-4e29-981e-f512d967f23d
+langcode: sv
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - media
+id: commerce_product_attribute_value.field_media_product_attribute
+field_name: field_media_product_attribute
+entity_type: commerce_product_attribute_value
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

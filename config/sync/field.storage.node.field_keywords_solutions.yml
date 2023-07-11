@@ -1,0 +1,20 @@
+uuid: b65f3391-dbf3-43bd-8b64-96eeecbdb467
+langcode: sv
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_keywords_solutions
+field_name: field_keywords_solutions
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: 4ec3f0a3-8d41-44ed-9846-5c162b6a7f0b
+langcode: sv
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product_variation.field_artnr
+field_name: field_artnr
+entity_type: commerce_product_variation
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

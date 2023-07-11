@@ -1,0 +1,10 @@
+uuid: da79eef9-eeb5-4ef6-990e-09591fa69c1b
+langcode: sv
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: yoNVreoTdTZTY7GuE8fI9Jmxqdz8vlo4ZJKixMNSosw
+name: 'Generella taggar'
+vid: tags
+description: 'Använd etiketter för att gruppera artiklar med liknande ämnen till kategorier.'
+weight: 0

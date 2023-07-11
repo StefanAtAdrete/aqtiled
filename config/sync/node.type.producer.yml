@@ -1,0 +1,17 @@
+uuid: 9085ebdc-c6fa-4929-9afe-2700306ea126
+langcode: sv
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Producent
+type: producer
+description: 'Tillverkare eller partner av produkten.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

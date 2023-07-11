@@ -1,0 +1,12 @@
+uuid: b348ab72-d26c-4eae-86be-7769674ef8d5
+langcode: sv
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 3vA4FKQ1Qu8B1R8UdGPnmMfJrYO6Y6uMqeNgDgXxods
+id: default
+label: Förvald
+traits: {  }
+locked: false
+orderItemType: default
+generateTitle: true

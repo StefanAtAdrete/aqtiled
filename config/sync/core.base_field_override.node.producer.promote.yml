@@ -1,0 +1,22 @@
+uuid: bc277719-b408-4d8d-9609-c012d1414d67
+langcode: sv
+status: true
+dependencies:
+  config:
+    - node.type.producer
+id: node.producer.promote
+field_name: promote
+entity_type: node
+bundle: producer
+label: 'Visas på startsidan'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: På
+  off_label: Av
+field_type: boolean

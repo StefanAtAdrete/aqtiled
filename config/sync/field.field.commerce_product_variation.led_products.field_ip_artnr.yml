@@ -1,0 +1,23 @@
+uuid: 9bde7236-496c-403c-95e0-f4336362dbdc
+langcode: sv
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.led_products
+    - field.storage.commerce_product_variation.field_ip_artnr
+id: commerce_product_variation.led_products.field_ip_artnr
+field_name: field_ip_artnr
+entity_type: commerce_product_variation
+bundle: led_products
+label: 'IP Artnr'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

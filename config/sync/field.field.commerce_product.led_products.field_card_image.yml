@@ -1,0 +1,35 @@
+uuid: 81a249a0-33b7-4aa5-bd6c-5f8afc8eecb3
+langcode: sv
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.led_products
+    - field.storage.commerce_product.field_card_image
+    - media.type.image
+    - media.type.remote_video
+    - media.type.vector_image
+    - media.type.video
+id: commerce_product.led_products.field_card_image
+field_name: field_card_image
+entity_type: commerce_product
+bundle: led_products
+label: 'Card image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+      remote_video: remote_video
+      vector_image: vector_image
+      video: video
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: image
+field_type: entity_reference

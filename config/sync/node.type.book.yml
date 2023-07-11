@@ -1,0 +1,16 @@
+uuid: 034b56d0-9894-4788-a8c8-0f8501fb6eef
+langcode: sv
+status: true
+dependencies:
+  enforced:
+    module:
+      - book
+_core:
+  default_config_hash: 2gWGA-X4ERc4McStS7cMEG3ZBpDEqfNRDPTjB1v674Y
+name: Boksida
+type: book
+description: '<em>Böcker</em> har en inbyggd hierarkisk navigering. Använd för handböcker eller handledningar.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

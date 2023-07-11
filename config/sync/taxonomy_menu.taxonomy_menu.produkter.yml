@@ -1,0 +1,16 @@
+uuid: 1895c39c-190d-493e-95b1-0cdcf354f093
+langcode: sv
+status: true
+dependencies:
+  config:
+    - system.menu.main
+    - taxonomy.vocabulary.products
+id: produkter
+label: Produkter
+vocabulary: products
+menu: main
+expanded: true
+depth: 3
+menu_parent: 'admin:admin_toolbar_tools.extra_links:entity.menu.edit_form.main'
+description_field_name: name
+use_term_weight_order: true

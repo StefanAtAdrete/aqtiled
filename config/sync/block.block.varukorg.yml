@@ -1,0 +1,31 @@
+uuid: 9eb05633-0d59-4c0d-b9e3-e9930bdd5823
+langcode: sv
+status: true
+dependencies:
+  module:
+    - commerce_cart
+    - user
+  theme:
+    - b5subtheme
+id: varukorg
+theme: b5subtheme
+region: usernav
+weight: -6
+provider: null
+plugin: commerce_cart
+settings:
+  id: commerce_cart
+  label: Varukorg
+  label_display: '0'
+  provider: commerce_cart
+  dropdown: true
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated
+      content_editor: content_editor
+      administrator: administrator

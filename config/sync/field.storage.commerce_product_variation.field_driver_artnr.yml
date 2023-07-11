@@ -1,0 +1,20 @@
+uuid: afb77260-74d3-4384-a2a0-e7833cfa1ca0
+langcode: sv
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product_variation.field_driver_artnr
+field_name: field_driver_artnr
+entity_type: commerce_product_variation
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

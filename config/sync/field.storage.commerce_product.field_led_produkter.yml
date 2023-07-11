@@ -1,0 +1,20 @@
+uuid: fa2ff278-0b70-4d37-9bfe-9a3a2c12d3fe
+langcode: sv
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - views
+id: commerce_product.field_led_produkter
+field_name: field_led_produkter
+entity_type: commerce_product
+type: entity_reference
+settings:
+  target_type: view
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

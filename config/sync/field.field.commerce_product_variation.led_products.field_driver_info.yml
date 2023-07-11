@@ -1,0 +1,19 @@
+uuid: a1e77ac6-269a-4770-9908-553d00713f70
+langcode: sv
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.led_products
+    - field.storage.commerce_product_variation.field_driver_info
+id: commerce_product_variation.led_products.field_driver_info
+field_name: field_driver_info
+entity_type: commerce_product_variation
+bundle: led_products
+label: 'Driver Info'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

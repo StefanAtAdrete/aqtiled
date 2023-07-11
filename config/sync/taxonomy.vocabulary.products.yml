@@ -1,0 +1,8 @@
+uuid: 744b5b74-a347-4c31-a950-aa2e203f0426
+langcode: sv
+status: true
+dependencies: {  }
+name: Produkter
+vid: products
+description: 'Produkttaggar för släktskap och ordning i menyer'
+weight: 0

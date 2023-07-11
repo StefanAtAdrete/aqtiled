@@ -1,0 +1,21 @@
+uuid: 57d2071d-59d8-4d12-9328-3a7a670e9fba
+langcode: sv
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.led_products
+    - field.storage.commerce_product_variation.field_length_mm
+  module:
+    - physical
+id: commerce_product_variation.led_products.field_length_mm
+field_name: field_length_mm
+entity_type: commerce_product_variation
+bundle: led_products
+label: 'Length (mm)'
+description: 'Ex. 500'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: physical_measurement

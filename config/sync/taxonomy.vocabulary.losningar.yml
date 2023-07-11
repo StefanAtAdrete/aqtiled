@@ -1,0 +1,8 @@
+uuid: eac2ae18-cc22-4ac0-be95-90923f099f77
+langcode: sv
+status: true
+dependencies: {  }
+name: Lösningar
+vid: losningar
+description: 'Direkta eller imaginära lösningar för olika scenarier'
+weight: 0

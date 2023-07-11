@@ -1,0 +1,12 @@
+uuid: aef87c81-b481-4d08-a886-81afe083c8c8
+langcode: sv
+status: true
+dependencies:
+  module:
+    - commerce_shipping
+_core:
+  default_config_hash: SOM4LMI0fFeahHJLPEPoVldiWGePCGwhTERi0cTjb0U
+id: commerce_shipment.checkout
+label: Kassan
+targetEntityType: commerce_shipment
+cache: true

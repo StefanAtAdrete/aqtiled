@@ -1,0 +1,273 @@
+uuid: 31234a27-e2cb-455d-b0d4-6f94ee23c5f8
+langcode: sv
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.led_products
+    - field.field.commerce_product_variation.led_products.attribute_effect_w
+    - field.field.commerce_product_variation.led_products.attribute_end_cap
+    - field.field.commerce_product_variation.led_products.attribute_length_mm
+    - field.field.commerce_product_variation.led_products.dimensions
+    - field.field.commerce_product_variation.led_products.feeds_item
+    - field.field.commerce_product_variation.led_products.field_artnr
+    - field.field.commerce_product_variation.led_products.field_driver
+    - field.field.commerce_product_variation.led_products.field_driver_artnr
+    - field.field.commerce_product_variation.led_products.field_driver_info
+    - field.field.commerce_product_variation.led_products.field_effect_artnr
+    - field.field.commerce_product_variation.led_products.field_effect_info
+    - field.field.commerce_product_variation.led_products.field_end_cap_info
+    - field.field.commerce_product_variation.led_products.field_end_cap_media
+    - field.field.commerce_product_variation.led_products.field_info
+    - field.field.commerce_product_variation.led_products.field_ip
+    - field.field.commerce_product_variation.led_products.field_ip_artnr
+    - field.field.commerce_product_variation.led_products.field_length_artnr
+    - field.field.commerce_product_variation.led_products.field_length_mm
+    - field.field.commerce_product_variation.led_products.field_media_product_variation
+    - field.field.commerce_product_variation.led_products.field_optics_degrees_
+    - field.field.commerce_product_variation.led_products.field_series
+    - field.field.commerce_product_variation.led_products.field_series_artnr
+    - field.field.commerce_product_variation.led_products.field_technical_attributes_ref
+    - field.field.commerce_product_variation.led_products.field_wireless_protocols
+    - field.field.commerce_product_variation.led_products.weight
+  module:
+    - commerce_price
+    - media_library
+    - physical
+id: commerce_product_variation.led_products.default
+targetEntityType: commerce_product_variation
+bundle: led_products
+mode: default
+content:
+  attribute_effect_w:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  attribute_end_cap:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  attribute_length_mm:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  dimensions:
+    type: physical_dimensions_default
+    weight: 90
+    region: content
+    settings:
+      default_unit: ''
+      allow_unit_change: true
+      available_units: {  }
+    third_party_settings: {  }
+  field_artnr:
+    type: string_textarea
+    weight: 94
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_driver:
+    type: string_textfield
+    weight: 100
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_driver_artnr:
+    type: number
+    weight: 102
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_driver_info:
+    type: string_textfield
+    weight: 101
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_effect_artnr:
+    type: string_textfield
+    weight: 97
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_effect_info:
+    type: string_textfield
+    weight: 99
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_end_cap_info:
+    type: string_textfield
+    weight: 107
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_end_cap_media:
+    type: media_library_widget
+    weight: 109
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_info:
+    type: string_textarea
+    weight: 93
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_ip:
+    type: number
+    weight: 105
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_ip_artnr:
+    type: number
+    weight: 106
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_length_artnr:
+    type: string_textfield
+    weight: 96
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_length_mm:
+    type: physical_measurement_default
+    weight: 95
+    region: content
+    settings:
+      default_unit: ''
+      allow_unit_change: true
+      available_units: {  }
+    third_party_settings: {  }
+  field_media_product_variation:
+    type: media_library_widget
+    weight: 108
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_optics_degrees_:
+    type: number
+    weight: 98
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_series:
+    type: string_textfield
+    weight: 91
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_series_artnr:
+    type: string_textfield
+    weight: 92
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_technical_attributes_ref:
+    type: entity_reference_autocomplete
+    weight: 104
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_wireless_protocols:
+    type: entity_reference_autocomplete
+    weight: 110
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  list_price:
+    type: commerce_list_price
+    weight: -1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  price:
+    type: commerce_price_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  sku:
+    type: string_textfield
+    weight: -4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 90
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  weight:
+    type: physical_measurement_default
+    weight: 91
+    region: content
+    settings:
+      default_unit: ''
+      allow_unit_change: true
+      available_units: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  feeds_item: true
+  uid: true

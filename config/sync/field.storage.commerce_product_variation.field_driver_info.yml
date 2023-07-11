@@ -1,0 +1,21 @@
+uuid: f3a8d080-ac34-4ebc-a4bf-4e40d13e37d1
+langcode: sv
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product_variation.field_driver_info
+field_name: field_driver_info
+entity_type: commerce_product_variation
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

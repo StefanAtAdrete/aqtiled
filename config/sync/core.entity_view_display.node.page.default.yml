@@ -1,0 +1,97 @@
+uuid: f39dd2ce-29b3-4f8a-a372-47072261b946
+langcode: sv
+status: true
+dependencies:
+  config:
+    - field.field.node.page.body
+    - field.field.node.page.field_taxonomy_term
+    - field.field.node.page.layout_builder__layout
+    - node.type.page
+  module:
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          31f03cfa-ccc6-4da7-a7cd-907515071714:
+            uuid: 31f03cfa-ccc6-4da7-a7cd-907515071714
+            region: content
+            configuration:
+              id: 'field_block:node:page:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          d90fba28-6522-4866-8ec5-63504e894ba4:
+            uuid: d90fba28-6522-4866-8ec5-63504e894ba4
+            region: content
+            configuration:
+              id: 'extra_field_block:node:page:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 1
+            additional: {  }
+          37bd8d12-3a66-4381-83e0-64aaa399fdfc:
+            uuid: 37bd8d12-3a66-4381-83e0-64aaa399fdfc
+            region: content
+            configuration:
+              id: 'field_block:node:page:field_taxonomy_term'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }
+_core:
+  default_config_hash: M_Y8L5tfmhx7DR143E05YyZSpvgil6VFvqcfBWykalg
+id: node.page.default
+targetEntityType: node
+bundle: page
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  field_taxonomy_term:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+hidden:
+  langcode: true
+  layout_builder__layout: true
+  published_at: true

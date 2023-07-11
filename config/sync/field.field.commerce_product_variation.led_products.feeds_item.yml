@@ -1,0 +1,23 @@
+uuid: 99e11a8f-d436-4afa-98bd-169f8905a1fa
+langcode: sv
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.led_products
+    - field.storage.commerce_product_variation.feeds_item
+  module:
+    - feeds
+id: commerce_product_variation.led_products.feeds_item
+field_name: feeds_item
+entity_type: commerce_product_variation
+bundle: led_products
+label: 'Feeds item'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:feeds_feed'
+  handler_settings: {  }
+field_type: feeds_item

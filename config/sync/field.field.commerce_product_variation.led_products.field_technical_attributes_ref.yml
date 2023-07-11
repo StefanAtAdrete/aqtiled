@@ -1,0 +1,33 @@
+uuid: 29b99a28-4597-46d7-9b14-e6f983656bbd
+langcode: sv
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.led_products
+    - field.storage.commerce_product_variation.field_technical_attributes_ref
+    - node.type.article
+    - node.type.page
+    - node.type.producer
+id: commerce_product_variation.led_products.field_technical_attributes_ref
+field_name: field_technical_attributes_ref
+entity_type: commerce_product_variation
+bundle: led_products
+label: 'Tekniska egenskaper'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+      page: page
+      producer: producer
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: article
+field_type: entity_reference

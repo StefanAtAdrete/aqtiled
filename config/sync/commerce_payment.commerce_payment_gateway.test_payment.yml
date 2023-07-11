@@ -1,0 +1,19 @@
+uuid: fa61120f-9afa-473f-b28a-4820ddb5326a
+langcode: sv
+status: true
+dependencies: {  }
+id: test_payment
+label: Test
+weight: null
+plugin: manual
+configuration:
+  display_label: Manual
+  mode: n/a
+  payment_method_types:
+    - credit_card
+  collect_billing_information: false
+  instructions:
+    value: ''
+    format: plain_text
+conditions: {  }
+conditionOperator: OR

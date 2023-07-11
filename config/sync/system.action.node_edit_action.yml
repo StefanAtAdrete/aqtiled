@@ -1,0 +1,14 @@
+uuid: e38cdc9b-7b3a-489e-91d1-06a385ab62f0
+langcode: sv
+status: true
+dependencies:
+  module:
+    - node
+    - views_bulk_edit
+_core:
+  default_config_hash: 0vLpSGhoYOPeREkfW-7bDeJOwEfW3zeG3nUBwUgsKQI
+id: node_edit_action
+label: 'Redigera innehåll'
+type: node
+plugin: 'entity:edit_action:node'
+configuration: {  }

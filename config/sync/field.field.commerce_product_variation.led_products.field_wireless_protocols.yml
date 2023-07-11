@@ -1,0 +1,31 @@
+uuid: 780f6af4-0985-4d8a-bc43-3c79f892613f
+langcode: sv
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.led_products
+    - field.storage.commerce_product_variation.field_wireless_protocols
+    - node.type.article
+    - node.type.page
+id: commerce_product_variation.led_products.field_wireless_protocols
+field_name: field_wireless_protocols
+entity_type: commerce_product_variation
+bundle: led_products
+label: 'Wireless protocols'
+description: 'B2L, Dimmable, Flicker Free etc. '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+      page: page
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: article
+field_type: entity_reference

@@ -1,0 +1,6 @@
+_core:
+  default_config_hash: 2VIFfYIzLIphEpkJSH9KfhEE0P66ieHfusDj6QMJIzY
+selectors: ".node\r\n.media\r\n.field\r\n.view-media-slider-products"
+custom_vendors: ''
+ignore_selectors: ''
+langcode: sv

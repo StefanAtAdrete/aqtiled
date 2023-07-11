@@ -1,0 +1,13 @@
+uuid: 07c8605c-0220-41a4-a437-f606fcc27691
+langcode: sv
+status: true
+dependencies:
+  module:
+    - comment
+_core:
+  default_config_hash: vpBH8OmL4sdesCdeZLsW8KOutB5gkbreWJbfjhfFKaQ
+id: comment_delete_action
+label: 'Radera kommentar'
+type: comment
+plugin: 'entity:delete_action:comment'
+configuration: {  }

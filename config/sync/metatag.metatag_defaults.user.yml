@@ -1,0 +1,12 @@
+uuid: 577aae57-c2e1-4eae-a0f8-928ad65f5c7b
+langcode: sv
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: MvQPTbQx0Vxwy0ordSHyixdZmLCMpvMdLD69dlwkrKc
+id: user
+label: Användare
+tags:
+  canonical_url: '[user:url]'
+  description: '[site:name]'
+  title: '[user:display-name] | [site:name]'

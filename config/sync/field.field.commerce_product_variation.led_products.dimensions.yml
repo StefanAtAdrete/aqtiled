@@ -1,0 +1,21 @@
+uuid: fedcedf5-4adf-4a55-bce2-774b08c8dd00
+langcode: sv
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.led_products
+    - field.storage.commerce_product_variation.dimensions
+  module:
+    - physical
+id: commerce_product_variation.led_products.dimensions
+field_name: dimensions
+entity_type: commerce_product_variation
+bundle: led_products
+label: Dimensions
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: null
+settings: {  }
+field_type: physical_dimensions

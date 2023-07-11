@@ -1,0 +1,33 @@
+uuid: 08d92ff2-7b16-4514-a708-e5c5afec192d
+langcode: sv
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.led_products
+    - field.storage.commerce_product.field_linked_icons
+    - node.type.article
+    - node.type.page
+    - node.type.producer
+id: commerce_product.led_products.field_linked_icons
+field_name: field_linked_icons
+entity_type: commerce_product
+bundle: led_products
+label: 'Ikoner länkade till innehåll'
+description: 'IP, Drivers och olika certifikat eller teknologier som varan har.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+      page: page
+      producer: producer
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: article
+field_type: entity_reference
