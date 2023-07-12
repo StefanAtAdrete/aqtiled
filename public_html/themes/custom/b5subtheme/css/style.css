@@ -163,7 +163,7 @@ article.node.node--type-article.node--promoted.node--view-mode-teaser h2, articl
   display: none;
 }
 
-#cardtitle h2, #cardtitle .h2 {
+#cardtitle {
   display: block;
 }
 
