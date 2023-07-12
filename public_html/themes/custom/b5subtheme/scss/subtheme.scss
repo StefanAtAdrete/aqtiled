@@ -169,6 +169,10 @@ figure.caption {
     border-radius: 5px;
 }
 
-article.node.node--type-article.node--promoted.node--view-mode-teaser.h2 {
+article.node.node--type-article.node--promoted.node--view-mode-teaser h2 {
     display: none;
+}
+
+#cardtitle h2  {
+    display: block;
 }
