@@ -153,3 +153,22 @@ a#superfish-main-toggle.sf-expanded {
     z-index: 9999;
     left: 90%;
 }
+
+/* Article */
+
+figure.caption {
+    margin: 5%;
+    font-style: italic;
+}
+
+/* Card */
+
+.card-img-top img {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 5px;
+}
+
+article.node.node--type-article.node--promoted.node--view-mode-teaser h2 {
+    display: none;
+}
