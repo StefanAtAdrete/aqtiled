@@ -170,6 +170,15 @@ figure.caption {
   height: 100%;
 }
 
+/* caption background */
+.caption > figcaption {
+  display: table-caption;
+  max-width: none;
+  caption-side: bottom;
+  background-color: #f2f2f2;
+  padding: 4px;
+}
+
 /* Card */
 .card-img-top img {
   width: 100% !important;
