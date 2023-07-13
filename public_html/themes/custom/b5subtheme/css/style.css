@@ -152,6 +152,24 @@ figure.caption {
   font-style: italic;
 }
 
+/* video 100% */
+.field.field--name-field-media-oembed-video.field--type-string.field--label-hidden.field__item {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+
+.media-oembed-content {
+  /* width: 100%; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 /* Card */
 .card-img-top img {
   width: 100% !important;
