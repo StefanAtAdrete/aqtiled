@@ -1,0 +1,22 @@
+uuid: 11e906a4-4041-44a2-a0eb-988247f42e11
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.vector_image
+id: media.vector_image.status
+field_name: status
+entity_type: media
+bundle: vector_image
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

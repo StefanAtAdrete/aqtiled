@@ -1,0 +1,29 @@
+uuid: 621047d0-d530-488a-86f5-d6b6f2f9e3f8
+langcode: sv
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_keywords_solutions
+    - node.type.article
+    - taxonomy.vocabulary.losningar
+id: node.article.field_keywords_solutions
+field_name: field_keywords_solutions
+entity_type: node
+bundle: article
+label: 'Nyckelord lösningar'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      losningar: losningar
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

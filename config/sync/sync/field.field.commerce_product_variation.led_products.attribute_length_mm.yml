@@ -1,0 +1,29 @@
+uuid: 47ae48bd-5b61-4e5b-99fd-80ca5fb32cc7
+langcode: sv
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_attribute.length_mm
+    - commerce_product.commerce_product_variation_type.led_products
+    - field.storage.commerce_product_variation.attribute_length_mm
+id: commerce_product_variation.led_products.attribute_length_mm
+field_name: attribute_length_mm
+entity_type: commerce_product_variation
+bundle: led_products
+label: 'Length (mm) attribut'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:commerce_product_attribute_value'
+  handler_settings:
+    target_bundles:
+      length_mm: length_mm
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

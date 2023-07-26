@@ -1,0 +1,29 @@
+uuid: 48109176-09d4-4eef-88ef-e29bea451767
+langcode: sv
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.led_products
+    - field.storage.node.field_related_products
+    - node.type.article
+id: node.article.field_related_products
+field_name: field_related_products
+entity_type: node
+bundle: article
+label: 'Relaterade varor'
+description: 'Vilken vara är relaterad till artikeln?'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:commerce_product'
+  handler_settings:
+    target_bundles:
+      led_products: led_products
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

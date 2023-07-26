@@ -1,0 +1,28 @@
+uuid: 3d71750a-68ee-4aa5-8222-92a861b1d4f9
+langcode: sv
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: rpwvgyEURXLz_JjgMCrkS1rUv-0k3L79BpO-ReN7fDI
+id: node
+label: Innehåll
+tags:
+  abstract: '[node:body]'
+  article_author: '[node:author]'
+  article_publisher: '[current-page:metatag:article_publisher]'
+  article_section: '[current-page:metatag:article_section]'
+  article_tag: '[node:field_taxonomy_term], [node:field_keywords_solutions]'
+  canonical_url: '[node:url]'
+  description: '[node:summary]'
+  keywords: '[node:field_taxonomy_term],[node:field_keywords_solutions],[node:field_products_term]'
+  og_description: '[site:slogan]'
+  og_image: '[node:field_image:1_1]'
+  og_image_alt: '[node:field_image:alt]'
+  og_image_secure_url: '[node:field_image:1_1]'
+  og_image_url: '[node:field_image:1_1]'
+  og_site_name: '[site:name]'
+  og_title: '[site:name]'
+  og_type: '[node:content-type]'
+  og_updated_time: '[node:changed]'
+  og_url: '[node:url]'
+  title: '[node:title] | [site:name]'

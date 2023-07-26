@@ -1,0 +1,12 @@
+uuid: d2b61402-fd90-47ee-95d7-c63150396dbb
+langcode: en
+status: true
+dependencies: {  }
+id: grey_padded_box
+label: 'Grey padded box'
+classes: greyblock
+type: component
+group: default
+block_restrictions: {  }
+layout_restrictions: {  }
+weight: 0

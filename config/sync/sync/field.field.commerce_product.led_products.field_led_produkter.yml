@@ -1,0 +1,21 @@
+uuid: 53b96820-b2b6-4efe-95f0-6be0b83cf0e4
+langcode: sv
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.led_products
+    - field.storage.commerce_product.field_led_produkter
+id: commerce_product.led_products.field_led_produkter
+field_name: field_led_produkter
+entity_type: commerce_product
+bundle: led_products
+label: 'LED produkter'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:view'
+  handler_settings: {  }
+field_type: entity_reference

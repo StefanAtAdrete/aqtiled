@@ -1,0 +1,18 @@
+uuid: 8f4b4ca0-945b-4690-93d6-caf672c60c1a
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.vector_image
+id: media.vector_image.created
+field_name: created
+entity_type: media
+bundle: vector_image
+label: 'Authored on'
+description: 'The time the media item was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\media\Entity\Media::getRequestTime'
+settings: {  }
+field_type: created

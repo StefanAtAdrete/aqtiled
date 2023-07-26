@@ -1,0 +1,18 @@
+uuid: e2804986-d7d6-40ce-b3c4-5dc0f63df29c
+langcode: sv
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.inspiriation
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.inspiriation
+target_entity_type_id: taxonomy_term
+target_bundle: inspiriation
+default_langcode: sv
+language_alterable: true

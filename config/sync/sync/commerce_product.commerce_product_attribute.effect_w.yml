@@ -1,0 +1,7 @@
+uuid: 6ed5b1e4-52c5-462a-a348-985b027629a2
+langcode: sv
+status: true
+dependencies: {  }
+id: effect_w
+label: 'Effekt (W)'
+elementType: select

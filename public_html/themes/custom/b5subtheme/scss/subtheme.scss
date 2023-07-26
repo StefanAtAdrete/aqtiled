@@ -204,3 +204,26 @@ article.node.node--type-article.node--promoted.node--view-mode-teaser h2 {
 #cardtitle  {
     display: block;
 }
+
+/* Language switcher */
+
+#block-languageswitcher ul {
+    margin-right: 20px;
+}
+
+#block-languageswitcher li {
+    float: left;
+    width: 40%;
+    text-decoration: none;
+    list-style: none;
+    margin-right: 10%;
+}
+
+#block-languageswitcher li a {
+    text-decoration: none;
+    color: #b7b7b7;
+}
+
+#block-languageswitcher li a.is-active {
+    text-decoration: underline;
+}

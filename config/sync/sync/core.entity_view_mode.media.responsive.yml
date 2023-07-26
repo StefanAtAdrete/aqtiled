@@ -1,0 +1,10 @@
+uuid: 20090aa6-5d5f-429e-98a8-75c2c50ff98b
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.responsive
+label: Responsive
+targetEntityType: media
+cache: true

@@ -1,0 +1,18 @@
+uuid: 8e4a7e5c-ff63-4f74-b4b9-4563324dd0ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.vector_image
+id: media.vector_image.metatag
+field_name: metatag
+entity_type: media
+bundle: vector_image
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

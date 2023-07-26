@@ -1,7 +1,0 @@
-uuid: 000e3a26-812b-4d82-aaff-0b994f5cf818
-langcode: sv
-status: true
-dependencies: {  }
-id: end_cap
-label: 'End Cap'
-elementType: select

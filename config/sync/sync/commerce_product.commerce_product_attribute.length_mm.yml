@@ -1,0 +1,7 @@
+uuid: 186c2799-d525-46cf-8298-7f0948c1d74d
+langcode: sv
+status: true
+dependencies: {  }
+id: length_mm
+label: 'Längd (mm)'
+elementType: select

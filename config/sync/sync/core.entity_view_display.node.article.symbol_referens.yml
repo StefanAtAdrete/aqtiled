@@ -1,0 +1,111 @@
+uuid: db671c04-db58-4509-9313-03b7d1889c5f
+langcode: sv
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.symbol_referens
+    - field.field.node.article.body
+    - field.field.node.article.comment
+    - field.field.node.article.feeds_item
+    - field.field.node.article.field_image
+    - field.field.node.article.field_keywords_solutions
+    - field.field.node.article.field_media
+    - field.field.node.article.field_metataggar
+    - field.field.node.article.field_products_term
+    - field.field.node.article.field_related_content
+    - field.field.node.article.field_related_products
+    - field.field.node.article.field_taxonomy_term
+    - field.field.node.article.layout_builder__layout
+    - node.type.article
+    - responsive_image.styles.narrow
+  module:
+    - layout_builder
+    - layout_discovery
+    - svg_image_responsive
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          8629a025-fe73-4c85-82b2-2f40f62e5344:
+            uuid: 8629a025-fe73-4c85-82b2-2f40f62e5344
+            region: content
+            configuration:
+              id: 'field_block:node:article:field_image'
+              label: Bild
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: responsive_image
+                label: hidden
+                settings:
+                  responsive_image_style: narrow
+                  image_link: content
+                  svg_attributes:
+                    width: 50
+                    height: 50
+                  svg_render_as_image: true
+                third_party_settings: {  }
+            weight: 0
+            additional:
+              component_attributes:
+                block_attributes:
+                  id: ''
+                  class: ''
+                  style: ''
+                  data: ''
+                block_title_attributes:
+                  id: ''
+                  class: visually-hidden
+                  style: ''
+                  data: ''
+                block_content_attributes:
+                  id: ''
+                  class: ''
+                  style: ''
+                  data: ''
+        third_party_settings: {  }
+_core:
+  default_config_hash: 7fb0j9HnIXfP9ndewzgPPzzeX_SV532wuYpkscrCMCk
+id: node.article.symbol_referens
+targetEntityType: node
+bundle: article
+mode: symbol_referens
+content:
+  field_image:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: narrow
+      image_link: content
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  comment: true
+  feeds_item: true
+  field_keywords_solutions: true
+  field_media: true
+  field_metataggar: true
+  field_products_term: true
+  field_related_content: true
+  field_related_products: true
+  field_taxonomy_term: true
+  langcode: true
+  layout_builder__layout: true
+  links: true
+  published_at: true

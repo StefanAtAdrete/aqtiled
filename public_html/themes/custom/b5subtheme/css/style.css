@@ -194,6 +194,28 @@ article.node.node--type-article.node--promoted.node--view-mode-teaser h2, articl
   display: block;
 }
 
+/* Language switcher */
+#block-languageswitcher ul {
+  margin-right: 20px;
+}
+
+#block-languageswitcher li {
+  float: left;
+  width: 40%;
+  text-decoration: none;
+  list-style: none;
+  margin-right: 10%;
+}
+
+#block-languageswitcher li a {
+  text-decoration: none;
+  color: #b7b7b7;
+}
+
+#block-languageswitcher li a.is-active {
+  text-decoration: underline;
+}
+
 /*!
  * Bootstrap  v5.3.0 (https://getbootstrap.com/)
  * Copyright 2011-2023 The Bootstrap Authors

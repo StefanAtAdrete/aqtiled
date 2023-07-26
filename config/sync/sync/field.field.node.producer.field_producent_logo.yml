@@ -1,0 +1,31 @@
+uuid: e20e83a9-f355-4dc1-87c9-f1bcf1905672
+langcode: sv
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_producent_logo
+    - media.type.image
+    - media.type.vector_image
+    - node.type.producer
+id: node.producer.field_producent_logo
+field_name: field_producent_logo
+entity_type: node
+bundle: producer
+label: 'Producent logo'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+      vector_image: vector_image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: image
+field_type: entity_reference

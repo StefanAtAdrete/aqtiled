@@ -1,0 +1,21 @@
+uuid: 5315f2f5-5e52-4803-bd58-56cac7ec8295
+langcode: sv
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.led_products
+    - field.storage.commerce_product.field_extra_info
+  module:
+    - text
+id: commerce_product.led_products.field_extra_info
+field_name: field_extra_info
+entity_type: commerce_product
+bundle: led_products
+label: 'Extra info'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

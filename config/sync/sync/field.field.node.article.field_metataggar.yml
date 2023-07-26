@@ -1,0 +1,21 @@
+uuid: c6b66d05-d005-4d97-b4d3-86d189e450bf
+langcode: sv
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metataggar
+    - node.type.article
+  module:
+    - metatag
+id: node.article.field_metataggar
+field_name: field_metataggar
+entity_type: node
+bundle: article
+label: Metataggar
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

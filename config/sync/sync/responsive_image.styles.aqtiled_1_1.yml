@@ -1,0 +1,35 @@
+uuid: 7bcda6a7-0aac-4ac4-a5c2-708d128c7c45
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.1_1
+    - image.style.max_325x325
+    - image.style.max_650x650
+  theme:
+    - b5subtheme
+id: aqtiled_1_1
+label: 'Aqtiled 1:1'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: max_650x650
+    breakpoint_id: b5subtheme.screen.lg-max
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: max_650x650
+    breakpoint_id: b5subtheme.screen.md-max
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: max_325x325
+    breakpoint_id: b5subtheme.screen.sm-max
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: max_325x325
+    breakpoint_id: b5subtheme.screen.xs-max
+    multiplier: 1x
+breakpoint_group: b5subtheme.screen
+fallback_image_style: '1_1'

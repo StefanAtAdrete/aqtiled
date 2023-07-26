@@ -1,0 +1,24 @@
+title: Contact
+elements: |
+  processed_text:
+    '#text': '<p><strong>Questions about deliverytimes or the product?</strong></p>'
+  name:
+    '#title': 'Your Name'
+  email:
+    '#title': 'Your Email'
+  message:
+    '#title': Message
+  lagring_av_uppgifter:
+    '#title': 'Keeping personal data'
+    '#description': 'We need to store your contact information in order to get back to you with a response. We only store it for as long as it is needed for the conversation.'
+    '#required_error': 'We will store your contact information. This is necessary for us to be able to handle your request.'
+  actions:
+    '#submit__label': 'Send message'
+settings:
+  confirmation_message: 'Your message has been sent.'
+  confirmation_url: '<front>'
+handlers:
+  email_confirmation:
+    label: 'Email confirmation'
+  email_notification:
+    label: 'Email notification'

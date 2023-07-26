@@ -1,0 +1,22 @@
+uuid: 3915fbbd-051c-4fb6-afb8-dd712ed46e2b
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.book
+id: node.book.status
+field_name: status
+entity_type: node
+bundle: book
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

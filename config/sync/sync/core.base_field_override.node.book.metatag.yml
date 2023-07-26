@@ -1,0 +1,18 @@
+uuid: 05ee456d-90e7-4ec7-8bea-68200839e200
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.book
+id: node.book.metatag
+field_name: metatag
+entity_type: node
+bundle: book
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

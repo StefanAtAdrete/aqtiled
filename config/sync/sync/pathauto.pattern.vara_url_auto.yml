@@ -1,0 +1,35 @@
+uuid: 56d75c8b-af20-453a-bcb9-e015f7703d5d
+langcode: sv
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - language
+id: vara_url_auto
+label: 'Vara URL auto'
+type: 'canonical_entities:commerce_product'
+pattern: '/[commerce_product:type]/[commerce_product:title]'
+selection_criteria:
+  99b07b70-462a-4cb0-a798-d35647b87cfd:
+    id: 'entity_bundle:commerce_product'
+    negate: false
+    uuid: 99b07b70-462a-4cb0-a798-d35647b87cfd
+    context_mapping:
+      commerce_product: commerce_product
+    bundles:
+      default: default
+      led_products: led_products
+  2bdf2627-10f7-47a8-9171-c48614b345ff:
+    id: language
+    negate: false
+    uuid: 2bdf2627-10f7-47a8-9171-c48614b345ff
+    context_mapping:
+      language: 'commerce_product:langcode:language'
+    langcodes:
+      en: en
+      sv: sv
+selection_logic: and
+weight: -10
+relationships:
+  'commerce_product:langcode:language':
+    label: Språk

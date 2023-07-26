@@ -1,0 +1,36 @@
+uuid: 49d0fb0d-5975-46cb-a870-3c670f94772a
+langcode: sv
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.led_products
+    - field.storage.commerce_product.field_referens
+    - taxonomy.vocabulary.products
+  content:
+    - 'taxonomy_term:products:7b1a1b75-631e-483d-998c-d90ead2f877f'
+    - 'taxonomy_term:products:882d4565-64af-4b2d-9eed-2a6164b7fa06'
+id: commerce_product.led_products.field_referens
+field_name: field_referens
+entity_type: commerce_product
+bundle: led_products
+label: 'Nyckelord produkter'
+description: 'Taxonomi termer att koppla till'
+required: true
+translatable: true
+default_value:
+  -
+    target_uuid: 7b1a1b75-631e-483d-998c-d90ead2f877f
+  -
+    target_uuid: 882d4565-64af-4b2d-9eed-2a6164b7fa06
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      products: products
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

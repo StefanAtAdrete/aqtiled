@@ -1,0 +1,29 @@
+uuid: bbd028d5-0edf-4855-bba9-99edf6c2b883
+langcode: sv
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_taxonomy_term
+    - node.type.article
+    - taxonomy.vocabulary.inspiriation
+id: node.article.field_taxonomy_term
+field_name: field_taxonomy_term
+entity_type: node
+bundle: article
+label: 'Nyckelord inspiration'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      inspiriation: inspiriation
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: products
+field_type: entity_reference

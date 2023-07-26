@@ -3,7 +3,7 @@
         'name' => 'drupal/recommended-project',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '822aece82c3f256a8ce4a8f6bd0621f4fed1184a',
+        'reference' => '0f4f5b453e5ae843c5cee9371342a6b7d4fbf3d2',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -1425,6 +1425,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'drupal/language_switcher_extended' => array(
+            'pretty_version' => '1.1.0',
+            'version' => '1.1.0.0',
+            'reference' => '8.x-1.1',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../public_html/modules/contrib/language_switcher_extended',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'drupal/layout_bg' => array(
             'pretty_version' => '1.3.0',
             'version' => '1.3.0.0',
@@ -1662,7 +1671,7 @@
         'drupal/recommended-project' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '822aece82c3f256a8ce4a8f6bd0621f4fed1184a',
+            'reference' => '0f4f5b453e5ae843c5cee9371342a6b7d4fbf3d2',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
