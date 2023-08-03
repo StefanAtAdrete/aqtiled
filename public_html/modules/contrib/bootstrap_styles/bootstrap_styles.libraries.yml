@@ -7,6 +7,8 @@ layout_builder_form_style:
     js/components/tabs.js: { }
     js/components/inputs.js: { }
   dependencies:
+    - core/drupal
+    - core/once
     - bootstrap_styles/themes-overrides
 
 # Offcanvas Font
@@ -169,7 +171,7 @@ plugin.box_shadow.build:
 # scroll_effects
 plugin.scroll_effects.build:
   dependencies:
-    - aos.remote
+    - bootstrap_styles/aos.remote
 
 # AOS remote library.
 aos.remote:

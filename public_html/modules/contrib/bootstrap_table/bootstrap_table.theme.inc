@@ -21,13 +21,15 @@ function template_preprocess_views_view_bootstraptable(&$variables) {
   $variables['view']->element['#attached']['library'][] = 'bootstrap_table/bootstrapTable';
   $is_live_preview = \Drupal::request()->request->get('live_preview');
   $variables["attributes"]['data-toggle'] = "table";
+  $attached = [];
   foreach ($options["extension"] as $extension => $val) {
     if ($val) {
+      $extension = str_replace('_', '-', $extension);
       if ($extension == 'auto-refresh') {
         $variables["attributes"]['data-show-refresh'] = "true";
       }
       $variables["attributes"]['data-' . $extension] = $val;
-      $variables['view']->element['#attached']['library'][] = 'bootstrap_table/' . $extension;
+      $attached[$extension] = 'bootstrap_table/' . $extension;
     }
   }
   $mapOption = [
@@ -44,7 +46,7 @@ function template_preprocess_views_view_bootstraptable(&$variables) {
       $extension = str_replace('_', '-', $extension);
       if ($extension == 'cookie') {
         $variables["attributes"]['data-cookie-id-table'] = $viewId . $displayId;
-        $variables['view']->element['#attached']['library'][] = 'bootstrap_table/' . $extension;
+        $attached[$extension] = 'bootstrap_table/' . $extension;
       }
       if ($extension == 'search') {
         $variables["attributes"]['data-search-accent-neutralise'] = 'true';
@@ -54,13 +56,15 @@ function template_preprocess_views_view_bootstraptable(&$variables) {
       if ($extension == 'advanced-search') {
         $variables["attributes"]['data-id-table'] = $viewId . $displayId;
         $variables["attributes"]['data-regex-search'] = "true";
-        $variables['view']->element['#attached']['library'][] = 'bootstrap_table/toolbar';
+        $attached['toolbar'] = 'bootstrap_table/toolbar';
       }
       $variables["attributes"]['data-' . $extension] = "true";
-      $variables['view']->element['#attached']['library'][] = 'bootstrap_table/' . $extension;
+      $attached[$extension] = 'bootstrap_table/' . $extension;
     }
   }
-
+  foreach ($attached as $library) {
+    $variables['view']->element['#attached']['library'][] = $library;
+  }
   foreach ($options["bootstrap_styles"] as $style) {
     if (!empty($style)) {
       $variables['attributes']['class'][] = 'table-' . $style;

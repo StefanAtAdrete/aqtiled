@@ -20,7 +20,6 @@ class ComposerStaticInit6abe90ec75cb584c3936b8894eb618e9
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
-        'c9d07b32a2e02bc0fc582d4f0c1b56cc' => __DIR__ . '/..' . '/laminas/laminas-servicemanager/src/autoload.php',
         'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
         '3e41e0554275033aae3e9e7e056c2d14' => __DIR__ . '/..' . '/longwave/laminas-diactoros/src/functions/create_uploaded_file.php',
         'f4ee20bfdee1006b0970e8d951bea11e' => __DIR__ . '/..' . '/longwave/laminas-diactoros/src/functions/marshal_headers_from_sapi.php',
@@ -172,7 +171,6 @@ class ComposerStaticInit6abe90ec75cb584c3936b8894eb618e9
             'League\\Csv\\' => 11,
             'League\\Container\\' => 17,
             'Laminas\\Stdlib\\' => 15,
-            'Laminas\\ServiceManager\\' => 23,
             'Laminas\\Feed\\' => 13,
             'Laminas\\Escaper\\' => 16,
             'Laminas\\Diactoros\\' => 18,
@@ -589,10 +587,6 @@ class ComposerStaticInit6abe90ec75cb584c3936b8894eb618e9
         'Laminas\\Stdlib\\' => 
         array (
             0 => __DIR__ . '/..' . '/laminas/laminas-stdlib/src',
-        ),
-        'Laminas\\ServiceManager\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/laminas/laminas-servicemanager/src',
         ),
         'Laminas\\Feed\\' => 
         array (
