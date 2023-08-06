@@ -1,3 +1,37 @@
+/* The better mega menu */
+.tbm {
+
+}
+
+.tbm.tbm--mobile.tbm--mobile-show .tbm-collapse {
+    display: block;
+    width: 90vw;
+    margin-left: -75vw;
+    background-color: #212429;
+}
+
+.tbm.tbm--mobile .tbm-nav {
+
+}
+
+.tbm-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #ca7719;
+    border: 1px solid rgb(255 255 255 / 20%);
+}
+
+.tbm-subnav>.tbm-item>.tbm-link-container>.tbm-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.tbm-link.level-1 {
+    color: #fff;
+    text-decoration: none;
+}
+
 /* Cookie concent banner */
 .eu-cookie-compliance-content {
     margin: 0 auto;
@@ -70,7 +104,7 @@ div#block-cartflyout {
     margin: auto 0;
 }
 
-.dropdown-menu {
+/*.dropdown-menu {
     --bs-dropdown-color: #212529;
     --bs-dropdown-bg: #fff;
     --bs-dropdown-link-color: #212529;
@@ -83,7 +117,7 @@ div#block-cartflyout {
     background-clip: padding-box;
     border: var(--bs-dropdown-border-width) solid var(--bs-dropdown-border-color);
     border-radius: var(--bs-dropdown-border-radius);
-}
+}*/
 
 /* Taxonomy page */
 
@@ -134,7 +168,7 @@ a#superfish-main-toggle span {
     font-size: 44px;
 }
 
-#superfish-main-toggle {
+/*#superfish-main-toggle {
     margin: 0;
     padding: 0;
     float: right;
@@ -148,11 +182,11 @@ color: #fff;
 a#superfish-main-toggle.sf-expanded {
     /* float: right; */
     /* display: block; */
-    margin-top: -60px;
+    /*margin-top: -60px;*/
     /* padding: 0px; */
-    z-index: 9999;
-    left: 90%;
-}
+    /*z-index: 9999;*/
+    /*left: 90%;
+}*/
 
 /* Article */
 

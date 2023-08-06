@@ -135,7 +135,7 @@
         "drupal/symfony_mailer": "^1.2",
         "drupal/taxonomy_manager": "^2.0",
         "drupal/taxonomy_menu": "^3.5",
-        "drupal/tb_megamenu": "^1.7",
+        "drupal/tb_megamenu": "^2.0@alpha",
         "drupal/token_filter": "^2.0",
         "drupal/tvi": "^2.0@alpha",
         "drupal/views_bootstrap": "^5.5@alpha",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d587c1868527c865fcaf44739c14aeec",
+    "content-hash": "bd17e806d1cc2a7617330084946b2f95",
     "packages": [
         {
             "name": "alchemy/binary-driver",
@@ -2968,17 +2968,17 @@
         },
         {
             "name": "drupal/bootstrap5",
-            "version": "3.0.8",
+            "version": "3.0.9",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/bootstrap5.git",
-                "reference": "3.0.8"
+                "reference": "3.0.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/bootstrap5-3.0.8.zip",
-                "reference": "3.0.8",
-                "shasum": "e9968a03960900ce0e4ef5bd9a8694156f302774"
+                "url": "https://ftp.drupal.org/files/projects/bootstrap5-3.0.9.zip",
+                "reference": "3.0.9",
+                "shasum": "6891732f14859a474bab73d2ddbd77a7dd264da1"
             },
             "require": {
                 "drupal/core": "^9.4 || ^10"
@@ -2986,8 +2986,8 @@
             "type": "drupal-theme",
             "extra": {
                 "drupal": {
-                    "version": "3.0.8",
-                    "datestamp": "1685974134",
+                    "version": "3.0.9",
+                    "datestamp": "1691152585",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5047,17 +5047,17 @@
         },
         {
             "name": "drupal/datalayer",
-            "version": "2.0.0-rc1",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/datalayer.git",
-                "reference": "2.0.0-rc1"
+                "reference": "2.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/datalayer-2.0.0-rc1.zip",
-                "reference": "2.0.0-rc1",
-                "shasum": "f7175ba5f77d3f8e601f9ae60e8b2a4572686b6a"
+                "url": "https://ftp.drupal.org/files/projects/datalayer-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "07453d807b44359614124ecc10771e51f29d4ed3"
             },
             "require": {
                 "drupal/core": "^9.4 || ^10"
@@ -5065,11 +5065,11 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0-rc1",
-                    "datestamp": "1673987576",
+                    "version": "2.0.0",
+                    "datestamp": "1691070909",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "RC releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 }
             },
@@ -11220,17 +11220,17 @@
         },
         {
             "name": "drupal/tb_megamenu",
-            "version": "1.7.0",
+            "version": "2.0.0-alpha7",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/tb_megamenu.git",
-                "reference": "8.x-1.7"
+                "reference": "2.0.0-alpha7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/tb_megamenu-8.x-1.7.zip",
-                "reference": "8.x-1.7",
-                "shasum": "5b6b0e6580254350d76cec907bd6d07e3044cd10"
+                "url": "https://ftp.drupal.org/files/projects/tb_megamenu-2.0.0-alpha7.zip",
+                "reference": "2.0.0-alpha7",
+                "shasum": "94ffde1584ebfe9be9139e8dfe26534e4e2e07e2"
             },
             "require": {
                 "drupal/core": "^8 || ^9"
@@ -11238,11 +11238,11 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.7",
-                    "datestamp": "1648215867",
+                    "version": "2.0.0-alpha7",
+                    "datestamp": "1686707356",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -11675,17 +11675,17 @@
         },
         {
             "name": "drupal/views_bulk_operations",
-            "version": "4.2.4",
+            "version": "4.2.5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/views_bulk_operations.git",
-                "reference": "4.2.4"
+                "reference": "4.2.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/views_bulk_operations-4.2.4.zip",
-                "reference": "4.2.4",
-                "shasum": "26f1dea73780fab2e338380ae803feca989172e1"
+                "url": "https://ftp.drupal.org/files/projects/views_bulk_operations-4.2.5.zip",
+                "reference": "4.2.5",
+                "shasum": "220479c5187b1619d5703f64c6f8c272afecf897"
             },
             "require": {
                 "drupal/core": "^9.4 || ^10",
@@ -11700,8 +11700,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "4.2.4",
-                    "datestamp": "1685368786",
+                    "version": "4.2.5",
+                    "datestamp": "1691066184",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -14019,16 +14019,16 @@
         },
         {
             "name": "league/csv",
-            "version": "9.9.0",
+            "version": "9.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/csv.git",
-                "reference": "b4418ede47fbd88facc34e40a16c8ce9153b961b"
+                "reference": "d24b0d484812313b07ab74b0fe4db9661606df6c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/csv/zipball/b4418ede47fbd88facc34e40a16c8ce9153b961b",
-                "reference": "b4418ede47fbd88facc34e40a16c8ce9153b961b",
+                "url": "https://api.github.com/repos/thephpleague/csv/zipball/d24b0d484812313b07ab74b0fe4db9661606df6c",
+                "reference": "d24b0d484812313b07ab74b0fe4db9661606df6c",
                 "shasum": ""
             },
             "require": {
@@ -14037,16 +14037,17 @@
                 "php": "^8.1.2"
             },
             "require-dev": {
-                "doctrine/collections": "^2.1.2",
+                "doctrine/collections": "^2.1.3",
                 "ext-dom": "*",
                 "ext-xdebug": "*",
-                "friendsofphp/php-cs-fixer": "^v3.14.3",
-                "phpbench/phpbench": "^1.2.8",
-                "phpstan/phpstan": "^1.10.4",
-                "phpstan/phpstan-deprecation-rules": "^1.1.2",
-                "phpstan/phpstan-phpunit": "^1.3.10",
-                "phpstan/phpstan-strict-rules": "^1.5.0",
-                "phpunit/phpunit": "^10.0.14"
+                "friendsofphp/php-cs-fixer": "^v3.22.0",
+                "phpbench/phpbench": "^1.2.14",
+                "phpstan/phpstan": "^1.10.26",
+                "phpstan/phpstan-deprecation-rules": "^1.1.3",
+                "phpstan/phpstan-phpunit": "^1.3.13",
+                "phpstan/phpstan-strict-rules": "^1.5.1",
+                "phpunit/phpunit": "^10.3.1",
+                "symfony/var-dumper": "^6.3.3"
             },
             "suggest": {
                 "ext-dom": "Required to use the XMLConverter and the HTMLConverter classes",
@@ -14102,7 +14103,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-03-11T15:57:12+00:00"
+            "time": "2023-08-04T15:12:48+00:00"
         },
         {
             "name": "league/oauth2-client",
@@ -20810,16 +20811,16 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "1.23.0",
+            "version": "1.23.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpdoc-parser.git",
-                "reference": "a2b24135c35852b348894320d47b3902a94bc494"
+                "reference": "846ae76eef31c6d7790fac9bc399ecee45160b26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/a2b24135c35852b348894320d47b3902a94bc494",
-                "reference": "a2b24135c35852b348894320d47b3902a94bc494",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/846ae76eef31c6d7790fac9bc399ecee45160b26",
+                "reference": "846ae76eef31c6d7790fac9bc399ecee45160b26",
                 "shasum": ""
             },
             "require": {
@@ -20851,9 +20852,9 @@
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
             "support": {
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
-                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.23.0"
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.23.1"
             },
-            "time": "2023-07-23T22:17:56+00:00"
+            "time": "2023-08-03T16:32:59+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -22987,6 +22988,7 @@
         "drupal/publication_date": 10,
         "drupal/rules": 15,
         "drupal/search_kint": 15,
+        "drupal/tb_megamenu": 15,
         "drupal/tvi": 15,
         "drupal/views_bootstrap": 15,
         "drupal/webhooks": 15,
