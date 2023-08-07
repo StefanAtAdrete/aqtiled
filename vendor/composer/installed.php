@@ -3,7 +3,7 @@
         'name' => 'drupal/recommended-project',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '4dc57d4a6aafc8e9af3ac0179fd9cd978fe03161',
+        'reference' => '54799302fc72597d3de858c2502613bd39d2bbbf',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -1428,6 +1428,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'drupal/languageicons' => array(
+            'pretty_version' => '2.0.0-beta4',
+            'version' => '2.0.0.0-beta4',
+            'reference' => '2.0.0-beta4',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../public_html/modules/contrib/languageicons',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'drupal/layout_bg' => array(
             'pretty_version' => '1.3.0',
             'version' => '1.3.0.0',
@@ -1665,7 +1674,7 @@
         'drupal/recommended-project' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '4dc57d4a6aafc8e9af3ac0179fd9cd978fe03161',
+            'reference' => '54799302fc72597d3de858c2502613bd39d2bbbf',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
