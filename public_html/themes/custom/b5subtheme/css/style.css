@@ -1,4 +1,13 @@
 @charset "UTF-8";
+/* Flexslider landningpage */
+.flexslider {
+  border: 0;
+}
+
+.flex-control-thumbs {
+  overflow: visible;
+}
+
 /* The better mega menu */
 .tbm.tbm--mobile.tbm--mobile-show .tbm-collapse {
   display: block;
