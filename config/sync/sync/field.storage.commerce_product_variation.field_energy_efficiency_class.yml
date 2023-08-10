@@ -1,0 +1,21 @@
+uuid: 88b19318-1ec0-4f5f-a840-0f927683ef50
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product_variation.field_energy_efficiency_class
+field_name: field_energy_efficiency_class
+entity_type: commerce_product_variation
+type: string
+settings:
+  max_length: 10
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

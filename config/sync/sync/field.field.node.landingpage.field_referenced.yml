@@ -1,0 +1,23 @@
+uuid: 064d0052-6d01-483f-a605-14b789d417fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_referenced
+    - node.type.landingpage
+id: node.landingpage.field_referenced
+field_name: field_referenced
+entity_type: node
+bundle: landingpage
+label: 'Referenced product'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:view'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.node.field_related_content
     - node.type.article
-    - node.type.book
     - node.type.page
     - node.type.producer
     - node.type.webform
@@ -13,7 +12,7 @@ id: node.article.field_related_content
 field_name: field_related_content
 entity_type: node
 bundle: article
-label: 'Relaterat innehåll till artikeln'
+label: 'Related content'
 description: ''
 required: false
 translatable: true
@@ -24,7 +23,6 @@ settings:
   handler_settings:
     target_bundles:
       article: article
-      book: book
       page: page
       producer: producer
       webform: webform

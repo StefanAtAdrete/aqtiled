@@ -8,7 +8,7 @@ dependencies:
   - commerce_add_to_cart_link:commerce_add_to_cart_link
   - commerce_wishlist:commerce_wishlist
 
-# Information added by Drupal.org packaging script on 2022-08-19
-version: '2.0.5'
+# Information added by Drupal.org packaging script on 2023-08-08
+version: '2.0.6'
 project: 'commerce_add_to_cart_link'
-datestamp: 1660923980
+datestamp: 1691479628

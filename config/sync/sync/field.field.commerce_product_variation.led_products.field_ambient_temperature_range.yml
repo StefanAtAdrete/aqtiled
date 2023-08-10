@@ -1,0 +1,19 @@
+uuid: c75f7b9e-9240-40e3-a8ef-3d03d6b02219
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.led_products
+    - field.storage.commerce_product_variation.field_ambient_temperature_range
+id: commerce_product_variation.led_products.field_ambient_temperature_range
+field_name: field_ambient_temperature_range
+entity_type: commerce_product_variation
+bundle: led_products
+label: 'Ambient temperature range'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

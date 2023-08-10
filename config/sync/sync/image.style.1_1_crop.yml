@@ -1,0 +1,17 @@
+uuid: 555101f1-0238-45f7-8db7-14bbf7a27038
+langcode: sv
+status: true
+dependencies:
+  module:
+    - focal_point
+name: 1_1_crop
+label: '1:1 Crop special'
+effects:
+  1c4ff600-125f-4674-ab77-4a5b96ed769d:
+    uuid: 1c4ff600-125f-4674-ab77-4a5b96ed769d
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 350
+      height: 350
+      crop_type: focal_point

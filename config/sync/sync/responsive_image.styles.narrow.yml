@@ -3,27 +3,18 @@ langcode: sv
 status: true
 dependencies:
   config:
-    - image.style.large
-    - image.style.max_1300x1300
-    - image.style.max_325x325
-    - image.style.max_650x650
-    - image.style.medium
+    - image.style.thumbnail
+  theme:
+    - b5subtheme
 _core:
   default_config_hash: E9Pvy75e7AcNQi7TBRvoG0DU2FI8mjFcLARqfB-rlIU
 id: narrow
-label: Smal
+label: Small
 image_style_mappings:
   -
-    image_mapping_type: sizes
-    image_mapping:
-      sizes: '(min-width: 1290px) 220px, (min-width: 851px) 25vw, (min-width: 560px) 50vw, 100vw'
-      sizes_image_styles:
-        - large
-        - max_1300x1300
-        - max_325x325
-        - max_650x650
-        - medium
-    breakpoint_id: responsive_image.viewport_sizing
+    image_mapping_type: image_style
+    image_mapping: thumbnail
+    breakpoint_id: b5subtheme.screen.xl-max
     multiplier: 1x
-breakpoint_group: responsive_image
-fallback_image_style: medium
+breakpoint_group: b5subtheme.screen
+fallback_image_style: thumbnail

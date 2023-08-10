@@ -1,6 +1,6 @@
 _core:
   default_config_hash: 2VIFfYIzLIphEpkJSH9KfhEE0P66ieHfusDj6QMJIzY
-selectors: ".node\r\n.media\r\n.field\r\n.view-media-slider-products\r\n.html5-video-player\r\nhtml5-video-player\r\n.node__content\r\n.media-oembed-content\r\niframe\r\n<iframe>"
+selectors: node
 custom_vendors: ''
 ignore_selectors: ''
 langcode: sv

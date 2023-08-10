@@ -5,17 +5,22 @@ dependencies:
   config:
     - commerce_product.commerce_product_attribute.end_cap
     - field.field.commerce_product_attribute_value.end_cap.field_media_product_attribute
+    - image.style.thumbnail
+  module:
+    - media
 id: commerce_product_attribute_value.end_cap.default
 targetEntityType: commerce_product_attribute_value
 bundle: end_cap
 mode: default
 content:
   field_media_product_attribute:
-    type: entity_reference_entity_view
+    type: media_thumbnail
     label: hidden
     settings:
-      view_mode: default
-      link: false
+      image_link: ''
+      image_style: thumbnail
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: -4
     region: content

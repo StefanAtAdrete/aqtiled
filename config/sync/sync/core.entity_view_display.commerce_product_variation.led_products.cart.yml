@@ -10,7 +10,13 @@ dependencies:
     - field.field.commerce_product_variation.led_products.attribute_length_mm
     - field.field.commerce_product_variation.led_products.dimensions
     - field.field.commerce_product_variation.led_products.feeds_item
+    - field.field.commerce_product_variation.led_products.field__failure_rate_b_
+    - field.field.commerce_product_variation.led_products.field__max_load_ampere_a_
+    - field.field.commerce_product_variation.led_products.field__nominal_voltage
+    - field.field.commerce_product_variation.led_products.field__performance_temp_tp_
+    - field.field.commerce_product_variation.led_products.field_ambient_temperature_range
     - field.field.commerce_product_variation.led_products.field_artnr
+    - field.field.commerce_product_variation.led_products.field_casing_material
     - field.field.commerce_product_variation.led_products.field_driver
     - field.field.commerce_product_variation.led_products.field_driver_artnr
     - field.field.commerce_product_variation.led_products.field_driver_info
@@ -18,13 +24,24 @@ dependencies:
     - field.field.commerce_product_variation.led_products.field_effect_info
     - field.field.commerce_product_variation.led_products.field_end_cap_info
     - field.field.commerce_product_variation.led_products.field_end_cap_media
+    - field.field.commerce_product_variation.led_products.field_endcap_material
+    - field.field.commerce_product_variation.led_products.field_energy_efficiency_class
+    - field.field.commerce_product_variation.led_products.field_fixture_colour
+    - field.field.commerce_product_variation.led_products.field_included_accessories
     - field.field.commerce_product_variation.led_products.field_info
+    - field.field.commerce_product_variation.led_products.field_integrated_thermal_fuse
     - field.field.commerce_product_variation.led_products.field_ip
     - field.field.commerce_product_variation.led_products.field_ip_artnr
+    - field.field.commerce_product_variation.led_products.field_l80_service_life
     - field.field.commerce_product_variation.led_products.field_length_artnr
     - field.field.commerce_product_variation.led_products.field_length_mm
     - field.field.commerce_product_variation.led_products.field_media_product_variation
     - field.field.commerce_product_variation.led_products.field_optics_degrees_
+    - field.field.commerce_product_variation.led_products.field_optics_material
+    - field.field.commerce_product_variation.led_products.field_power_factor
+    - field.field.commerce_product_variation.led_products.field_protection_class
+    - field.field.commerce_product_variation.led_products.field_replaceable_ledmodules_and
+    - field.field.commerce_product_variation.led_products.field_sdcm_colour_tolerance
     - field.field.commerce_product_variation.led_products.field_series
     - field.field.commerce_product_variation.led_products.field_series_artnr
     - field.field.commerce_product_variation.led_products.field_technical_attributes_ref
@@ -70,6 +87,12 @@ hidden:
   attribute_length_mm: true
   dimensions: true
   feeds_item: true
+  field__failure_rate_b_: true
+  field__max_load_ampere_a_: true
+  field__nominal_voltage: true
+  field__performance_temp_tp_: true
+  field_ambient_temperature_range: true
+  field_casing_material: true
   field_driver: true
   field_driver_artnr: true
   field_driver_info: true
@@ -77,12 +100,23 @@ hidden:
   field_effect_info: true
   field_end_cap_info: true
   field_end_cap_media: true
+  field_endcap_material: true
+  field_energy_efficiency_class: true
+  field_fixture_colour: true
+  field_included_accessories: true
+  field_integrated_thermal_fuse: true
   field_ip: true
   field_ip_artnr: true
+  field_l80_service_life: true
   field_length_artnr: true
   field_length_mm: true
   field_media_product_variation: true
   field_optics_degrees_: true
+  field_optics_material: true
+  field_power_factor: true
+  field_protection_class: true
+  field_replaceable_ledmodules_and: true
+  field_sdcm_colour_tolerance: true
   field_series: true
   field_series_artnr: true
   field_technical_attributes_ref: true

@@ -1,0 +1,10 @@
+uuid: 4532267c-b977-433f-b478-4ca645f666d3
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.small_icons
+label: 'Small icons'
+targetEntityType: media
+cache: true

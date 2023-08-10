@@ -1,0 +1,21 @@
+uuid: 3e2265e4-10d8-474f-8b5c-720deca0b9ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_extra_info
+    - node.type.landingpage
+  module:
+    - text
+id: node.landingpage.field_extra_info
+field_name: field_extra_info
+entity_type: node
+bundle: landingpage
+label: 'Extra info'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,37 @@
+uuid: b4ecf939-fab1-4574-9601-63a7d01a4905
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_media_section_3
+    - media.type.document
+    - media.type.image
+    - media.type.remote_video
+    - media.type.vector_image
+    - media.type.video
+    - node.type.landingpage
+id: node.landingpage.field_media_section_3
+field_name: field_media_section_3
+entity_type: node
+bundle: landingpage
+label: 'Media section 3'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+      image: image
+      remote_video: remote_video
+      vector_image: vector_image
+      video: video
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: document
+field_type: entity_reference

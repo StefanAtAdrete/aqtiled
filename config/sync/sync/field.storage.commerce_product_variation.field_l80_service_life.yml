@@ -1,0 +1,20 @@
+uuid: 2dcf9b7c-087c-4f60-a3a5-19cd0e01f61a
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product_variation.field_l80_service_life
+field_name: field_l80_service_life
+entity_type: commerce_product_variation
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

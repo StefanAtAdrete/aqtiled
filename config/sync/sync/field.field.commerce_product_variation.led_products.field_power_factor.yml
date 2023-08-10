@@ -1,0 +1,23 @@
+uuid: 99c8b2fa-1032-4e97-8a1e-a8eb972cbbd6
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.led_products
+    - field.storage.commerce_product_variation.field_power_factor
+id: commerce_product_variation.led_products.field_power_factor
+field_name: field_power_factor
+entity_type: commerce_product_variation
+bundle: led_products
+label: 'Power factor'
+description: 'Power factor 0,96 (0,96)'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

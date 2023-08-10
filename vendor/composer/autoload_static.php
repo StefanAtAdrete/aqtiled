@@ -130,6 +130,7 @@ class ComposerStaticInit6abe90ec75cb584c3936b8894eb618e9
             'Symfony\\Cmf\\Component\\Routing\\' => 30,
             'Symfony\\Bridge\\PsrHttpMessage\\' => 30,
             'Symfony\\Bridge\\PhpUnit\\' => 23,
+            'Svg\\' => 4,
             'SlevomatCodingStandard\\' => 23,
             'Shaper\\Tests\\' => 13,
             'Shaper\\' => 7,
@@ -137,6 +138,7 @@ class ComposerStaticInit6abe90ec75cb584c3936b8894eb618e9
             'SelfUpdate\\' => 11,
             'Seld\\PharUtils\\' => 15,
             'Seld\\JsonLint\\' => 14,
+            'Sabberworm\\CSS\\' => 15,
         ),
         'R' => 
         array (
@@ -204,6 +206,7 @@ class ComposerStaticInit6abe90ec75cb584c3936b8894eb618e9
         ),
         'E' => 
         array (
+            'Evenement\\' => 10,
             'Enlightn\\SecurityChecker\\' => 25,
             'Egulias\\EmailValidator\\' => 23,
             'EasyRdf\\' => 8,
@@ -231,6 +234,7 @@ class ComposerStaticInit6abe90ec75cb584c3936b8894eb618e9
             'Drupal\\' => 7,
             'DrupalPractice\\' => 15,
             'DrupalCodeGenerator\\' => 20,
+            'Dompdf\\' => 7,
             'Doctrine\\Persistence\\' => 21,
             'Doctrine\\Instantiator\\' => 22,
             'Doctrine\\Inflector\\' => 19,
@@ -483,6 +487,10 @@ class ComposerStaticInit6abe90ec75cb584c3936b8894eb618e9
         array (
             0 => __DIR__ . '/..' . '/symfony/phpunit-bridge',
         ),
+        'Svg\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phenx/php-svg-lib/src/Svg',
+        ),
         'SlevomatCodingStandard\\' => 
         array (
             0 => __DIR__ . '/..' . '/slevomat/coding-standard/SlevomatCodingStandard',
@@ -510,6 +518,10 @@ class ComposerStaticInit6abe90ec75cb584c3936b8894eb618e9
         'Seld\\JsonLint\\' => 
         array (
             0 => __DIR__ . '/..' . '/seld/jsonlint/src/Seld/JsonLint',
+        ),
+        'Sabberworm\\CSS\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sabberworm/php-css-parser/src',
         ),
         'Robo\\' => 
         array (
@@ -649,6 +661,10 @@ class ComposerStaticInit6abe90ec75cb584c3936b8894eb618e9
         array (
             0 => __DIR__ . '/..' . '/facebook/php-business-sdk/src/FacebookAds',
         ),
+        'Evenement\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/evenement/evenement/src',
+        ),
         'Enlightn\\SecurityChecker\\' => 
         array (
             0 => __DIR__ . '/..' . '/enlightn/security-checker/src',
@@ -744,6 +760,10 @@ class ComposerStaticInit6abe90ec75cb584c3936b8894eb618e9
         'DrupalCodeGenerator\\' => 
         array (
             0 => __DIR__ . '/..' . '/chi-teck/drupal-code-generator/src',
+        ),
+        'Dompdf\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dompdf/dompdf/src',
         ),
         'Doctrine\\Persistence\\' => 
         array (
@@ -933,13 +953,6 @@ class ComposerStaticInit6abe90ec75cb584c3936b8894eb618e9
                 0 => __DIR__ . '/..' . '/php-ffmpeg/php-ffmpeg/src',
             ),
         ),
-        'E' => 
-        array (
-            'Evenement' => 
-            array (
-                0 => __DIR__ . '/..' . '/evenement/evenement/src',
-            ),
-        ),
         'D' => 
         array (
             'Dflydev\\DotAccessData' => 
@@ -974,6 +987,7 @@ class ComposerStaticInit6abe90ec75cb584c3936b8894eb618e9
     public static $classMap = array (
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Dompdf\\Cpdf' => __DIR__ . '/..' . '/dompdf/dompdf/lib/Cpdf.php',
         'Drupal' => __DIR__ . '/../..' . '/public_html/core/lib/Drupal.php',
         'DrupalFinder\\DrupalFinder' => __DIR__ . '/..' . '/webflo/drupal-finder/src/DrupalFinder.php',
         'Drupal\\Component\\DependencyInjection\\Container' => __DIR__ . '/../..' . '/public_html/core/lib/Drupal/Component/DependencyInjection/Container.php',

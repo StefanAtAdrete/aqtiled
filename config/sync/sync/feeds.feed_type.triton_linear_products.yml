@@ -8,11 +8,30 @@ dependencies:
     - field.field.commerce_product_variation.led_products.attribute_end_cap
     - field.field.commerce_product_variation.led_products.attribute_length_mm
     - field.field.commerce_product_variation.led_products.dimensions
+    - field.field.commerce_product_variation.led_products.field__failure_rate_b_
+    - field.field.commerce_product_variation.led_products.field__max_load_ampere_a_
+    - field.field.commerce_product_variation.led_products.field__nominal_voltage
+    - field.field.commerce_product_variation.led_products.field__performance_temp_tp_
+    - field.field.commerce_product_variation.led_products.field_ambient_temperature_range
     - field.field.commerce_product_variation.led_products.field_artnr
+    - field.field.commerce_product_variation.led_products.field_casing_material
+    - field.field.commerce_product_variation.led_products.field_driver
     - field.field.commerce_product_variation.led_products.field_effect_artnr
+    - field.field.commerce_product_variation.led_products.field_endcap_material
+    - field.field.commerce_product_variation.led_products.field_energy_efficiency_class
+    - field.field.commerce_product_variation.led_products.field_fixture_colour
+    - field.field.commerce_product_variation.led_products.field_included_accessories
     - field.field.commerce_product_variation.led_products.field_info
+    - field.field.commerce_product_variation.led_products.field_integrated_thermal_fuse
+    - field.field.commerce_product_variation.led_products.field_ip
+    - field.field.commerce_product_variation.led_products.field_l80_service_life
     - field.field.commerce_product_variation.led_products.field_length_artnr
     - field.field.commerce_product_variation.led_products.field_optics_degrees_
+    - field.field.commerce_product_variation.led_products.field_optics_material
+    - field.field.commerce_product_variation.led_products.field_power_factor
+    - field.field.commerce_product_variation.led_products.field_protection_class
+    - field.field.commerce_product_variation.led_products.field_replaceable_ledmodules_and
+    - field.field.commerce_product_variation.led_products.field_sdcm_colour_tolerance
     - field.field.commerce_product_variation.led_products.field_series_artnr
     - field.field.commerce_product_variation.led_products.weight
   module:
@@ -22,21 +41,32 @@ dependencies:
 third_party_settings:
   feeds_tamper:
     tampers:
-      64b45c61-9e98-4d40-9652-2257c3286389:
+      323c648d-c853-4376-a2c7-29f89692512c:
         find: ','
         replace: .
         case_sensitive: false
         word_boundaries: false
         whole: false
-        uuid: 64b45c61-9e98-4d40-9652-2257c3286389
+        uuid: 323c648d-c853-4376-a2c7-29f89692512c
         plugin: find_replace
-        source: price_euro_15mm_bracket
+        source: weight_kg_1
+        weight: 0
+        label: 'Find replace'
+      af7f5ffc-5b22-4459-b0ec-803c6668f975:
+        find: ','
+        replace: .
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: af7f5ffc-5b22-4459-b0ec-803c6668f975
+        plugin: find_replace
+        source: agent_price_eur_15mm_bracket
         weight: 0
         label: 'Find replace'
 label: 'Triton linear products'
 id: triton_linear_products
 description: 'Triton MAX and OPTI products'
-help: ''
+help: 'Import for English'
 import_period: -1
 fetcher: upload
 fetcher_configuration:
@@ -192,11 +222,121 @@ custom_sources:
     label: 'Product info'
     machine_name: product_info
     type: csv
+  weight_kg_1:
+    value: 'Weight (kg)'
+    label: 'Weight (kg)'
+    machine_name: weight_kg_1
+    type: csv
+  driver:
+    value: Driver
+    label: Driver
+    machine_name: driver
+    type: csv
+  protection_class:
+    value: 'Protection class'
+    label: 'Protection class'
+    machine_name: protection_class
+    type: csv
+  energy_efficiency_class:
+    value: 'Energy efficiency class'
+    label: 'Energy efficiency class'
+    machine_name: energy_efficiency_class
+    type: csv
+  _nominal_voltage:
+    value: ' Nominal Voltage'
+    label: ' Nominal Voltage'
+    machine_name: _nominal_voltage
+    type: csv
+  power_factor:
+    value: 'Power factor'
+    label: 'Power factor'
+    machine_name: power_factor
+    type: csv
+  _max_load_ampere_a_:
+    value: ' Max load Ampere (A)'
+    label: ' Max load Ampere (A)'
+    machine_name: _max_load_ampere_a_
+    type: csv
+  _performance_temp_tp_:
+    value: ' Performance temp. (tp)'
+    label: ' Performance temp. (tp)'
+    machine_name: _performance_temp_tp_
+    type: csv
+  ambient_temperature_range:
+    value: 'Ambient temperature range'
+    label: 'Ambient temperature range'
+    machine_name: ambient_temperature_range
+    type: csv
+  integrated_thermal_fuse:
+    value: 'Integrated thermal fuse'
+    label: 'Integrated thermal fuse'
+    machine_name: integrated_thermal_fuse
+    type: csv
+  sdcm_colour_tolerance:
+    value: 'SDCM colour tolerance'
+    label: 'SDCM colour tolerance'
+    machine_name: sdcm_colour_tolerance
+    type: csv
+  l80_service_life:
+    value: 'L80 Service life'
+    label: 'L80 Service life'
+    machine_name: l80_service_life
+    type: csv
+  _failure_rate_b_:
+    value: ' Failure rate (B)'
+    label: ' Failure rate (B)'
+    machine_name: _failure_rate_b_
+    type: csv
+  casing_material:
+    value: 'Casing material'
+    label: 'Casing material'
+    machine_name: casing_material
+    type: csv
+  fixture_colour:
+    value: 'Fixture Colour'
+    label: 'Fixture Colour'
+    machine_name: fixture_colour
+    type: csv
+  optics_material:
+    value: 'Optics material'
+    label: 'Optics material'
+    machine_name: optics_material
+    type: csv
+  endcap_material:
+    value: 'Endcap Material'
+    label: 'Endcap Material'
+    machine_name: endcap_material
+    type: csv
+  included_accessories:
+    value: 'Included accessories'
+    label: 'Included accessories'
+    machine_name: included_accessories
+    type: csv
+  replaceable_ledmodules_and_driver:
+    value: 'Replaceable Ledmodules and driver'
+    label: 'Replaceable Ledmodules and driver'
+    machine_name: replaceable_ledmodules_and_driver
+    type: csv
+  agent_price_eur_15mm_bracket:
+    value: 'Agent Price EUR 15mm bracket'
+    label: 'Agent Price EUR 15mm bracket'
+    machine_name: agent_price_eur_15mm_bracket
+    type: csv
+  ip_grade:
+    value: 'IP grade'
+    label: 'IP grade'
+    machine_name: ip_grade
+    type: csv
+  max_load_ampere_a_:
+    value: ' Max load Ampere (A)'
+    label: ' Max load Ampere (A)'
+    machine_name: max_load_ampere_a_
+    type: csv
 mappings:
   -
     target: price
     map:
-      number: price_euro_15mm_bracket
+      number: agent_price_eur_15mm_bracket
     settings:
       currency_code: EUR
   -
@@ -232,7 +372,7 @@ mappings:
   -
     target: weight
     map:
-      number: weight_kg_
+      number: weight_kg_1
     settings:
       unit: kg
   -
@@ -299,3 +439,135 @@ mappings:
       value: product_info
     settings:
       language: null
+  -
+    target: field_driver
+    map:
+      value: driver
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_protection_class
+    map:
+      value: protection_class
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_energy_efficiency_class
+    map:
+      value: energy_efficiency_class
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field__nominal_voltage
+    map:
+      value: _nominal_voltage
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_power_factor
+    map:
+      value: power_factor
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field__max_load_ampere_a_
+    map:
+      value: max_load_ampere_a_
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field__performance_temp_tp_
+    map:
+      value: _performance_temp_tp_
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_integrated_thermal_fuse
+    map:
+      value: integrated_thermal_fuse
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_sdcm_colour_tolerance
+    map:
+      value: sdcm_colour_tolerance
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_l80_service_life
+    map:
+      value: l80_service_life
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field__failure_rate_b_
+    map:
+      value: _failure_rate_b_
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_fixture_colour
+    map:
+      value: fixture_colour
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_optics_material
+    map:
+      value: optics_material
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_endcap_material
+    map:
+      value: endcap_material
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_included_accessories
+    map:
+      value: included_accessories
+    settings:
+      language: null
+  -
+    target: field_replaceable_ledmodules_and
+    map:
+      value: replaceable_ledmodules_and_driver
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_ip
+    map:
+      value: ip_grade
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_ambient_temperature_range
+    map:
+      value: ambient_temperature_range
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_casing_material
+    map:
+      value: casing_material
+    settings:
+      language: null
+    unique: {  }

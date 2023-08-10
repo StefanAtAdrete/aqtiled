@@ -107,7 +107,7 @@ settings:
   dialog: false
   dialog_options:
     narrow:
-      title: Smal
+      title: Small
       width: 600
     normal:
       title: Normal

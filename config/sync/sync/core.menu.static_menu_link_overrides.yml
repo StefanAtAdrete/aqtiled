@@ -33,11 +33,11 @@ definitions:
     menu_name: main
     enabled: true
   'taxonomy_menu__menu_link:taxonomy_menu__menu_link__inspiration__7':
-    expanded: true
-    parent: 'admin:'
-    weight: 1
+    enabled: false
     menu_name: main
-    enabled: true
+    parent: ''
+    expanded: true
+    weight: 1
   'taxonomy_menu__menu_link:taxonomy_menu__menu_link__inspiration__11':
     expanded: true
     parent: 'taxonomy_menu.menu_link:taxonomy_menu.menu_link.inspiration.7'
@@ -98,3 +98,15 @@ definitions:
     parent: 'taxonomy_menu.menu_link:taxonomy_menu.menu_link.losningar.6'
     expanded: true
     enabled: true
+  'taxonomy_menu__menu_link:taxonomy_menu__menu_link__inspiration__23':
+    enabled: false
+    menu_name: main
+    parent: 'taxonomy_menu.menu_link:taxonomy_menu.menu_link.inspiration.7'
+    expanded: true
+    weight: 0
+  masquerade__unmasquerade:
+    enabled: false
+    menu_name: account
+    parent: ''
+    expanded: false
+    weight: -50

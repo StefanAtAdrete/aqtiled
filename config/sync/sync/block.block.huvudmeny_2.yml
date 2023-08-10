@@ -1,0 +1,24 @@
+uuid: dd7a6256-1310-436a-9d4d-4abc01f931e3
+langcode: sv
+status: true
+dependencies:
+  module:
+    - block_class
+    - tb_megamenu
+  theme:
+    - b5subtheme
+third_party_settings:
+  block_class:
+    classes: navbar
+id: huvudmeny_2
+theme: b5subtheme
+region: nav_main
+weight: 0
+provider: null
+plugin: 'tb_megamenu_menu_block:main'
+settings:
+  id: 'tb_megamenu_menu_block:main'
+  label: Huvudmeny
+  label_display: '0'
+  provider: tb_megamenu
+visibility: {  }

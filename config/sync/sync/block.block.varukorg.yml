@@ -10,7 +10,7 @@ dependencies:
 id: varukorg
 theme: b5subtheme
 region: usernav
-weight: -6
+weight: -3
 provider: null
 plugin: commerce_cart
 settings:

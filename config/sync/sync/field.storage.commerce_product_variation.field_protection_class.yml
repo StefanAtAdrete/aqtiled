@@ -1,0 +1,20 @@
+uuid: 55f1496c-6a94-462d-ae78-6e36f46357bb
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product_variation.field_protection_class
+field_name: field_protection_class
+entity_type: commerce_product_variation
+type: decimal
+settings:
+  precision: 10
+  scale: 0
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,14 @@
+uuid: db500385-715c-4651-a5da-9cea0bc91b08
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.agent
+  module:
+    - user
+id: user_remove_role_action.agent
+label: 'Remove the Agent role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: agent

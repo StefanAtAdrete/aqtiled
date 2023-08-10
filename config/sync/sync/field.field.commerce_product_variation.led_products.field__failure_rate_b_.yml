@@ -1,0 +1,23 @@
+uuid: 75352c26-6d73-4214-bf1d-1f2ea9722004
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.led_products
+    - field.storage.commerce_product_variation.field__failure_rate_b_
+id: commerce_product_variation.led_products.field__failure_rate_b_
+field_name: field__failure_rate_b_
+entity_type: commerce_product_variation
+bundle: led_products
+label: ' Failure rate (B)'
+description: ' Failure rate (B) 10 (10)'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: '%'
+field_type: integer

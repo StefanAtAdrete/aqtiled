@@ -1,0 +1,23 @@
+uuid: 2d521dce-b381-4c05-b9c3-59e0505c4bf4
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.led_products
+    - field.storage.commerce_product_variation.field__performance_temp_tp_
+id: commerce_product_variation.led_products.field__performance_temp_tp_
+field_name: field__performance_temp_tp_
+entity_type: commerce_product_variation
+bundle: led_products
+label: ' Performance temp. (tp)'
+description: ' Performance temp. (tp) 52 (52)'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: °C
+field_type: decimal

@@ -9,7 +9,13 @@ dependencies:
     - field.field.commerce_product_variation.led_products.attribute_length_mm
     - field.field.commerce_product_variation.led_products.dimensions
     - field.field.commerce_product_variation.led_products.feeds_item
+    - field.field.commerce_product_variation.led_products.field__failure_rate_b_
+    - field.field.commerce_product_variation.led_products.field__max_load_ampere_a_
+    - field.field.commerce_product_variation.led_products.field__nominal_voltage
+    - field.field.commerce_product_variation.led_products.field__performance_temp_tp_
+    - field.field.commerce_product_variation.led_products.field_ambient_temperature_range
     - field.field.commerce_product_variation.led_products.field_artnr
+    - field.field.commerce_product_variation.led_products.field_casing_material
     - field.field.commerce_product_variation.led_products.field_driver
     - field.field.commerce_product_variation.led_products.field_driver_artnr
     - field.field.commerce_product_variation.led_products.field_driver_info
@@ -17,32 +23,101 @@ dependencies:
     - field.field.commerce_product_variation.led_products.field_effect_info
     - field.field.commerce_product_variation.led_products.field_end_cap_info
     - field.field.commerce_product_variation.led_products.field_end_cap_media
+    - field.field.commerce_product_variation.led_products.field_endcap_material
+    - field.field.commerce_product_variation.led_products.field_energy_efficiency_class
+    - field.field.commerce_product_variation.led_products.field_fixture_colour
+    - field.field.commerce_product_variation.led_products.field_included_accessories
     - field.field.commerce_product_variation.led_products.field_info
+    - field.field.commerce_product_variation.led_products.field_integrated_thermal_fuse
     - field.field.commerce_product_variation.led_products.field_ip
     - field.field.commerce_product_variation.led_products.field_ip_artnr
+    - field.field.commerce_product_variation.led_products.field_l80_service_life
     - field.field.commerce_product_variation.led_products.field_length_artnr
     - field.field.commerce_product_variation.led_products.field_length_mm
     - field.field.commerce_product_variation.led_products.field_media_product_variation
     - field.field.commerce_product_variation.led_products.field_optics_degrees_
+    - field.field.commerce_product_variation.led_products.field_optics_material
+    - field.field.commerce_product_variation.led_products.field_power_factor
+    - field.field.commerce_product_variation.led_products.field_protection_class
+    - field.field.commerce_product_variation.led_products.field_replaceable_ledmodules_and
+    - field.field.commerce_product_variation.led_products.field_sdcm_colour_tolerance
     - field.field.commerce_product_variation.led_products.field_series
     - field.field.commerce_product_variation.led_products.field_series_artnr
     - field.field.commerce_product_variation.led_products.field_technical_attributes_ref
     - field.field.commerce_product_variation.led_products.field_wireless_protocols
     - field.field.commerce_product_variation.led_products.weight
+    - image.style.thumbnail
   module:
     - commerce_price
+    - media
     - physical
 id: commerce_product_variation.led_products.default
 targetEntityType: commerce_product_variation
 bundle: led_products
 mode: default
 content:
+  field__failure_rate_b_:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 31
+    region: content
+  field__max_load_ampere_a_:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 0
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 25
+    region: content
+  field__nominal_voltage:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 23
+    region: content
+  field__performance_temp_tp_:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 0
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 26
+    region: content
+  field_ambient_temperature_range:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 38
+    region: content
   field_artnr:
     type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
     weight: 4
+    region: content
+  field_casing_material:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 32
     region: content
   field_driver:
     type: string
@@ -94,13 +169,46 @@ content:
     weight: 17
     region: content
   field_end_cap_media:
-    type: entity_reference_entity_view
+    type: media_thumbnail
     label: above
     settings:
-      view_mode: default
-      link: false
+      image_link: ''
+      image_style: thumbnail
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 19
+    region: content
+  field_endcap_material:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 35
+    region: content
+  field_energy_efficiency_class:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 22
+    region: content
+  field_fixture_colour:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 33
+    region: content
+  field_included_accessories:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 36
     region: content
   field_info:
     type: basic_string
@@ -108,6 +216,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_integrated_thermal_fuse:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 28
     region: content
   field_ip:
     type: number_integer
@@ -126,6 +242,15 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     weight: 16
+    region: content
+  field_l80_service_life:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 30
     region: content
   field_length_artnr:
     type: string
@@ -146,7 +271,7 @@ content:
     type: entity_reference_entity_view
     label: above
     settings:
-      view_mode: default
+      view_mode: responsive
       link: false
     third_party_settings: {  }
     weight: 18
@@ -159,6 +284,52 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     weight: 8
+    region: content
+  field_optics_material:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 34
+    region: content
+  field_power_factor:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 24
+    region: content
+  field_protection_class:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 21
+    region: content
+  field_replaceable_ledmodules_and:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 37
+    region: content
+  field_sdcm_colour_tolerance:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 29
     region: content
   field_series:
     type: string

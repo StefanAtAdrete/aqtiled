@@ -1,0 +1,24 @@
+uuid: a0ca82b8-32af-4d4c-8d51-4a3e910458e3
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - language
+  theme:
+    - b5subtheme
+third_party_settings:
+  block_class:
+    classes: navbar
+id: languageswitcher
+theme: b5subtheme
+region: usernav
+weight: -5
+provider: null
+plugin: 'language_block:language_interface'
+settings:
+  id: 'language_block:language_interface'
+  label: 'Language switcher'
+  label_display: '0'
+  provider: language
+visibility: {  }

@@ -169,11 +169,13 @@ class AddToCartController extends ControllerBase {
 
     if ($this->config('commerce_add_to_cart_link.settings')->get('redirect_back')) {
       $referer = $request->server->get('HTTP_REFERER');
-      $fake_request = Request::create($referer);
-      $referer_url = $this->pathValidator->getUrlIfValid($fake_request->getRequestUri());
-      if ($referer_url && $referer_url->isRouted() && $referer_url->getRouteName() !== 'user.login') {
-        $referer_url->setAbsolute();
-        return new RedirectResponse($referer_url->toString());
+      if (!empty($referer)) {
+        $fake_request = Request::create($referer);
+        $referer_url = $this->pathValidator->getUrlIfValid($fake_request->getRequestUri());
+        if ($referer_url && $referer_url->isRouted() && $referer_url->getRouteName() !== 'user.login') {
+          $referer_url->setAbsolute();
+          return new RedirectResponse($referer_url->toString());
+        }
       }
     }
 

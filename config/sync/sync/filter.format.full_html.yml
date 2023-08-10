@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.media.full
     - core.entity_view_mode.media.responsive
+    - core.entity_view_mode.media.small_icons
   module:
     - editor
     - media
@@ -61,11 +62,12 @@ filters:
     status: true
     weight: -40
     settings:
-      default_view_mode: default
+      default_view_mode: responsive
       allowed_view_modes:
         default: default
         full: full
         responsive: responsive
+        small_icons: small_icons
       allowed_media_types: {  }
   filter_responsive_tables_filter:
     id: filter_responsive_tables_filter

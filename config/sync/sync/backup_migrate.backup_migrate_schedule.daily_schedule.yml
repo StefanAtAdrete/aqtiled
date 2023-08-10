@@ -5,10 +5,10 @@ dependencies: {  }
 _core:
   default_config_hash: B6mQr6j7ZcqZB14S8ytJEXCYzOQ1mcOW9-oWYbtkbJc
 id: daily_schedule
-label: 'Daily Schedule'
-enabled: false
-keep: null
-period: null
+label: 'Weekly Schedule'
+enabled: true
+keep: 3
+period: 604800
 cron: null
 source_id: default_db
 destination_id: private_files

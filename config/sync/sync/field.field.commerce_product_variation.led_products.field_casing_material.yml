@@ -1,0 +1,19 @@
+uuid: 8f2d33f4-cb7f-4672-89b1-8304590933db
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.led_products
+    - field.storage.commerce_product_variation.field_casing_material
+id: commerce_product_variation.led_products.field_casing_material
+field_name: field_casing_material
+entity_type: commerce_product_variation
+bundle: led_products
+label: 'Casing material'
+description: 'T.ex  6061 Anodized Aluminum'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

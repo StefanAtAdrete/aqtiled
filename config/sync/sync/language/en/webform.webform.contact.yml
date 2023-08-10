@@ -1,18 +1,29 @@
 title: Contact
+description: 'Basic email contact webform.'
 elements: |
-  processed_text:
-    '#text': '<p><strong>Questions about deliverytimes or the product?</strong></p>'
   name:
     '#title': 'Your Name'
+    '#type': textfield
+    '#required': true
+    '#default_value': '[current-user:display-name]'
   email:
     '#title': 'Your Email'
+    '#type': email
+    '#required': true
+    '#default_value': '[current-user:mail]'
+  subject:
+    '#title': Subject
+    '#type': textfield
+    '#required': true
+    '#test': 'Testing contact webform from [site:name]'
   message:
     '#title': Message
-  lagring_av_uppgifter:
-    '#title': 'Keeping personal data'
-    '#description': 'We need to store your contact information in order to get back to you with a response. We only store it for as long as it is needed for the conversation.'
-    '#required_error': 'We will store your contact information. This is necessary for us to be able to handle your request.'
+    '#type': textarea
+    '#required': true
+    '#test': 'Please ignore this email.'
   actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
     '#submit__label': 'Send message'
 settings:
   confirmation_message: 'Your message has been sent.'
@@ -20,5 +31,13 @@ settings:
 handlers:
   email_confirmation:
     label: 'Email confirmation'
+    settings:
+      from_name: _default
+      subject: '[webform_submission:values:subject:raw]'
+      body: '[webform_submission:values:message:value]'
   email_notification:
     label: 'Email notification'
+    settings:
+      from_name: '[webform_submission:values:name:raw]'
+      subject: '[webform_submission:values:subject:raw]'
+      body: '[webform_submission:values:message:value]'

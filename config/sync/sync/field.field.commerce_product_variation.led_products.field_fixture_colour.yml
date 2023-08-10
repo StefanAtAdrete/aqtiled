@@ -1,0 +1,19 @@
+uuid: b3a55a68-ac1f-4b37-98a6-32911985f2ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.led_products
+    - field.storage.commerce_product_variation.field_fixture_colour
+id: commerce_product_variation.led_products.field_fixture_colour
+field_name: field_fixture_colour
+entity_type: commerce_product_variation
+bundle: led_products
+label: 'Fixture Colour'
+description: ' Fixture Colour t.ex ALU/Silver'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

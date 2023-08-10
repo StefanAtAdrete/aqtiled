@@ -1,0 +1,23 @@
+uuid: 08026453-e73d-4d8e-8420-39a6c21895cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.led_products
+    - field.storage.commerce_product_variation.field__max_load_ampere_a_
+id: commerce_product_variation.led_products.field__max_load_ampere_a_
+field_name: field__max_load_ampere_a_
+entity_type: commerce_product_variation
+bundle: led_products
+label: ' Max load Ampere (A)'
+description: ' Max load Ampere (A) 16 (16)'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: A
+field_type: decimal

@@ -21,6 +21,10 @@
   background-color: #212429;
 }
 
+.tbm-link.level-1:hover, .tbm-link.level-1:focus {
+  background-color: #e39000;
+}
+
 .tbm-button {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -191,7 +195,8 @@ figure.caption {
 }
 
 /* video 100% */
-.field.field--name-field-media-oembed-video.field--type-string.field--label-hidden.field__item {
+.field.field--name-field-media-oembed-video.field--type-string.field--label-hidden.field__item,
+.field.field--name-field-media-video-file.field--type-file.field--label-hidden.field__item {
   position: relative;
   padding-bottom: 56.25%;
   padding-top: 30px;
@@ -199,7 +204,8 @@ figure.caption {
   overflow: hidden;
 }
 
-.media-oembed-content {
+.media-oembed-content,
+.field--name-field-media-video-file.field__item {
   /* width: 100%; */
   position: absolute;
   top: 0;

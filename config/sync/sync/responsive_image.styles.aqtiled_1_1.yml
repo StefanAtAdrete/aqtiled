@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - image.style.1_1
+    - image.style.large
     - image.style.max_325x325
     - image.style.max_650x650
   theme:
@@ -14,16 +15,16 @@ image_style_mappings:
   -
     image_mapping_type: image_style
     image_mapping: max_650x650
-    breakpoint_id: b5subtheme.screen.lg-max
+    breakpoint_id: b5subtheme.screen.lg-min
     multiplier: 1x
   -
     image_mapping_type: image_style
-    image_mapping: max_650x650
+    image_mapping: large
     breakpoint_id: b5subtheme.screen.md-max
     multiplier: 1x
   -
     image_mapping_type: image_style
-    image_mapping: max_325x325
+    image_mapping: max_650x650
     breakpoint_id: b5subtheme.screen.sm-max
     multiplier: 2x
   -

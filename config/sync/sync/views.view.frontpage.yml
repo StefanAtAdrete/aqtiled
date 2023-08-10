@@ -637,13 +637,13 @@ display:
       style:
         type: views_bootstrap_grid
         options:
-          row_class: row
+          row_class: mb-2
           default_row_class: false
           uses_fields: false
           col_xs: col-12
           col_sm: col-sm-6
           col_md: col-md-6
-          col_lg: col-lg-3
+          col_lg: col-lg-4
           col_xl: none
           col_xxl: none
       row:

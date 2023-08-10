@@ -1,0 +1,21 @@
+uuid: 54292690-bda1-4076-83d2-197d921e9354
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_extra_info_3
+    - node.type.landingpage
+  module:
+    - text
+id: node.landingpage.field_extra_info_3
+field_name: field_extra_info_3
+entity_type: node
+bundle: landingpage
+label: 'Extra info 3'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

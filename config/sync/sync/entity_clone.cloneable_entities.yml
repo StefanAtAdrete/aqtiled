@@ -101,3 +101,6 @@ cloneable_entities:
   - icon_set
   - feeds_import_log
   - tb_megamenu
+  - jsonapi_resource_config
+  - oembed_provider
+  - oembed_provider_bucket

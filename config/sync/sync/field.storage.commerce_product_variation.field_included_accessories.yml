@@ -1,0 +1,19 @@
+uuid: fb1f7445-b0c3-4323-b70a-9f0e2089591e
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product_variation.field_included_accessories
+field_name: field_included_accessories
+entity_type: commerce_product_variation
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

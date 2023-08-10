@@ -1,0 +1,13 @@
+uuid: 4cf68987-e21c-41c0-8616-90f5f7d0b164
+langcode: sv
+status: true
+dependencies:
+  config:
+    - image.style.thumbnail
+  theme:
+    - b5subtheme
+id: thumbnails
+label: Thumbnails
+image_style_mappings: {  }
+breakpoint_group: b5subtheme.screen
+fallback_image_style: thumbnail
