@@ -1,1 +1,1 @@
-window.euCookieComplianceLoadScripts = function(category) {var scriptTag = document.createElement("script");scriptTag.src = "\/modules\/custom\/b5subtheme\/js\/facebook-pixel.js";document.body.appendChild(scriptTag);}
+window.euCookieComplianceLoadScripts = function(category) {var scriptTag = document.createElement("script");scriptTag.src = "\/themes\/custom\/b5subtheme\/js\/facebook-pixel.js";document.body.appendChild(scriptTag);}

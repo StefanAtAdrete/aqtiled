@@ -15,7 +15,7 @@ function masquerade_post_update_add_block_setting_link(&$sandbox) {
   \Drupal::classResolver(ConfigEntityUpdater::class)->update($sandbox, 'block', function (BlockInterface $block) {
     if ($block->getPluginId() === 'masquerade') {
       $configuration = $block->getPlugin()->getConfiguration();
-      if (isset($configuration['show_unmasquerade_link'])) {
+      if (!isset($configuration['show_unmasquerade_link'])) {
         $block->getPlugin()->setConfigurationValue('show_unmasquerade_link', FALSE);
         return TRUE;
       }

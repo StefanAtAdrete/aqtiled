@@ -1,0 +1,182 @@
+<?php
+
+/**
+ * @file
+ * Contains media_contextual_crop implemented hooks.
+ */
+
+declare(strict_types=1);
+
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Template\AttributeString;
+use Drupal\responsive_image\Entity\ResponsiveImageStyle;
+
+/**
+ * Implements hook_help().
+ */
+function media_contextual_crop_help($route_name, RouteMatchInterface $route_match) {
+  $advanced_help = \Drupal::moduleHandler()->moduleExists('advanced_help');
+  switch ($route_name) {
+    // Main module help for the media_contextual_crop_field_formatter module.
+    case 'help.page.media_contextual_crop':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('This module provides API elements for media_contextual_crop collection.') . '</p>';
+      $output .= '';
+      if ($advanced_help) {
+        $output .= '<p>' . t('For more information, please see <a href="/admin/help/ah/media_contextual_crop">advanced_help</a>  page.') . '</p>';
+      }
+      else {
+        $output .= '<p>' . t('For more information, please install <a href="https://www.drupal.org/project/advanced_help">advanced_help</a>  module.') . '</p>';
+      }
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_preprocess_image_formatter().
+ *
+ * @Desc : intercept classic image formatter
+ */
+function media_contextual_crop_preprocess_image_formatter(&$variables) {
+  $use_case_plugin_manager = \Drupal::service('plugin.manager.media_contextual_crop_use_case');
+  $use_case_plugin = $use_case_plugin_manager->findCompetent($variables['item']);
+
+  if ($use_case_plugin != NULL) {
+    $new_uri = $use_case_plugin->getContextualUri($variables['item'], $variables['image']['#uri'], $variables['image']['#style_name']);
+    if ($new_uri != NULL) {
+      $variables['image']['#uri'] = $new_uri;
+    }
+  }
+
+}
+
+/**
+ * Implements hook_cache_flush().
+ */
+function media_contextual_crop_cache_flush() {
+  $use_case_plugin_manager = \Drupal::service('plugin.manager.media_contextual_crop_use_case');
+  $use_case_plugin_manager->flushCopies();
+}
+
+/**
+ * Implements hook_preprocess_responsive_image_formatter().
+ *
+ * @Desc : intercept responsive image formatter
+ */
+function media_contextual_crop_preprocess_responsive_image_formatter(&$variables) {
+
+  // Check if image will be overrided by a use_case plugin.
+  $use_case_plugin_manager = \Drupal::service('plugin.manager.media_contextual_crop_use_case');
+  $use_case_plugin = $use_case_plugin_manager->findCompetent($variables['item']);
+
+  if ($use_case_plugin != NULL) {
+
+    // Pregenerate crop settings.
+    $crop_settings = $use_case_plugin->getCropSettings($variables['item']);
+
+    if ($crop_settings != NULL) {
+      // Inject crop settings.
+      $variables['responsive_image']['#attributes']['#mcc'] = $crop_settings;
+    }
+
+  }
+
+}
+
+/**
+ * Implements hook_preprocess_responsive_image().
+ *
+ * @Desc : intercept responsive image processor
+ */
+function media_contextual_crop_preprocess_responsive_image(&$variables) {
+
+  if (isset($variables['attributes']['#mcc'])) {
+
+    // Recover crop settings.
+    $crop_settings = $variables['attributes']['#mcc'];
+
+    // Clean un-needed attributes.
+    unset($variables['attributes']['#mcc']);
+    unset($variables['img_element']['#attributes']['#mcc']);
+
+    // Get Responsive config data.
+    $responsive_image_style = ResponsiveImageStyle::load($variables['responsive_image_style_id']);
+
+    if ($responsive_image_style != NULL) {
+      // Make old image stats.
+      $old_image = [
+        '#uri' => $variables['uri'],
+        '#width' => $variables['width'],
+        '#height' => $variables['height'],
+      ];
+
+      // Find styles.
+      $style_mapping = $responsive_image_style->getImageStyleMappings();
+      $styles = [];
+      foreach ($style_mapping as $data) {
+        $styles[$data['image_mapping_type']] = $data['image_mapping']['sizes_image_styles'];
+      }
+      $style_set = NULL;
+      foreach (array_keys($variables['attributes']) as $type) {
+        if (isset($styles[$type])) {
+          $style_set = $styles[$type];
+        }
+      }
+
+      // Generate mcc images.
+      $new_uris = [];
+      $at_least_one = FALSE;
+      $media_contextual_crop_service = \Drupal::service('media_contextual_crop.service');
+      foreach ($style_set as $style) {
+
+        if ($media_contextual_crop_service->styleUseMultiCrop($style)) {
+          $crop_settings['image_style'] = $style;
+          $new_base = $media_contextual_crop_service->prepareCropImage($old_image, $crop_settings);
+          $new_uris[$style] = _responsive_image_image_style_url($style, $new_base);
+          $at_least_one = TRUE;
+        }
+        else {
+          $new_uris[$style] = NULL;
+        }
+      }
+
+      if ($at_least_one === TRUE) {
+        // Get srcset.
+        $srcset = $variables['img_element']['#attributes']['srcset']->value();
+
+        // If srcset item must be change, change it.
+        $data = explode(',', $srcset);
+        $new_data = [];
+        foreach ($data as $line) {
+          [$uri, $conf] = explode(' ', trim($line));
+          foreach ($new_uris as $style => $new_uri) {
+            if (strstr($uri, '/styles/' . $style . '/public/') && $new_uri != NULL) {
+              $uri = $new_uri;
+            }
+          }
+          $new_data[] = $uri . ' ' . $conf;
+        }
+        $new_value = implode(', ', $new_data);
+
+        // Inject new srcset.
+        $variables['img_element']['#attributes']['srcset'] = new AttributeString('srcset', $new_value);
+      }
+
+      // Manage Fallback Image.
+      $fallback = $responsive_image_style->getFallbackImageStyle();
+
+      if ($media_contextual_crop_service->styleUseMultiCrop($fallback)) {
+        $crop_settings['image_style'] = $fallback;
+        $new_uri = $media_contextual_crop_service->prepareCropImage($old_image, $crop_settings);
+        // Replace image fallback URI.
+        $variables['img_element']['#attributes']['uri'] = $new_uri;
+      }
+
+    }
+  }
+
+}

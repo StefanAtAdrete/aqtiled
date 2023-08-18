@@ -1,0 +1,67 @@
+<?php
+
+/**
+ * @file
+ * Contains media_contextual_crop_field_formatter implemented hooks.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function media_contextual_crop_field_formatter_help($route_name, RouteMatchInterface $route_match) {
+  $advanced_help = \Drupal::moduleHandler()->moduleExists('advanced_help');
+  switch ($route_name) {
+    // Main module help for the media_contextual_crop_field_formatter module.
+    case 'help.page.media_contextual_crop_field_formatter':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('This module provides a field formatter for image field to give the ability to apply a contextual crop to referenced media in entity reference fields') . '</p>';
+      $output .= '';
+      if ($advanced_help) {
+        $output .= '<p>' . t('For more information, please see <a href="/admin/help/ah/media_contextual_crop_field_formatter">advanced_help</a>  page.') . '</p>';
+      }
+      else {
+        $output .= '<p>' . t('For more information, please install <a href="https://www.drupal.org/project/advanced_help">advanced_help</a>  module.') . '</p>';
+      }
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook media_library_media_modify_referenced_entity_values_alter().
+ */
+function media_contextual_crop_field_formatter_media_library_media_modify_referenced_entity_values_alter(&$values, $fields, $referenced_entity) {
+
+  // Load multi crop plugins.
+  $multi_crop_plugins = \Drupal::service('plugin.manager.media_contextual_crop');
+  $plugin_definitions = $multi_crop_plugins->getDefinitions();
+
+  // Parse all entity field.
+  foreach ($fields as $field_name) {
+
+    // Pass on each field values.
+    $item_list = $referenced_entity->get($field_name);
+    foreach ($item_list->getValue() as $key => $item) {
+      // If a field as a target item of one of plugins.
+      foreach ($plugin_definitions as $plugin) {
+
+        $target_field = $plugin['target_field_name'];
+        if (isset($item[$target_field])) {
+
+          $data = $plugin['class']::processFieldData($item[$target_field]);
+          if ($data != NULL) {
+            $values[$field_name][$key][$target_field] = $data;
+          }
+          else {
+            unset($values[$field_name][$key][$target_field]);
+          }
+        }
+
+      }
+    }
+  }
+}

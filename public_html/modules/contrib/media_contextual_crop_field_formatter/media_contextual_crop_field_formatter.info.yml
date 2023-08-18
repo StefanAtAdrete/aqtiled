@@ -1,0 +1,15 @@
+name: Media Contextual Crop Reference
+description: Provides an solution to contextualize crop in media referenced fields
+type: module
+package: Media Contextual Cropping
+core_version_requirement: ^9.4 || ^10
+dependencies:
+  - drupal:field
+  - drupal:media
+  - media_contextual_crop:media_contextual_crop
+  - media_library_media_modify:media_library_media_modify
+
+# Information added by Drupal.org packaging script on 2023-08-17
+version: '1.3.0'
+project: 'media_contextual_crop_field_formatter'
+datestamp: 1692266182

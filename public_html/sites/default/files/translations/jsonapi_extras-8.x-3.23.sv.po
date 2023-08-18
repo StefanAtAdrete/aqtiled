@@ -1,10 +1,10 @@
 # Swedish translation of JSON:API Extras (8.x-3.23)
-# Copyright (c) 2022 by the Swedish translation team
+# Copyright (c) 2023 by the Swedish translation team
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: JSON:API Extras (8.x-3.23)\n"
-"POT-Creation-Date: 2022-11-25 11:46+0000\n"
+"POT-Creation-Date: 2023-07-17 03:23+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
@@ -56,3 +56,9 @@ msgid "No fields available."
 msgstr "Inga fält tillgängliga."
 msgid "Resource"
 msgstr "Resurs"
+msgid "Builds on top of JSON API to deliver extra functionality."
+msgstr "Bygger på toppen av JSON API för att leverera extra funktionalitet."
+msgid "Builds on top of JSON:API to deliver extra functionality."
+msgstr "Bygger ovanpå JSON:API för att leverera extra funktionalitet."
+msgid "JSON:API Resource override"
+msgstr "Åsidosättande av JSON:API-resurs"

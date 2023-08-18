@@ -1,0 +1,13 @@
+services:
+  plugin.manager.media_contextual_crop:
+    class: Drupal\media_contextual_crop\MediaContextualCropPluginManager
+    parent: default_plugin_manager
+
+  media_contextual_crop.service:
+    class: Drupal\media_contextual_crop\MediaContextualCropService
+    arguments: ['@plugin.manager.media_contextual_crop', '@file_system', '@stream_wrapper_manager', '@entity_type.manager', '@entity.repository']
+
+  plugin.manager.media_contextual_crop_use_case:
+    class: Drupal\media_contextual_crop\MediaContextualCropUseCasePluginManager
+    parent: default_plugin_manager
+    arguments: ['@media_contextual_crop.service']

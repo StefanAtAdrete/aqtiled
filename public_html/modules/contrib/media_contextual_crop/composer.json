@@ -1,0 +1,12 @@
+{
+    "name": "drupal/media_contextual_crop",
+    "type": "drupal-module",
+    "description": "Media Contextual Cropping API",
+    "keywords": ["Drupal"],
+    "require": {
+        "drupal/core": "^9.4 || ^10"
+    },
+    "require-dev": {
+        "drupal/advanced_help": "^1"
+    }
+}
